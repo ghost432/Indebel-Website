@@ -1,0 +1,7 @@
+[    6328ms] [ERROR] Access to fetch at 'https://pro.indebel.be/api/devis/valides?limit=9' from origin 'http://127.0.0.1:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:3000/particulier:0
+[    6332ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://pro.indebel.be/api/devis/valides?limit=9:0
+[    7378ms] [ERROR] Access to fetch at 'https://indebel.be/api/devis/valides?limit=9' from origin 'http://127.0.0.1:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:3000/particulier:0
+[    7379ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://indebel.be/api/devis/valides?limit=9:0
+[    7379ms] [ERROR] API error: Error: API indisponible
+    at fetchDevis (http://127.0.0.1:3000/js/devis-widget.js?v=20260702d:113:19)
+    at async HTMLDocument.init (http://127.0.0.1:3000/js/devis-widget.js?v=20260702d:143:23) @ http://127.0.0.1:3000/js/devis-widget.js?v=20260702d:114

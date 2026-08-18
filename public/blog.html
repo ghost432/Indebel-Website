@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Indebel</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css?v=1785654755222">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .blog-hero {
+            padding: 120px 0 60px;
+            background-color: #f2fdff;
+            text-align: center;
+        }
+
+        .blog-hero h1 {
+            font-size: 3rem;
+            color: #45485f;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .blog-hero p {
+            font-size: 1.2rem;
+            color: #627C89;
+        }
+
+        .blog-section {
+            background-color: #f2fdff;
+            padding: 60px 0;
+        }
+    </style>
+</head>
+
+<body class="blog-page">
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="blog-hero">
+            <div class="container">
+                <span class="blog-hero-kicker">Ressources et conseils</span>
+                <h1>Le Blog Indebel</h1>
+                <p>Guides concrets, actualités et inspiration pour les prestataires, recruteurs et particuliers.</p>
+            </div>
+        </section>
+
+        <section class="blog-section">
+            <div class="container">
+                <div class="blog-grid" id="blogContainer">
+                    <!-- Dynamic content will load here -->
+                    <p style="text-align: center; color: #627C89;">Chargement des articles...</p>
+                </div>
+
+                <!-- Pagination Container -->
+                <div id="paginationContainer" class="blog-pagination"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/layout-loader.js?v=20260801-header-footer-2"></script>
+    <script>
+        // Load Blog Posts with Pagination
+        
+        function truncateWords(text, limit) {
+            if (!text) return "";
+            const stripped = text.replace(/<[^>]*>?/gm, '');
+            const words = stripped.trim().split(/\s+/);
+            if (words.length <= limit) return stripped;
+            return words.slice(0, limit).join(" ") + "...";
+        }
+
+        async function loadBlog(page = 1) {
+            const container = document.getElementById('blogContainer');
+            const pagination = document.getElementById('paginationContainer');
+            container.innerHTML = '<p style="text-align: center; color: #627C89; grid-column: 1/-1;">Chargement des articles...</p>';
+
+            try {
+                const res = await fetch(`/api/blog?page=${page}&limit=15`);
+                const data = await res.json();
+                const posts = data.data;
+
+                if (!posts || posts.length === 0) {
+                    container.innerHTML = '<p class="text-center" style="grid-column: 1/-1;">Aucun article disponible pour le moment.</p>';
+                    pagination.innerHTML = '';
+                } else {
+                    container.innerHTML = posts.map(p => `
+                        <article class="blog-card">
+                            <div class="blog-image" style="background-image: url('${p.image_url || 'images/logo.png'}');"></div>
+                            <div class="blog-content">
+                                <h3>${p.title}</h3>
+                                <p>${truncateWords(p.content, 50)}</p>
+                                <a href="/blog-articles?id=${p.id}" class="read-more">Lire la suite</a>
+                            </div>
+                        </article>
+                    `).join('');
+
+                    // Render Pagination
+                    if (data.totalPages > 1) {
+                        let html = '';
+                        if (data.page > 1) {
+                            html += `<button onclick="goToPage(${data.page - 1})" class="blog-page-button"><i class="fas fa-chevron-left"></i><span>Précédent</span></button>`;
+                        }
+
+                        // Page numbers if needed, but the user asked for /blog-page=2 format for URL
+                        // but let's just make functional buttons for now.
+                        html += `<span class="blog-page-status">Page ${data.page} sur ${data.totalPages}</span>`;
+
+                        if (data.page < data.totalPages) {
+                            html += `<button onclick="goToPage(${data.page + 1})" class="blog-page-button"><span>Suivant</span><i class="fas fa-chevron-right"></i></button>`;
+                        }
+                        pagination.innerHTML = html;
+                    } else {
+                        pagination.innerHTML = '';
+                    }
+                }
+            } catch (err) {
+                console.error('Failed to load blog:', err);
+                container.innerHTML = '<p class="text-center" style="grid-column: 1/-1;">Erreur lors du chargement des articles.</p>';
+            }
+        }
+
+        function goToPage(page) {
+            // Update URL query param without full reload if possible, or just reload with the param
+            const url = new URL(window.location);
+            url.searchParams.set('page', page);
+            window.history.pushState({}, '', url);
+            loadBlog(page);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const page = parseInt(urlParams.get('page')) || 1;
+            loadBlog(page);
+        });
+    </script>
+</body>
+
+</html>

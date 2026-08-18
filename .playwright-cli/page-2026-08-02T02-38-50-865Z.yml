@@ -1,0 +1,21 @@
+- generic [active] [ref=e1]:
+  - link "Retour à l'accueil" [ref=e2] [cursor=pointer]:
+    - /url: /
+    - generic [ref=e3]: 
+    - text: Retour à l'accueil
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - img "Indebel" [ref=e6]
+      - heading "Se connecter" [level=2] [ref=e7]
+      - paragraph [ref=e8]: Accédez à votre compte Indebel
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e11]: Email
+        - textbox [ref=e12]
+      - generic [ref=e13]:
+        - generic [ref=e14]: Mot de passe
+        - generic [ref=e15]:
+          - textbox [ref=e16]
+          - button "Afficher le mot de passe" [ref=e17] [cursor=pointer]:
+            - generic [ref=e18]: 
+      - button "Connexion" [ref=e19] [cursor=pointer]

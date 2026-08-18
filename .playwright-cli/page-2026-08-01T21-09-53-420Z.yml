@@ -1,0 +1,165 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: BIENVENUE 😊 ! Indebel, la plateforme d’indépendants 100% belge
+      - generic [ref=e7] [cursor=pointer]: 
+    - generic [ref=e8]:
+      - generic [ref=e10]:
+        - generic [ref=e11]:
+          - link "" [ref=e12] [cursor=pointer]:
+            - /url: https://www.facebook.com/share/1BefEfLns8/
+          - link "" [ref=e14] [cursor=pointer]:
+            - /url: https://www.instagram.com/indebel.be?igsh=MTA0Ymw2c2V6bDBnaQ==
+          - link "" [ref=e16] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/ind%C3%A9go/
+          - link "" [ref=e18] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@indebel
+          - link "" [ref=e20] [cursor=pointer]:
+            - /url: https://www.youtube.com/channel/UCXKqrn-OMbJGVlhgpYxRmPg
+        - generic [ref=e22]:
+          - link "Espace Particulier" [ref=e23] [cursor=pointer]:
+            - /url: /particulier
+          - link "Espace Prestataire" [ref=e24] [cursor=pointer]:
+            - /url: /prestataire
+          - link "Espace Recruteur" [ref=e25] [cursor=pointer]:
+            - /url: /recruteur
+      - banner [ref=e26]:
+        - generic [ref=e28]:
+          - link [ref=e30] [cursor=pointer]:
+            - /url: /
+            - img "Indebel Logo" [ref=e31]
+          - navigation [ref=e32]:
+            - list [ref=e33]:
+              - listitem [ref=e34]:
+                - link "Notre plateforme" [ref=e35] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e36]:
+                - link "Nos secteurs" [ref=e37] [cursor=pointer]:
+                  - /url: /secteurs
+              - listitem [ref=e38]:
+                - link "Nos offres " [ref=e39] [cursor=pointer]:
+                  - /url: "#"
+                  - text: Nos offres
+                  - generic [ref=e40]: 
+                - list [ref=e152]:
+                  - listitem [ref=e153]:
+                    - link "Missions disponibles" [ref=e154] [cursor=pointer]:
+                      - /url: https://indebel.be/missions
+                  - listitem [ref=e155]:
+                    - link "Demandes de devis disponibles" [ref=e156] [cursor=pointer]:
+                      - /url: https://pro.indebel.be/devis
+              - listitem [ref=e41]:
+                - link "Label Indebel" [ref=e42] [cursor=pointer]:
+                  - /url: /label-indebel
+              - listitem [ref=e43]:
+                - link "Comment ça marche?" [ref=e44] [cursor=pointer]:
+                  - /url: /how-it-works
+              - listitem [ref=e45]:
+                - link "À propos" [ref=e46] [cursor=pointer]:
+                  - /url: /a-propos-de-nous
+              - listitem [ref=e157]:
+                - link "Se connecter" [ref=e158] [cursor=pointer]:
+                  - /url: https://pro.indebel.be/login
+          - button "Fermer le menu" [expanded] [active] [ref=e159] [cursor=pointer]
+  - main [ref=e49]:
+    - generic [ref=e52]:
+      - generic [ref=e53]:
+        - paragraph [ref=e54]: Expertises disponibles
+        - heading "Nos Secteurs d'Activité" [level=1] [ref=e55]
+        - paragraph [ref=e56]: "Chez Indebel, nous croyons que la diversité des compétences est une force. C’est pourquoi notre plateforme réunit des professionnels qualifiés et des entreprises partenaires dans une multitude de secteurs clés. Notre mission ? Favoriser la mise en relation simple, rapide et efficace dans des domaines porteurs et essentiels au développement économique et social. Découvrez les secteurs d'activité couverts par Indebel :"
+      - img "Indépendants Indebel en action" [ref=e59]
+    - generic [ref=e62]:
+      - generic [ref=e63]:
+        - generic [ref=e64]: 
+        - heading "Rénovation & Construction" [level=3] [ref=e65]
+        - paragraph [ref=e66]: "Nous rassemblons des artisans, ouvriers qualifiés, ingénieurs et experts du bâtiment pour tous types de projets : rénovation, gros œuvre, second œuvre, aménagement intérieur et extérieur."
+      - generic [ref=e67]:
+        - generic [ref=e68]: 
+        - heading "Transport & Logistique" [level=3] [ref=e69]
+        - paragraph [ref=e70]: Conducteurs, manutentionnaires, gestionnaires de flux, chargement et déchargement… Nos talents assurent le bon acheminement des marchandises et la fluidité de votre chaîne logistique.
+      - generic [ref=e71]:
+        - generic [ref=e72]: 
+        - heading "Nettoyage & Multiservices" [level=3] [ref=e73]
+        - paragraph [ref=e74]: "Nettoyage industriel et commercial, entretien des locaux et surfaces, planification et organisation des tâches : nous facilitons la vie quotidienne des particuliers et des professionnels."
+    - generic [ref=e77]:
+      - 'heading "Indebel : Une plateforme, des opportunités infinies" [level=2] [ref=e78]'
+      - paragraph [ref=e79]: "Notre écosystème repose sur la rencontre entre compétences et besoins concrets. Grâce à une interface intuitive, une sélection rigoureuse et un accompagnement personnalisé, Indebel est bien plus qu'une plateforme de mise en relation : c'est un moteur de croissance pour les indépendants, les entreprises et les collectivités."
+    - generic [ref=e81]:
+      - heading "REJOIGNEZ INDEBEL ET ACCÉDEZ À UN MONDE D’OPPORTUNITÉS !" [level=2] [ref=e82]
+      - generic [ref=e83]:
+        - link "Vous êtes à la recherche d’un professionnel ?" [ref=e84] [cursor=pointer]:
+          - /url: https://pro.indebel.be/register
+        - link "Vous êtes un expert prêt à proposer vos services ?" [ref=e85] [cursor=pointer]:
+          - /url: https://pro.indebel.be/register
+  - contentinfo [ref=e87]:
+    - generic [ref=e89]:
+      - generic [ref=e90]:
+        - img "Indebel Logo" [ref=e91]
+        - paragraph [ref=e92]: Indebel est la plateforme de référence pour connecter les entreprises et les indépendants en Belgique.
+      - generic [ref=e93]:
+        - heading "Ressources" [level=3] [ref=e94]
+        - list [ref=e95]:
+          - listitem [ref=e96]:
+            - link "Blog" [ref=e97] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=e98]:
+            - link "FAQs Indépendants" [ref=e99] [cursor=pointer]:
+              - /url: /faqs-independants
+          - listitem [ref=e100]:
+            - link "FAQs Entreprise" [ref=e101] [cursor=pointer]:
+              - /url: /faqs-entreprise
+          - listitem [ref=e102]:
+            - link "FAQs Particulier" [ref=e103] [cursor=pointer]:
+              - /url: /faqs-particuliers
+          - listitem [ref=e104]:
+            - link "Comment ça marche?" [ref=e105] [cursor=pointer]:
+              - /url: /how-it-works
+          - listitem [ref=e106]:
+            - link "Contact" [ref=e107] [cursor=pointer]:
+              - /url: /contact
+      - generic [ref=e108]:
+        - heading "Liens Utiles" [level=3] [ref=e109]
+        - list [ref=e110]:
+          - listitem [ref=e111]:
+            - link "Label Indebel" [ref=e112] [cursor=pointer]:
+              - /url: /label-indebel
+          - listitem [ref=e113]:
+            - link "Nos Secteurs" [ref=e114] [cursor=pointer]:
+              - /url: /secteurs
+          - listitem [ref=e115]:
+            - link "Responsabilité et obligations" [ref=e116] [cursor=pointer]:
+              - /url: /conformite-et-securite
+          - listitem [ref=e117]:
+            - link "Politique de confidentialité" [ref=e118] [cursor=pointer]:
+              - /url: /politique-de-confidentialite
+          - listitem [ref=e119]:
+            - link "CGU & Mentions Légales" [ref=e120] [cursor=pointer]:
+              - /url: /cgu
+          - listitem [ref=e121]:
+            - link "CGU - Particuliers" [ref=e122] [cursor=pointer]:
+              - /url: /cgu-particuliers
+      - generic [ref=e123]:
+        - heading "Réseaux Sociaux" [level=3] [ref=e124]
+        - generic [ref=e125]:
+          - link "" [ref=e126] [cursor=pointer]:
+            - /url: https://www.facebook.com/share/1BefEfLns8/
+          - link "" [ref=e128] [cursor=pointer]:
+            - /url: https://www.instagram.com/indebel.be?igsh=MTA0Ymw2c2V6bDBnaQ==
+          - link "" [ref=e130] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/ind%C3%A9go/
+          - link "" [ref=e132] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@indebel
+          - link "" [ref=e134] [cursor=pointer]:
+            - /url: https://www.youtube.com/channel/UCXKqrn-OMbJGVlhgpYxRmPg
+        - generic [ref=e136]:
+          - generic [ref=e137]:
+            - generic [ref=e138]: 
+            - generic [ref=e139]: 
+            - generic [ref=e140]: 
+            - generic [ref=e141]: 
+            - generic [ref=e142]: 
+          - paragraph [ref=e143]: L'une des meilleures plateformes de mise en relation en Belgique.
+    - paragraph [ref=e146]:
+      - text: Copyright™ Indebel, Tous droits réservés. Créé par
+      - link "DreamBis" [ref=e147] [cursor=pointer]:
+        - /url: https://dreambis.be

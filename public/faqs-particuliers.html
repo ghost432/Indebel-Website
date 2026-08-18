@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs Particuliers - Indebel</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=1785654755222">
+    <style>
+        .page-header {
+            background-color: #f2fdff;
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            color: #45485f;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #627C89;
+        }
+
+        .section-padding {
+            background-color: #f2fdff;
+            padding: 80px 0;
+        }
+    </style>
+</head>
+
+<body class="faq-page faq-individual-page">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <span class="faq-hero-kicker">Centre d'aide</span>
+                <h1>FAQs Particuliers</h1>
+                <p>Trouvez un professionnel de confiance pour vos travaux et services à domicile.</p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="faq-container">
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Comment s'inscrire en tant que particulier ?
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>En tant que particulier, il n'est pas nécessaire de s'inscrire ou de créer un compte.
+                                Vous pouvez directement remplir le formulaire de demande de devis pour votre projet.
+                                Vos informations seront transmises aux professionnels qualifiés qui vous répondront
+                                directement.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Est-ce payant de déposer une demande de devis ?
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Non, le dépôt d'une demande de devis pour vos travaux ou services est entièrement gratuit
+                                sur Indebel. Vous recevez des propositions sans engagement de votre part.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Comment trouver un professionnel pour mes besoins ?
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Décrivez votre projet (rénovation, nettoyage, transport, dépannage, etc.) via le
+                                formulaire "Déposer un devis". Les indépendants qualifiés de votre région recevront
+                                votre demande et vous enverront leurs propositions que vous pourrez comparer librement.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Puis-je évaluer le prestataire après son intervention ?
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Oui ! Après la prestation, nous vous encourageons vivement à laisser une évaluation. Cela
+                                permet de valoriser les bons professionnels et d'aider la communauté Indebel à faire les
+                                meilleurs choix.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Quels types de services sont disponibles sur la plateforme ?
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Indebel couvre un large éventail de services : construction et rénovation, transport et
+                                livraison, nettoyage, multiservices, jardinage, et bien d'autres métiers manuels ou
+                                techniques.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/layout-loader.js?v=20260801-header-footer-2"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

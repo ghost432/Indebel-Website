@@ -1,0 +1,9 @@
+node_modules/
+.env*
+dist/
+build/
+.DS_Store
+indebel-project/
+*.sql
+*.tar.gz
+output/

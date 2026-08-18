@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs Indépendants - Indebel</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=1785654755222">
+    <style>
+        .page-header {
+            background-color: #f2fdff;
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            color: #45485f;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #627C89;
+        }
+
+        .section-padding {
+            background-color: #f2fdff;
+            padding: 80px 0;
+        }
+    </style>
+</head>
+
+<body class="faq-page faq-freelancer-page">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <span class="faq-hero-kicker">Centre d'aide</span>
+                <h1>FAQs Indépendants</h1>
+                <p>Retrouvez toutes les informations pour lancer et gérer votre activité sur Indebel.</p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="faq-container">
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Quelles sont les étapes pour devenir indépendant en Belgique ?
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Pour vous lancer, vous devez : définir votre business plan, choisir votre statut
+                                (personne physique ou société), vous inscrire à la BCE, ouvrir un compte bancaire
+                                professionnel, vous affilier à une caisse d'assurances sociales, activer votre numéro de
+                                TVA et souscrire aux assurances requises (RC Pro, etc.).</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Comment avoir un profil vérifié et complet ?
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Rendez-vous dans l'onglet "Profil" pour valider votre compte via la section KYC. Une
+                                pièce d'identité valide (UE) ou un titre de séjour (hors UE) sera demandée. Un profil
+                                avec le badge "Vérifié" obtient beaucoup plus de missions.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Comment puis-je postuler à une mission ?
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Vous recevez des notifications dès qu'une mission correspond à votre profil. Allez dans
+                                votre tableau de bord, consultez les détails de l'offre, et cliquez sur "Postuler" ou
+                                "Valider" si les conditions vous conviennent.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Est-il possible de postuler à plusieurs missions à la fois ?
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolument ! Vous pouvez postuler à plusieurs offres simultanément. Dès qu'une entreprise
+                                valide votre candidature, vous en êtes informé immédiatement.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Comment se déroule une mission typique sur Indebel ?
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Le flux est simple : 1. Notification d'offre reçue. 2. Vous postulez. 3. Le client
+                                confirme. 4. Vous êtes mis en relation pour régler les derniers détails (outils, accès,
+                                etc.). 5. Vous réalisez la mission. 6. Vous recevez votre évaluation.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/layout-loader.js?v=20260801-header-footer-2"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

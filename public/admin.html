@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indebel Admin - Gestion</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Quill.js CSS & JS -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #044CF3;
+            --secondary-color: #0238b6;
+            --text-color: #333;
+            --light-bg: #f4f6f9;
+            --sidebar-width: 260px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--light-bg);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: #fff;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            z-index: 100;
+        }
+
+        .sidebar-header {
+            padding: 30px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar-header img {
+            max-width: 150px;
+        }
+
+        .sidebar-menu {
+            padding: 20px;
+            flex-grow: 1;
+            list-style: none;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            color: #666;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .sidebar-menu a i {
+            width: 25px;
+            margin-right: 10px;
+        }
+
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background-color: #eff6ff;
+            color: var(--primary-color);
+        }
+
+        .sidebar-footer {
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            flex-grow: 1;
+            padding: 40px;
+            width: calc(100% - var(--sidebar-width));
+        }
+
+        /* Views management */
+        .section-view {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .section-view.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header Actions */
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .view-header h2 {
+            font-size: 24px;
+            color: var(--text-color);
+        }
+
+        /* Components */
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .btn-outline {
+            border: 1px solid #ddd;
+            background: white;
+            color: #666;
+        }
+
+        .btn-outline:hover,
+        .btn-outline.active {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .btn-danger {
+            background-color: #fee2e2;
+            color: #dc2626;
+            padding: 6px 12px;
+            font-size: 14px;
+        }
+
+        .btn-danger:hover {
+            background-color: #fecaca;
+        }
+
+        .btn-edit {
+            background-color: #fef3c7;
+            color: #d97706;
+            padding: 6px 12px;
+            font-size: 14px;
+            margin-right: 5px;
+        }
+
+        .btn-edit:hover {
+            background-color: #fde68a;
+        }
+
+        .form-container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            display: none;
+        }
+
+        .form-container.active {
+            display: block;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: inherit;
+        }
+
+        .data-list {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .list-item {
+            padding: 20px;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .list-info strong {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .list-info small {
+            color: #888;
+        }
+
+        .list-icon {
+            width: 40px;
+            height: 40px;
+            background: #f0f7ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            margin-right: 15px;
+        }
+
+        .item-left {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Stats */
+        .stats-overview {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-card h3 {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .stat-card .value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .message-detail-row {
+            margin-bottom: 15px;
+        }
+
+        .message-detail-label {
+            font-weight: 600;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .message-detail-value {
+            background: #f9fafb;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+
+        /* Pagination Control */
+        .pagination-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            padding-bottom: 20px;
+        }
+
+        .pagination-btn {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .pagination-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="/"><img src="/images/logo.png" alt="Indebel Admin"></a>
+            <div style="margin-top:10px; font-weight:bold; color:var(--primary-color);">ADMIN PANEL</div>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#" onclick="switchView('dashboard', this)" class="active"><i class="fas fa-home"></i> Tableau
+                    de bord</a></li>
+            <li><a href="#" onclick="switchView('users', this)"><i class="fas fa-users"></i> Utilisateurs</a></li>
+            <li><a href="#" onclick="switchView('sectors', this)"><i class="fas fa-layer-group"></i> Secteurs</a></li>
+            <li><a href="#" onclick="switchView('blog', this)"><i class="fas fa-newspaper"></i> Blog</a></li>
+            <li><a href="#" onclick="switchView('messages', this)"><i class="fas fa-envelope"></i> Messages <span
+                        id="msg-badge" class="badge"
+                        style="background:#ef4444; color:white; padding:2px 8px; border-radius:10px; font-size:11px; margin-left:auto; display:none;">0</span></a>
+            </li>
+            <li><a href="#" onclick="switchView('settings', this)"><i class="fas fa-cog"></i> Configuration SEO</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="/" class="btn btn-outline" style="width: 100%; justify-content: center;"><i
+                    class="fas fa-sign-out-alt"></i> Quitter</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Dashboard View -->
+        <section id="dashboard" class="section-view active">
+            <div class="view-header">
+                <h2 id="view-title">Tableau de bord</h2>
+            </div>
+
+            <div class="stats-overview" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div class="stat-card">
+                    <h3>Utilisateurs</h3>
+                    <div class="value" id="stats-users">-</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Secteurs</h3>
+                    <div class="value" id="stats-sectors">-</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Messages</h3>
+                    <div class="value" id="stats-messages">-</div>
+                </div>
+                <div class="stat-card" style="border-top: 4px solid #10b981;">
+                    <h3>Visites Totales</h3>
+                    <div class="value" id="stats-visits">-</div>
+                </div>
+            </div>
+
+            <div class="view-header" style="margin-top: 40px;">
+                <h3>Articles par catégorie</h3>
+            </div>
+            <div class="stats-overview" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+                <div class="stat-card">
+                    <h3>Indebel</h3>
+                    <div class="value" id="stats-blog-indebel">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Particulier</h3>
+                    <div class="value" id="stats-blog-particulier">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Prestataire</h3>
+                    <div class="value" id="stats-blog-prestataire">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Recruteur</h3>
+                    <div class="value" id="stats-blog-recruteur">0</div>
+                </div>
+            </div>
+
+            <div class="view-header" style="margin-top: 40px;">
+                <h3>Pages les plus visitées</h3>
+            </div>
+            <div class="data-list" id="popular-pages-list">
+                <div style="padding: 20px; text-align: center; color: #888;">Chargement des statistiques...</div>
+            </div>
+        </section>
+
+        <!-- Users View -->
+        <section id="users" class="section-view">
+            <div class="view-header">
+                <h2>Utilisateurs</h2>
+                <button class="btn btn-primary" onclick="toggleForm('userFormContainer')"><i class="fas fa-plus"></i>
+                    Nouvel Utilisateur</button>
+            </div>
+            <div id="userFormContainer" class="form-container">
+                <h3 style="margin-bottom: 20px; font-size: 18px;">Ajouter un utilisateur</h3>
+                <form id="userForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nom complet</label>
+                            <input type="text" id="userName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="userEmail" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Mot de passe</label>
+                            <input type="password" id="userPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Rôle</label>
+                            <select id="userRole">
+                                <option value="user">Utilisateur Standard</option>
+                                <option value="admin">Administrateur</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Créer le compte</button>
+                </form>
+            </div>
+            <div class="data-list" id="usersList">
+                <div style="padding: 20px; text-align: center; color: #888;">Chargement...</div>
+            </div>
+        </section>
+
+        <!-- Sectors View -->
+        <section id="sectors" class="section-view">
+            <div class="view-header">
+                <h2>Secteurs d'activités</h2>
+                <button class="btn btn-primary" onclick="toggleForm('sectorFormContainer')"><i class="fas fa-plus"></i>
+                    Nouveau Secteur</button>
+            </div>
+            <div id="sectorFormContainer" class="form-container">
+                <h3 style="margin-bottom: 20px; font-size: 18px;">Ajouter un secteur</h3>
+                <form id="sectorForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nom du secteur</label>
+                            <input type="text" id="sectorName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Classe Icône (FontAwesome)</label>
+                            <input type="text" id="sectorIcon" value="fas fa-star" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                </form>
+            </div>
+            <div class="data-list" id="sectorsList">
+                <div style="padding: 20px; text-align: center; color: #888;">Chargement...</div>
+            </div>
+        </section>
+
+        <!-- Blog View -->
+        <section id="blog" class="section-view">
+            <div class="view-header">
+                <h2>Articles de Blog</h2>
+                <div class="category-filters" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                    <button class="btn btn-outline filter-btn active"
+                        onclick="filterBlogByCat('all', this)">Tous</button>
+                    <button class="btn btn-outline filter-btn"
+                        onclick="filterBlogByCat('indebel', this)">Indebel</button>
+                    <button class="btn btn-outline filter-btn"
+                        onclick="filterBlogByCat('particulier', this)">Particulier</button>
+                    <button class="btn btn-outline filter-btn"
+                        onclick="filterBlogByCat('prestataire', this)">Prestataire</button>
+                    <button class="btn btn-outline filter-btn"
+                        onclick="filterBlogByCat('recruteur', this)">Recruteur</button>
+                </div>
+                <button class="btn btn-primary" onclick="toggleForm('blogFormContainer')"><i class="fas fa-plus"></i>
+                    Nouvel Article</button>
+            </div>
+            <div id="blogFormContainer" class="form-container">
+                <h3 style="margin-bottom: 20px; font-size: 18px;">Éditer un article</h3>
+                <form id="blogForm">
+                    <div class="form-group">
+                        <label>Titre</label>
+                        <input type="text" id="blogTitle" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Image de l'article</label>
+                            <input type="file" id="blogImageFile" accept="image/*">
+                            <small id="currentImageUrl" style="display:block; margin-top:5px; color:#666;"></small>
+                        </div>
+                        <div class="form-group">
+                            <label>Date de publication</label>
+                            <input type="date" id="blogDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Catégorie</label>
+                            <select id="blogCategory" required>
+                                <option value="indebel">Indebel (Global)</option>
+                                <option value="particulier">Particulier</option>
+                                <option value="prestataire">Prestataire</option>
+                                <option value="recruteur">Recruteur</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 50px;">
+                        <label>Contenu</label>
+                        <div id="blogEditor" style="height: 300px; background: white;"></div>
+                        <input type="hidden" id="blogContent">
+                    </div>
+                    <input type="hidden" id="blogId">
+                    <div style="display: flex; gap: 10px;">
+                        <button type="submit" class="btn btn-primary">Publier</button>
+                        <button type="button" class="btn btn-outline"
+                            onclick="resetBlogForm(); toggleForm('blogFormContainer');">Annuler</button>
+                    </div>
+                </form>
+            </div>
+            <div class="data-list" id="blogList">
+                <div style="padding: 20px; text-align: center; color: #888;">Chargement...</div>
+            </div>
+        </section>
+
+        <!-- Messages View -->
+        <section id="messages" class="section-view">
+            <div class="view-header">
+                <h2>Messages Reçus</h2>
+            </div>
+            <div class="data-list" id="messagesList">
+                <div style="padding: 20px; text-align: center; color: #888;">Chargement...</div>
+            </div>
+        </section>
+
+        <!-- Settings View -->
+        <section id="settings" class="section-view">
+            <div class="view-header">
+                <h2>Configuration Générale & SEO</h2>
+                <button class="btn btn-primary" onclick="saveSettings()"><i class="fas fa-save"></i> Enregistrer
+                    tout</button>
+            </div>
+
+            <div class="stats-overview" style="display: block; margin-bottom: 30px;">
+                <div class="stat-card" style="margin-bottom: 30px;">
+                    <h3>Informations Générales</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nom du site</label>
+                            <input type="text" id="set-site-name" value="Indebel">
+                        </div>
+                        <div class="form-group">
+                            <label>Slogan (Tagline)</label>
+                            <input type="text" id="set-site-tagline" value="La mise en relation 100% belge">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card" style="margin-bottom: 30px;">
+                    <h3>SEO Global (Metadata)</h3>
+                    <div class="form-group">
+                        <label>Meta Titre par défaut</label>
+                        <input type="text" id="set-seo-title" value="Indebel - Freelances et Entreprises en Belgique">
+                    </div>
+                    <div class="form-group">
+                        <label>Meta Description par défaut</label>
+                        <textarea id="set-seo-description"
+                            rows="3">La plateforme de référence pour connecter les entreprises, les prestataires et les particuliers en Belgique.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Mots clés (Keywords)</label>
+                        <input type="text" id="set-seo-keywords"
+                            value="belgique, freelance, recrutement, artisans, services">
+                    </div>
+                </div>
+
+                <div class="stat-card" style="margin-bottom: 30px;">
+                    <h3>Réseaux Sociaux</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fab fa-facebook"></i> Facebook</label>
+                            <input type="url" id="set-social-facebook" placeholder="https://facebook.com/...">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fab fa-instagram"></i> Instagram</label>
+                            <input type="url" id="set-social-instagram" placeholder="https://instagram.com/...">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fab fa-linkedin"></i> LinkedIn</label>
+                            <input type="url" id="set-social-linkedin" placeholder="https://linkedin.com/...">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fab fa-twitter"></i> Twitter/X</label>
+                            <input type="url" id="set-social-twitter" placeholder="https://twitter.com/...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Message View Modal -->
+    <div id="messageModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalSubject">Sujet du message</h3>
+                <button class="modal-close" onclick="closeMessageModal()">&times;</button>
+            </div>
+            <div id="modalBody">
+                <!-- Injected via JS -->
+            </div>
+            <div style="margin-top: 20px; text-align: right;">
+                <button class="btn btn-outline" onclick="closeMessageModal()">Fermer</button>
+                <a id="modalReplyBtn" href="#" class="btn btn-primary" target="_blank"><i class="fas fa-reply"></i>
+                    Répondre</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- State ---
+        const ITEMS_PER_PAGE = 20;
+        const state = {
+            users: { page: 1, data: [] },
+            sectors: { page: 1, data: [] },
+            blog: { page: 1, data: [] },
+            messages: { page: 1, data: [] }
+        };
+
+        // Initialize Quill
+        let quill;
+        document.addEventListener('DOMContentLoaded', () => {
+            quill = new Quill('#blogEditor', {
+                theme: 'snow',
+                modules: {
+                    toolbar: [
+                        [{ 'header': [1, 2, 3, false] }],
+                        ['bold', 'italic', 'underline', 'strike'],
+                        ['link', 'image'],
+                        [{ 'align': [] }],
+                        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                        ['clean']
+                    ]
+                }
+            });
+            init();
+        });
+
+        // --- Init ---
+        function init() {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (!user || user.role !== 'admin') {
+                window.location.href = '/login';
+                return;
+            }
+
+            handleRouting();
+            window.addEventListener('popstate', handleRouting);
+
+            // Initial Load for potentially active sections
+            loadDashboardStats();
+
+            // Initial Badge
+            updateUnreadCount();
+            setInterval(updateUnreadCount, 30000);
+        }
+
+        // --- Settings Management ---
+        async function fetchSettings() {
+            try {
+                const res = await fetch('/api/admin/settings');
+                const settings = await res.json();
+
+                // Map to inputs
+                if (settings.site_name) document.getElementById('set-site-name').value = settings.site_name;
+                if (settings.site_tagline) document.getElementById('set-site-tagline').value = settings.site_tagline;
+                if (settings.seo_title) document.getElementById('set-seo-title').value = settings.seo_title;
+                if (settings.seo_description) document.getElementById('set-seo-description').value = settings.seo_description;
+                if (settings.seo_keywords) document.getElementById('set-seo-keywords').value = settings.seo_keywords;
+                if (settings.social_facebook) document.getElementById('set-social-facebook').value = settings.social_facebook;
+                if (settings.social_instagram) document.getElementById('set-social-instagram').value = settings.social_instagram;
+                if (settings.social_linkedin) document.getElementById('set-social-linkedin').value = settings.social_linkedin;
+                if (settings.social_twitter) document.getElementById('set-social-twitter').value = settings.social_twitter;
+            } catch (e) {
+                console.error('Settings fetch error:', e);
+            }
+        }
+
+        async function saveSettings() {
+            const settings = {
+                site_name: document.getElementById('set-site-name').value,
+                site_tagline: document.getElementById('set-site-tagline').value,
+                seo_title: document.getElementById('set-seo-title').value,
+                seo_description: document.getElementById('set-seo-description').value,
+                seo_keywords: document.getElementById('set-seo-keywords').value,
+                social_facebook: document.getElementById('set-social-facebook').value,
+                social_instagram: document.getElementById('set-social-instagram').value,
+                social_linkedin: document.getElementById('set-social-linkedin').value,
+                social_twitter: document.getElementById('set-social-twitter').value
+            };
+
+            try {
+                const res = await fetch('/api/admin/settings', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(settings)
+                });
+                const result = await res.json();
+                if (result.success) {
+                    alert('Configuration enregistrée avec succès !');
+                } else {
+                    alert('Erreur lors de l\'enregistrement.');
+                }
+            } catch (e) {
+                alert('Erreur réseau.');
+            }
+        }
+
+        // --- Routing ---
+        function handleRouting() {
+            const path = window.location.pathname; // /admin or /admin/messages
+            const parts = path.split('/');
+            let section = 'dashboard';
+
+            if (parts.length > 2 && parts[2]) {
+                section = parts[2];
+            }
+            if (section === 'message') section = 'messages'; // alias fix
+
+            if (!document.getElementById(section)) section = 'dashboard';
+
+            // Visual Switch
+            document.querySelectorAll('.sidebar-menu a').forEach(el => el.classList.remove('active'));
+            // Try match standard href
+            let link = document.querySelector(`.sidebar-menu a[onclick*="'${section}'"]`);
+            if (link) link.classList.add('active');
+
+            document.querySelectorAll('.section-view').forEach(el => el.classList.remove('active'));
+            document.getElementById(section).classList.add('active');
+
+            // Trigger Data Load if needed
+            if (section === 'users') fetchUsers();
+            if (section === 'sectors') fetchSectors();
+            if (section === 'blog') fetchBlog('all');
+            if (section === 'messages') fetchMessages();
+            if (section === 'settings') fetchSettings();
+        }
+
+        function switchView(viewId, linkElement) {
+            // Update URL
+            let newPath = viewId === 'dashboard' ? '/admin' : `/admin/${viewId}`;
+            if (window.location.pathname !== newPath) {
+                history.pushState(null, '', newPath);
+            }
+            handleRouting();
+
+            // Dynamic Page Title
+            const titles = {
+                'dashboard': 'Tableau de Bord',
+                'users': 'Utilisateurs',
+                'sectors': 'Secteurs d\'activités',
+                'blog': 'Articles de Blog',
+                'messages': 'Messages reçus',
+                'settings': 'Configuration SEO'
+            };
+            document.title = `Indebel Admin - ${titles[viewId] || 'Gestion'}`;
+            const vt = document.getElementById('view-title');
+            if (vt) vt.innerText = titles[viewId] || 'Gestion';
+        }
+
+        function toggleForm(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('active');
+        }
+
+        // --- Data & Pagination ---
+
+        function renderPagination(type, containerId) {
+            const listEl = document.getElementById(containerId);
+            const s = state[type];
+            const start = (s.page - 1) * ITEMS_PER_PAGE;
+            const end = start + ITEMS_PER_PAGE;
+            const items = s.data.slice(start, end);
+            const totalPages = Math.ceil(s.data.length / ITEMS_PER_PAGE);
+
+            if (items.length === 0) {
+                listEl.innerHTML = '<div style="padding:20px; text-align:center;">Aucune donnée.</div>';
+                return;
+            }
+
+            let html = items.map(item => getRowHtml(type, item)).join('');
+
+            // Controls
+            if (totalPages > 1) {
+                html += `<div class="pagination-controls">`;
+                html += `<button class="pagination-btn" onclick="changePage('${type}', ${s.page - 1}, '${containerId}')" ${s.page === 1 ? 'disabled' : ''}>Préc.</button>`;
+
+                for (let i = 1; i <= totalPages; i++) {
+                    if (totalPages <= 7 || i === 1 || i === totalPages || (i >= s.page - 1 && i <= s.page + 1)) {
+                        html += `<button class="pagination-btn ${s.page === i ? 'active' : ''}" onclick="changePage('${type}', ${i}, '${containerId}')">${i}</button>`;
+                    } else if (html.slice(-3) !== '...') {
+                        // html += '<span style="padding:5px;">...</span>'; 
+                        // Simplified logic to avoid complex "..." logic for now
+                    }
+                }
+
+                html += `<button class="pagination-btn" onclick="changePage('${type}', ${s.page + 1}, '${containerId}')" ${s.page === totalPages ? 'disabled' : ''}>Suiv.</button>`;
+                html += `</div>`;
+            }
+
+            listEl.innerHTML = html;
+        }
+
+        function changePage(type, page, containerId) {
+            const total = Math.ceil(state[type].data.length / ITEMS_PER_PAGE);
+            if (page < 1 || page > total) return;
+            state[type].page = page;
+            renderPagination(type, containerId);
+        }
+
+        function getRowHtml(type, item) {
+            if (type === 'users') {
+                return `
+                <div class="list-item">
+                    <div class="item-left">
+                        <div class="list-icon"><i class="fas fa-user"></i></div>
+                        <div class="list-info">
+                            <strong>${item.name} ${item.role === 'admin' ? '<span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:12px;font-size:12px">Admin</span>' : ''}</strong>
+                            <small>${item.email}</small>
+                        </div>
+                    </div>
+                </div>`;
+            }
+            if (type === 'sectors') {
+                return `
+                <div class="list-item">
+                    <div class="item-left">
+                        <div class="list-icon"><i class="${item.icon_class}"></i></div>
+                        <div class="list-info">
+                            <strong>${item.name}</strong>
+                        </div>
+                    </div>
+                </div>`;
+            }
+            if (type === 'blog') {
+                return `
+                <div class="list-item">
+                    <div class="item-left">
+                        <div class="list-icon" style="background-image:url('${item.image_url}');background-size:cover;color:transparent"></div>
+                        <div class="list-info">
+                            <strong>${item.title} <span style="background:#f3f4f6; color:#4b5563; padding:2px 6px; border-radius:4px; font-size:11px; margin-left:5px;">${item.category}</span></strong>
+                            <small>${new Date(item.published_date).toLocaleDateString()}</small>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-edit" onclick="editPost(${item.id})"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-danger" onclick="deletePost(${item.id})"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>`;
+            }
+            if (type === 'messages') {
+                const isUnread = item.status === 'unread';
+                const safeItem = JSON.stringify(item).replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+                return `
+                <div class="list-item" style="${isUnread ? 'background-color:#f0f9ff' : ''}">
+                    <div class="item-left">
+                        <div class="list-icon"><i class="fas fa-envelope${isUnread ? '-open-text' : ''}"></i></div>
+                        <div class="list-info">
+                            <strong>${item.subject} ${isUnread ? '<span style="color:red;font-size:10px">● Nouveau</span>' : ''}</strong>
+                            <small>${item.name} | ${new Date(item.created_at).toLocaleDateString()}</small>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary" style="padding:5px 10px;font-size:13px" onclick='openMessageModal(${safeItem})'>
+                            <i class="fas fa-eye"></i> Lire
+                        </button>
+                    </div>
+                </div>`;
+            }
+            return '';
+        }
+
+        // --- API & Actions ---
+
+        async function loadDashboardStats() {
+            try {
+                const res = await fetch('/api/admin/stats');
+                const data = await res.json();
+
+                document.getElementById('stats-users').innerText = data.users;
+                document.getElementById('stats-sectors').innerText = data.sectors;
+                document.getElementById('stats-messages').innerText = data.messages;
+                document.getElementById('stats-visits').innerText = data.visits.total;
+
+                // Reset blog stats
+                const cats = ['indebel', 'particulier', 'prestataire', 'recruteur'];
+                cats.forEach(c => {
+                    const el = document.getElementById(`stats-blog-${c}`);
+                    if (el) el.innerText = 0;
+                });
+
+                // Set blog stats
+                if (data.blog) {
+                    data.blog.forEach(b => {
+                        const el = document.getElementById(`stats-blog-${b.category}`);
+                        if (el) el.innerText = b.count;
+                    });
+                }
+
+                // Popular Pages
+                const list = document.getElementById('popular-pages-list');
+                if (data.visits.popular.length === 0) {
+                    list.innerHTML = '<div style="padding:20px; text-align:center; color:#888;">Aucune visite enregistrée encore.</div>';
+                } else {
+                    list.innerHTML = data.visits.popular.map(p => `
+                        <div class="list-item">
+                            <div class="item-left">
+                                <i class="fas fa-file-alt" style="margin-right:15px; color:#6b7280"></i>
+                                <strong>${p.url}</strong>
+                            </div>
+                            <div class="badge" style="background:#eff6ff; color:var(--primary-color); padding:5px 12px; border-radius:15px; font-weight:bold;">
+                                ${p.count} vues
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            } catch (e) { console.error('Stats error:', e); }
+        }
+
+        async function fetchUsers() {
+            const res = await fetch('/api/users');
+            state.users.data = await res.json();
+            renderPagination('users', 'usersList');
+        }
+        async function fetchSectors() {
+            const res = await fetch('/api/sectors');
+            state.sectors.data = await res.json();
+            renderPagination('sectors', 'sectorsList');
+        }
+        async function fetchBlog(category = 'all') {
+            const url = category === 'all' ? '/api/blog?limit=100' : `/api/blog?category=${category}&limit=100`;
+            const res = await fetch(url);
+            const result = await res.json();
+            state.blog.data = result.data || [];
+            renderPagination('blog', 'blogList');
+        }
+
+        function filterBlogByCat(cat, btn) {
+            // UI
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            state.blog.page = 1;
+            fetchBlog(cat);
+        }
+        async function fetchMessages() {
+            const res = await fetch('/api/admin/contacts');
+            let messages = await res.json();
+            // Sort newest first
+            messages.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+            state.messages.data = messages;
+            renderPagination('messages', 'messagesList');
+        }
+        async function updateUnreadCount() {
+            try {
+                const res = await fetch('/api/admin/contacts');
+                const m = await res.json();
+                const unread = m.filter(msg => msg.status === 'unread').length;
+                const badge = document.getElementById('msg-badge');
+                if (unread > 0) {
+                    badge.innerText = unread;
+                    badge.style.display = 'inline-block';
+                } else {
+                    badge.style.display = 'none';
+                }
+            } catch (e) { }
+        }
+
+        // --- Modals ---
+        function openMessageModal(msg) {
+            document.getElementById('modalSubject').innerText = msg.subject;
+            document.getElementById('modalBody').innerHTML = `
+                <div class="message-detail-row"><span class="message-detail-label">De :</span>
+                    <div class="message-detail-value">
+                        <strong>${msg.name}</strong> (${msg.user_type})<br>
+                        Email: <a href="mailto:${msg.email}">${msg.email}</a><br>
+                        Tel: ${msg.phone || '-'}<br>
+                        ${msg.bce_number ? `BCE: ${msg.bce_number}` : ''}
+                    </div>
+                </div>
+                <div class="message-detail-row"><span class="message-detail-label">Message :</span>
+                    <div class="message-detail-value" style="white-space: pre-wrap;">${msg.message}</div>
+                </div>
+                <div style="font-size:12px; color:#999">Reçu le ${new Date(msg.created_at).toLocaleString()}</div>
+            `;
+            document.getElementById('modalReplyBtn').href = `mailto:${msg.email}?subject=Re: ${encodeURIComponent(msg.subject)}`;
+            document.getElementById('messageModal').style.display = 'flex';
+
+            // Mark as Read if unread
+            if (msg.status === 'unread') {
+                // Optimistic Update
+                msg.status = 'read';
+                const found = state.messages.data.find(m => m.id === msg.id);
+                if (found) found.status = 'read';
+
+                // Re-render List (to remove badge)
+                renderPagination('messages', 'messagesList');
+
+                // Update Sidebar Badge (Fetch new count or decrement)
+                updateUnreadCount();
+
+                // Call API
+                fetch(`/api/admin/contacts/${msg.id}/read`, { method: 'PUT' }).catch(console.error);
+            }
+        }
+        function closeMessageModal() {
+            document.getElementById('messageModal').style.display = 'none';
+        }
+
+        // --- Form Submits (Restored) ---
+
+        // User
+        document.getElementById('userForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                name: document.getElementById('userName').value,
+                email: document.getElementById('userEmail').value,
+                password: document.getElementById('userPassword').value,
+                role: document.getElementById('userRole').value
+            };
+            try {
+                const res = await fetch('/api/register', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+                if (res.ok) {
+                    toggleForm('userFormContainer');
+                    e.target.reset();
+                    fetchUsers();
+                    alert('Utilisateur ajouté');
+                } else alert('Erreur création');
+            } catch (err) { alert('Erreur serveur'); }
+        });
+
+        // Sector
+        document.getElementById('sectorForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                name: document.getElementById('sectorName').value,
+                icon_class: document.getElementById('sectorIcon').value
+            };
+            try {
+                const res = await fetch('/api/sectors', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+                if (res.ok) {
+                    toggleForm('sectorFormContainer');
+                    e.target.reset();
+                    fetchSectors();
+                } else alert('Erreur ajout secteur');
+            } catch (err) { alert('Erreur serveur'); }
+        });
+
+        // Blog
+        function resetBlogForm() {
+            document.getElementById('blogForm').reset();
+            document.getElementById('blogId').value = '';
+            document.getElementById('currentImageUrl').innerText = '';
+            if (quill) quill.setContents([]);
+        }
+
+        function editPost(id) {
+            const post = state.blog.data.find(p => p.id === id);
+            if (!post) return;
+            document.getElementById('blogId').value = post.id;
+            document.getElementById('blogTitle').value = post.title;
+            document.getElementById('currentImageUrl').innerText = `Image actuelle: ${post.image_url}`;
+            document.getElementById('blogDate').value = post.published_date.split('T')[0];
+            document.getElementById('blogCategory').value = post.category || 'indebel';
+
+            if (quill) {
+                quill.root.innerHTML = post.content;
+            } else {
+                document.getElementById('blogContent').value = post.content;
+            }
+
+            document.getElementById('blogFormContainer').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        async function deletePost(id) {
+            if (!confirm('Supprimer cet article ?')) return;
+            try {
+                const res = await fetch(`/api/blog/${id}`, { method: 'DELETE' });
+                if (res.ok) fetchBlog();
+                else alert('Erreur suppression');
+            } catch (e) { alert('Erreur'); }
+        }
+
+        document.getElementById('blogForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const id = document.getElementById('blogId').value;
+            const formData = new FormData();
+
+            formData.append('title', document.getElementById('blogTitle').value);
+            formData.append('published_date', document.getElementById('blogDate').value);
+            formData.append('category', document.getElementById('blogCategory').value);
+
+            const content = quill ? quill.root.innerHTML : '';
+            formData.append('content', content);
+
+            const fileInput = document.getElementById('blogImageFile');
+            if (fileInput.files[0]) {
+                formData.append('image', fileInput.files[0]);
+            }
+
+            const url = id ? `/api/blog/${id}` : '/api/blog';
+            const method = id ? 'PUT' : 'POST';
+
+            try {
+                const res = await fetch(url, { method: method, body: formData });
+                if (res.ok) {
+                    document.getElementById('blogFormContainer').classList.remove('active');
+                    resetBlogForm();
+                    fetchBlog();
+                    loadDashboardStats(); // Refresh stats cards
+                } else alert('Erreur sauvegarde');
+            } catch (e) { alert('Erreur serveur'); }
+        });
+
+        init();
+    </script>
+</body>
+
+</html>

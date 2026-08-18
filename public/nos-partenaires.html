@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Partenaires | Indebel</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modern-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .partners-hero {
+            background-color: #f7f9fd;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        .partners-hero h1 {
+            color: #1a2b4b;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .partners-hero p {
+            color: #627C89;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .partners-grid-container {
+            padding: 80px 0;
+            background: #fff;
+        }
+        .partner-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-color: #e2e8f0;
+        }
+        .partner-logo-wrapper {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            width: 100%;
+        }
+        .partner-logo-wrapper img {
+            max-height: 80px;
+            max-width: 180px;
+            object-fit: contain;
+        }
+        .partner-card h3 {
+            color: #1a2b4b;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .partner-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+        .partner-link {
+            color: #F2994A;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s;
+        }
+        .partner-link:hover {
+            color: #d88133;
+        }
+        .partners-grid-inner {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+    </style>
+</head>
+<body class="partners-page">
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="partners-hero">
+            <div class="container">
+                <h1>Ils nous font confiance</h1>
+                <p>Découvrez notre réseau de partenaires stratégiques qui partagent notre vision et contribuent chaque jour au succès des indépendants et des entreprises sur Indebel.</p>
+            </div>
+        </section>
+
+        <section class="partners-grid-container">
+            <div class="container">
+                <div class="partners-grid-inner">
+                    <!-- Partner 1 -->
+                    <div class="partner-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="images/partner/02-01.webp" alt="GestionPro">
+                        </div>
+                        <h3>GestionPro</h3>
+                        <p>Création d'entreprise en Belgique sans tracas. Créez votre entreprise en 24H et exercez votre profession en toute légitimité.</p>
+                        <a href="/partenaire-details.html?id=gestionpro" class="partner-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Partner 2 -->
+                    <div class="partner-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="images/partner/29aca6_682d82f9dff74532b88b50c7ee21a1admv2.webp" alt="Acerta">
+                        </div>
+                        <h3>Acerta</h3>
+                        <p>Nous vous proposons tous les services d'un guichet d'entreprise pour vous accompagner dans vos démarches administratives.</p>
+                        <a href="/partenaire-details.html?id=acerta" class="partner-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Partner 3 -->
+                    <div class="partner-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="images/partner/Logo-transparent-012-_1_-1536x432-1.webp" alt="Dreambis.be">
+                        </div>
+                        <h3>Dreambis</h3>
+                        <p>Des solutions digitales innovantes à des prix très compétitifs pour accélérer votre développement sur le web.</p>
+                        <a href="/partenaire-details.html?id=dreambis" class="partner-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Partner 4 -->
+                    <div class="partner-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="images/partner/Screenshot_20250407_121629_Gallery.webp" alt="Lead up consult">
+                        </div>
+                        <h3>Lead Up Consult</h3>
+                        <p>Services Comptables & Fiscaux professionnels pour assurer la santé financière de votre activité indépendante.</p>
+                        <a href="/partenaire-details.html?id=leadup" class="partner-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Partner 5 -->
+                    <div class="partner-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="images/partner/WhatsApp-Image-2025-05-07-at-17.14.27-1.webp" alt="UCM">
+                        </div>
+                        <h3>UCM</h3>
+                        <p>L’ensemble des services d’un guichet d’entreprise mis à votre disposition pour vous accompagner à chaque étape.</p>
+                        <a href="/partenaire-details.html?id=ucm" class="partner-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Partner 6 -->
+                    <div class="partner-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="images/partner/logo-lepetitbureau2.webp" alt="Lepetitbureau">
+                        </div>
+                        <h3>Le Petit Bureau</h3>
+                        <p>Bénéficiez d’une adresse professionnelle prestigieuse en plein cœur de Bruxelles, sans les coûts d'un bureau physique.</p>
+                        <a href="/partenaire-details.html?id=lepetitbureau" class="partner-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Partner 7 -->
+                    <div class="partner-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="images/partner/telechargement.webp" alt="Invest Conseil">
+                        </div>
+                        <h3>Invest Conseil</h3>
+                        <p>Solutions d'assurances sur-mesure pour PME et indépendants en Belgique.</p>
+                        <a href="/partenaire-details.html?id=investconseil" class="partner-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Partner 8 -->
+                    <div class="partner-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="images/partners/partner1.jpeg" alt="SiègeSocial4You">
+                        </div>
+                        <h3>SiègeSocial4You</h3>
+                        <p>Domiciliez votre société à Watermael-Boitsfort avec une solution simple et flexible.</p>
+                        <a href="/partenaire-details.html?id=siegesocial" class="partner-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Partner 9 -->
+                    <div class="partner-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="images/partners/partner2.jpeg" alt="Avium">
+                        </div>
+                        <h3>Avium</h3>
+                        <p>Votre partenaire de confiance en matière d'assurances PME en Belgique.</p>
+                        <a href="/partenaire-details.html?id=avium" class="partner-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Partner 10 -->
+                    <div class="partner-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="images/partners/partner3.jpeg" alt="BAM Consult Agency">
+                        </div>
+                        <h3>BAM Consult Agency</h3>
+                        <p>Agence conseil et communication dédiée à l'accompagnement stratégique des entrepreneurs.</p>
+                        <a href="/partenaire-details.html?id=bamconsult" class="partner-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Partner 11 -->
+                    <div class="partner-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="images/partner-new.jpeg" alt="MicroStart">
+                        </div>
+                        <h3>MicroStart</h3>
+                        <p>Financez votre projet avec MicroStart. Un accompagnement solidaire pour donner vie à vos idées.</p>
+                        <a href="/partenaire-details.html?id=microstart" class="partner-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Partner 12 -->
+                    <div class="partner-card">
+                        <div class="partner-logo-wrapper">
+                            <img src="images/workall.jpeg" alt="Workall">
+                        </div>
+                        <h3>Workall</h3>
+                        <p>Domiciliez votre société en Wallonie avec Workall et bénéficiez d’une adresse professionnelle au centre de La Louvière.</p>
+                        <a href="/partenaire-details.html?id=workall" class="partner-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/layout-loader.js"></script>
+</body>
+</html>

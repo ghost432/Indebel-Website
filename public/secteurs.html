@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Secteurs d'Activité | Indebel</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css?v=1785654755222">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .secteurs-hero {
+            padding: 60px 0 80px;
+            background-color: #fdfdfd;
+        }
+
+        .secteurs-hero h1 {
+            font-size: 3.5rem;
+            color: #45485f;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+
+        .secteurs-hero p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #627C89;
+            max-width: 900px;
+            margin-bottom: 40px;
+        }
+
+        .hero-image-container {
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            display: block;
+        }
+
+        .sectors-grid-page {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 100px 0;
+            background-color: #ffffff;
+        }
+
+        .sector-large-card {
+            background: #f2fdff;
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
+        }
+
+        .sector-large-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+            background: #ffffff;
+            border: 1px solid #eef2f5;
+        }
+
+        .sector-large-card i {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            background: #ffffff;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .sector-large-card h3 {
+            font-size: 1.8rem;
+            color: #45485f;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .sector-large-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #627C89;
+        }
+
+        .eco-section {
+            padding: 100px 0;
+            background-color: #f2fdff;
+            text-align: center;
+        }
+
+        .eco-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .eco-section h2 {
+            font-size: 2.5rem;
+            color: #45485f;
+            margin-bottom: 30px;
+        }
+
+        .eco-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #627C89;
+        }
+
+        .cta-secteurs {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a2b4b 0%, #2a4a7a 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-secteurs h2 {
+            color: white;
+            font-size: clamp(1.6rem, 5vw, 2.8rem);
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta {
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-employer {
+            background-color: white;
+            color: #1a2b4b;
+        }
+
+        .btn-provider {
+            background-color: #ff9800;
+            /* Orange consistent with Label checks */
+            color: white;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-flex-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-image-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-image-container {
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            margin-top: 0;
+            height: 100%;
+        }
+
+        @media (max-width: 992px) {
+            .hero-flex-container {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .secteurs-hero {
+                text-align: center;
+            }
+
+            .secteurs-hero p {
+                margin: 0 auto 40px;
+            }
+        }
+    </style>
+</head>
+
+<body class="sectors-page">
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="secteurs-hero sectors-hero-modern">
+            <div class="container">
+                <div class="hero-flex-container">
+                    <div class="hero-text-content">
+                        <p class="sectors-eyebrow">Expertises disponibles</p>
+                        <h1>Nos Secteurs d'Activité</h1>
+                        <p>Chez Indebel, nous croyons que la diversité des compétences est une force. C’est pourquoi
+                            notre plateforme réunit des professionnels qualifiés et des entreprises partenaires dans une
+                            multitude de secteurs clés. Notre mission ? Favoriser la mise en relation simple, rapide et
+                            efficace dans des domaines porteurs et essentiels au développement économique et social.
+                            Découvrez les secteurs d'activité couverts par Indebel :</p>
+                    </div>
+                    <div class="hero-image-content">
+                        <div class="hero-image-container">
+                            <img src="images/secteurs-hero.jpeg" alt="Indépendants Indebel en action"
+                                style="height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sectors Grid -->
+        <section class="sectors-grid-page sectors-directory">
+            <div class="container">
+                <div class="sectors-grid-modern">
+                    <!-- Rénovation -->
+                    <div class="sector-large-card">
+                        <i class="fas fa-hammer"></i>
+                        <h3>Rénovation & Construction</h3>
+                        <p>Nous rassemblons des artisans, ouvriers qualifiés, ingénieurs et experts du bâtiment pour
+                            tous types de projets : rénovation, gros œuvre, second œuvre, aménagement intérieur et
+                            extérieur.</p>
+                    </div>
+
+                    <!-- Transport -->
+                    <div class="sector-large-card">
+                        <i class="fas fa-truck"></i>
+                        <h3>Transport & Logistique</h3>
+                        <p>Conducteurs, manutentionnaires, gestionnaires de flux, chargement et déchargement… Nos
+                            talents assurent le bon acheminement des marchandises et la fluidité de votre chaîne
+                            logistique.</p>
+                    </div>
+
+                    <!-- Nettoyage -->
+                    <div class="sector-large-card">
+                        <i class="fas fa-broom"></i>
+                        <h3>Nettoyage & Multiservices</h3>
+                        <p>Nettoyage industriel et commercial, entretien des locaux et surfaces, planification et
+                            organisation des tâches : nous facilitons la vie quotidienne des particuliers et des
+                            professionnels.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ecosystem Section -->
+        <section class="eco-section sectors-ecosystem">
+            <div class="container">
+                <div class="eco-container">
+                    <div class="eco-copy">
+                        <p class="sectors-eyebrow">Un réseau qui avance</p>
+                        <h2>Indebel : Une plateforme, des opportunités infinies</h2>
+                        <p>Notre écosystème repose sur la rencontre entre compétences et besoins concrets. Grâce à une
+                            interface intuitive, une sélection rigoureuse et un accompagnement personnalisé, Indebel est
+                            bien plus qu'une plateforme de mise en relation : c'est un moteur de croissance pour les
+                            indépendants, les entreprises et les collectivités.</p>
+                        <p>Chaque projet peut devenir une collaboration durable : les besoins sont mieux qualifiés, les
+                            profils gagnent en visibilité et les échanges restent simples du premier contact à la mission.</p>
+                        <ul class="eco-highlights">
+                            <li><i class="fas fa-check"></i> Des compétences accessibles dans des secteurs essentiels.</li>
+                            <li><i class="fas fa-check"></i> Des opportunités adaptées aux indépendants comme aux entreprises.</li>
+                            <li><i class="fas fa-check"></i> Une plateforme belge pensée pour des échanges directs.</li>
+                        </ul>
+                    </div>
+                    <div class="eco-image">
+                        <img src="images/sectors-btp-team.jpg" alt="Une equipe BTP reunie sur un chantier">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="cta-secteurs sectors-cta">
+            <div class="container">
+                <div class="sectors-cta-grid">
+                    <div class="sectors-cta-content">
+                        <h2>REJOIGNEZ INDEBEL ET ACCÉDEZ À UN MONDE D’OPPORTUNITÉS !</h2>
+                        <div class="cta-buttons">
+                            <a href="https://pro.indebel.be/register?type=employer" class="btn-cta btn-employer">Vous êtes à la recherche d’un
+                                professionnel ?</a>
+                            <a href="https://pro.indebel.be/register?type=freelancer" class="btn-cta btn-provider">Vous êtes un expert prêt à
+                                proposer vos services ?</a>
+                        </div>
+                    </div>
+                    <div class="sectors-cta-image">
+                        <img src="images/sectors-electrician-doorbell.webp" alt="Un electricien repare un interphone a l'entree d'une habitation">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/layout-loader.js?v=20260801-header-footer-2"></script>
+</body>
+
+</html>

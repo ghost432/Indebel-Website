@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous | Indebel</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=1785654755222">
+    <style>
+        .contact-section {
+            padding: 120px 0 80px;
+            background-color: #f2fdff;
+            min-height: 80vh;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-header h1 {
+            font-size: 32px;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .contact-header p {
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: var(--primary-hover);
+        }
+
+        #successMessage {
+            display: none;
+            background-color: #d1fae5;
+            color: #065f46;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="contact-page">
+    <div id="header-placeholder"></div>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <h1>Contactez-nous</h1>
+                    <p>Une question ? Un projet ? N'hésitez à nous envoyer un message.</p>
+                </div>
+
+                <form id="contactForm">
+                    <div class="form-row" style="display:flex; gap:20px;">
+                        <div class="form-group" style="flex:1;">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" name="name" class="form-control" required
+                                placeholder="Votre nom">
+                        </div>
+                        <div class="form-group" style="flex:1;">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" class="form-control" required
+                                placeholder="votre@email.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Numéro de téléphone</label>
+                        <div style="display:flex; gap:10px;">
+                            <select id="country" class="form-control" style="width:auto; min-width:100px;">
+                                <option value="+32">🇧🇪 +32</option>
+                                <option value="+33">🇫🇷 +33</option>
+                                <option value="+31">🇳🇱 +31</option>
+                                <option value="+49">🇩🇪 +49</option>
+                                <option value="+352">🇱🇺 +352</option>
+                                <option value="+44">🇬🇧 +44</option>
+                                <option value="+34">🇪🇸 +34</option>
+                                <option value="+39">🇮🇹 +39</option>
+                            </select>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="470 12 34 56">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userType">Vous êtes ? *</label>
+                        <select id="userType" name="user_type" class="form-control" required onchange="toggleBCE()">
+                            <option value="particulier">Particulier</option>
+                            <option value="prestataire">Prestataire (Indépendant/Entreprise)</option>
+                            <option value="recruteur">Recruteur</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="bceGroup" style="display:none;">
+                        <label for="bceNumber">N° BCE *</label>
+                        <input type="text" id="bceNumber" name="bce_number" class="form-control"
+                            placeholder="BE 0123.456.789">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Sujet *</label>
+                        <input type="text" id="subject" name="subject" class="form-control" required
+                            placeholder="Sujet de votre message">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" class="form-control" required
+                            placeholder="Votre message ici..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Envoyer le message</button>
+                    <div id="successMessage">
+                        <i class="fas fa-check-circle"></i> Votre message a bien été envoyé ! Nous vous répondrons dans
+                        les plus brefs délais.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Success Popup -->
+    <div id="popup-overlay"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:2000; justify-content:center; align-items:center;">
+        <div
+            style="background:white; padding:40px; border-radius:12px; text-align:center; max-width:400px; box-shadow:0 10px 25px rgba(0,0,0,0.2);">
+            <i class="fas fa-check-circle" style="font-size:60px; color:#22c55e; margin-bottom:20px;"></i>
+            <h3 style="margin-bottom:10px; font-size:24px; color: var(--text-color);">Message Reçu !</h3>
+            <p style="color:#666; margin-bottom:30px; line-height:1.6;">Votre message a bien été envoyé. Notre équipe
+                vous contactera dans les plus brefs délais.</p>
+            <button id="closePopup" class="btn btn-primary" style="width:100%;">Retour à l'accueil</button>
+        </div>
+    </div>
+
+    <!-- Layout Scripts -->
+    <script src="js/layout-loader.js?v=20260801-header-footer-2"></script>
+
+    <!-- Page Specific Script -->
+    <script>
+        function toggleBCE() {
+            const type = document.getElementById('userType').value;
+            const bceGroup = document.getElementById('bceGroup');
+            const bceInput = document.getElementById('bceNumber');
+
+            if (type !== 'particulier') {
+                bceGroup.style.display = 'block';
+                bceInput.required = true;
+            } else {
+                bceGroup.style.display = 'none';
+                bceInput.required = false;
+                bceInput.value = '';
+            }
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const btn = this.querySelector('.btn-submit');
+            const originalText = btn.textContent;
+            btn.textContent = 'Envoi...';
+            btn.disabled = true;
+
+            const countryCode = document.getElementById('country').value;
+            const phoneNumber = document.getElementById('phone').value;
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: phoneNumber ? `${countryCode} ${phoneNumber}` : '',
+                user_type: document.getElementById('userType').value,
+                bce_number: document.getElementById('bceNumber').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    // Show Popup Overlay
+                    const popup = document.getElementById('popup-overlay');
+                    popup.style.display = 'flex';
+
+                    this.reset();
+                    toggleBCE();
+                } else {
+                    alert('Une erreur est survenue.');
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Erreur de connexion.');
+            } finally {
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }
+        });
+
+        // Popup Close Action
+        document.getElementById('closePopup').addEventListener('click', function () {
+            window.location.href = '/';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,254 @@
+- generic [ref=f1e1]:
+  - generic [ref=f1e3]:
+    - generic [ref=f1e5]:
+      - generic [ref=f1e6]: BIENVENUE 😊 ! Indebel, la plateforme d’indépendants 100% belge
+      - generic [ref=f1e7] [cursor=pointer]: 
+    - generic [ref=f1e8]:
+      - generic [ref=f1e10]:
+        - generic [ref=f1e11]:
+          - link "" [ref=f1e12] [cursor=pointer]:
+            - /url: https://www.facebook.com/share/1BefEfLns8/
+          - link "" [ref=f1e14] [cursor=pointer]:
+            - /url: https://www.instagram.com/indebel.be?igsh=MTA0Ymw2c2V6bDBnaQ==
+          - link "" [ref=f1e16] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/ind%C3%A9go/
+          - link "" [ref=f1e18] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@indebel
+          - link "" [ref=f1e20] [cursor=pointer]:
+            - /url: https://www.youtube.com/channel/UCXKqrn-OMbJGVlhgpYxRmPg
+        - generic [ref=f1e22]:
+          - link "Espace Particulier" [ref=f1e23] [cursor=pointer]:
+            - /url: /particulier
+          - link "Espace Prestataire" [ref=f1e24] [cursor=pointer]:
+            - /url: /prestataire
+          - link "Espace Recruteur" [ref=f1e25] [cursor=pointer]:
+            - /url: /recruteur
+      - banner [ref=f1e26]:
+        - generic [ref=f1e28]:
+          - link [ref=f1e30] [cursor=pointer]:
+            - /url: /
+            - img "Indebel Logo" [ref=f1e31]
+          - navigation [ref=f1e202]:
+            - list [ref=f1e203]:
+              - listitem [ref=f1e204]:
+                - link "Notre plateforme" [ref=f1e205] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=f1e206]:
+                - link "Nos secteurs" [ref=f1e207] [cursor=pointer]:
+                  - /url: /secteurs
+              - listitem [ref=f1e208]:
+                - link "Nos offres " [ref=f1e209] [cursor=pointer]:
+                  - /url: "#"
+                  - text: Nos offres
+                  - generic [ref=f1e210]: 
+                - list [ref=f1e211]:
+                  - listitem [ref=f1e212]:
+                    - link "Missions disponibles" [ref=f1e213] [cursor=pointer]:
+                      - /url: https://indebel.be/missions
+                  - listitem [ref=f1e214]:
+                    - link "Demandes de devis disponibles" [ref=f1e215] [cursor=pointer]:
+                      - /url: https://pro.indebel.be/devis
+              - listitem [ref=f1e216]:
+                - link "Label Indebel" [ref=f1e217] [cursor=pointer]:
+                  - /url: /label-indebel
+              - listitem [ref=f1e218]:
+                - link "Comment ça marche?" [ref=f1e219] [cursor=pointer]:
+                  - /url: /how-it-works
+              - listitem [ref=f1e220]:
+                - link "À propos" [ref=f1e221] [cursor=pointer]:
+                  - /url: /a-propos-de-nous
+              - listitem [ref=f1e222]:
+                - link "Se connecter" [ref=f1e223] [cursor=pointer]:
+                  - /url: https://pro.indebel.be/login
+          - button "Fermer le menu" [expanded] [active] [ref=f1e224] [cursor=pointer]
+  - main [ref=f1e36]:
+    - generic [ref=f1e38]:
+      - paragraph [ref=f1e39]: Informations légales
+      - heading "Conditions Générales d’Utilisation & Mentions Légales" [level=1] [ref=f1e40]
+      - paragraph [ref=f1e41]: Les conditions qui régissent l’accès et l’utilisation de la plateforme Indebel.
+    - generic [ref=f1e43]:
+      - paragraph [ref=f1e44]:
+        - text: "Dernière mise à jour :"
+        - strong [ref=f1e45]: janvier 2026
+      - paragraph [ref=f1e46]: Les présentes Conditions Générales d’Utilisation (ci-après les « CGU ») régissent l’accès et l’utilisation de la plateforme Indebel. Toute utilisation de la Plateforme implique l’acceptation pleine, entière et sans réserve des présentes CGU.
+      - heading "Article 1 — Identité de l’éditeur" [level=3] [ref=f1e47]
+      - paragraph [ref=f1e48]:
+        - text: La Plateforme
+        - strong [ref=f1e49]: Indebel
+        - text: "est exploitée par :"
+        - strong [ref=f1e50]: Dreambis SRL
+        - text: "Numéro d’entreprise :"
+        - strong [ref=f1e51]: BE 0798.656.725
+        - text: "Siège social :"
+        - strong [ref=f1e52]: Rue d’Havré 9, 7000 Mons – Belgique
+        - text: "Email :"
+        - strong [ref=f1e53]: contact@indebel.be
+      - paragraph [ref=f1e54]: "Hébergeur : Hostinger International Ltd., 61 Lordou Vironos Street, 6023 Larnaca, Chypre."
+      - heading "Article 2 — Définitions" [level=3] [ref=f1e55]
+      - list [ref=f1e56]:
+        - listitem [ref=f1e57]:
+          - strong [ref=f1e58]: "Plateforme / Indebel :"
+          - text: service numérique de mise en relation entre utilisateurs.
+        - listitem [ref=f1e59]:
+          - strong [ref=f1e60]: "Utilisateur :"
+          - text: toute personne accédant à la Plateforme.
+        - listitem [ref=f1e61]:
+          - strong [ref=f1e62]: "Membre :"
+          - text: Utilisateur disposant d’un compte.
+        - listitem [ref=f1e63]:
+          - strong [ref=f1e64]: "Entreprise :"
+          - text: client professionnel publiant des missions.
+        - listitem [ref=f1e65]:
+          - strong [ref=f1e66]: "Prestataire / Indépendant :"
+          - text: personne physique ou morale agissant en qualité d’indépendant.
+        - listitem [ref=f1e67]:
+          - strong [ref=f1e68]: "Particulier :"
+          - text: personne physique publiant une demande de devis.
+        - listitem [ref=f1e69]:
+          - strong [ref=f1e70]: "Mission / Demande de devis :"
+          - text: annonce publiée sur la Plateforme.
+        - listitem [ref=f1e71]:
+          - strong [ref=f1e72]: "Service :"
+          - text: fonctionnalités techniques proposées par Indebel.
+      - heading "Article 3 — Objet de la Plateforme" [level=3] [ref=f1e73]
+      - paragraph [ref=f1e74]: Indebel est une plateforme de mise en relation technique.
+      - paragraph [ref=f1e75]: "Indebel :"
+      - list [ref=f1e76]:
+        - listitem [ref=f1e77]: n’est ni prestataire de services, ni sous-traitant, ni employeur ;
+        - listitem [ref=f1e78]: n’intervient pas dans les contrats conclus entre utilisateurs ;
+        - listitem [ref=f1e79]: ne participe ni aux paiements ni à l’exécution des prestations.
+      - heading "Article 4 — Absence de contrôle et de garantie" [level=3] [ref=f1e80]
+      - paragraph [ref=f1e81]: "Les Utilisateurs reconnaissent expressément que :"
+      - list [ref=f1e82]:
+        - listitem [ref=f1e83]: Indebel ne vérifie pas systématiquement l’identité, les compétences, les assurances ou la conformité légale des Prestataires ;
+        - listitem [ref=f1e84]: toute vérification éventuelle est non exhaustive, non automatique et non garantie ;
+        - listitem [ref=f1e85]: Indebel ne certifie, ne valide et ne recommande aucun Prestataire.
+      - heading "Article 5 — Création de compte" [level=3] [ref=f1e86]
+      - paragraph [ref=f1e87]: Certaines fonctionnalités nécessitent la création d’un compte.
+      - paragraph [ref=f1e88]: "Chaque Membre :"
+      - list [ref=f1e89]:
+        - listitem [ref=f1e90]: garantit l’exactitude des informations fournies ;
+        - listitem [ref=f1e91]: est seul responsable de leur mise à jour ;
+        - listitem [ref=f1e92]: assume l’ensemble des conséquences liées à l’utilisation de son compte.
+      - paragraph [ref=f1e93]: Indebel se réserve le droit de suspendre ou supprimer un compte sans préavis en cas de fraude, abus ou non-respect des CGU.
+      - heading "Article 6 — Conditions Financières" [level=3] [ref=f1e94]
+      - paragraph [ref=f1e95]:
+        - strong [ref=f1e96]: 6.1 Particuliers
+        - text: L’utilisation de la Plateforme est gratuite.
+      - paragraph [ref=f1e97]:
+        - strong [ref=f1e98]: 6.2 Prestataires et Entreprises
+        - text: Indebel propose des formules gratuites et payantes. Les fonctionnalités varient selon l’abonnement souscrit.
+      - heading "Article 7 — Obligations des Entreprises" [level=3] [ref=f1e99]
+      - paragraph [ref=f1e100]: "Les Entreprises reconnaissent être seules responsables :"
+      - list [ref=f1e101]:
+        - listitem [ref=f1e102]: du respect de la législation belge en matière de sous-traitance ;
+        - listitem [ref=f1e103]: des obligations fiscales, sociales, TVA, sécurité et assurances ;
+        - listitem [ref=f1e104]: de la vérification préalable des Prestataires.
+      - paragraph [ref=f1e105]: Indebel n’assume aucune obligation de conseil juridique ou de contrôle.
+      - heading "Article 8 — Obligations des Prestataires" [level=3] [ref=f1e106]
+      - paragraph [ref=f1e107]: "Chaque Prestataire s’engage à :"
+      - list [ref=f1e108]:
+        - listitem [ref=f1e109]: être en règle sur les plans légal, fiscal et social ;
+        - listitem [ref=f1e110]: disposer des assurances professionnelles obligatoires ;
+        - listitem [ref=f1e111]: respecter la législation belge applicable à la sous-traitance ;
+        - listitem [ref=f1e112]: fournir des informations exactes et sincères.
+      - paragraph [ref=f1e113]: Le Prestataire demeure seul responsable de son statut et de ses obligations.
+      - heading "Article 9 — Absence de lien de subordination" [level=3] [ref=f1e114]
+      - paragraph [ref=f1e115]: "Les Parties reconnaissent qu’il n’existe :"
+      - list [ref=f1e116]:
+        - listitem [ref=f1e117]: aucun lien de subordination ;
+        - listitem [ref=f1e118]: aucun mandat ;
+        - listitem [ref=f1e119]: aucune relation d’agence ou d’emploi entre Indebel et les Utilisateurs.
+      - heading "Article 10 — Responsabilité" [level=3] [ref=f1e120]
+      - paragraph [ref=f1e121]: "Indebel décline toute responsabilité, notamment en cas de :"
+      - list [ref=f1e122]:
+        - listitem [ref=f1e123]: litige entre utilisateurs ;
+        - listitem [ref=f1e124]: défaut de paiement ou d’exécution ;
+        - listitem [ref=f1e125]: non-conformité légale d’un utilisateur ;
+        - listitem [ref=f1e126]: informations erronées ou trompeuses ;
+        - listitem [ref=f1e127]: dommages indirects et directs ou pertes financières.
+      - heading "Article 11 — Propriété Intellectuelle" [level=3] [ref=f1e128]
+      - paragraph [ref=f1e129]: L’ensemble du contenu de la Plateforme est protégé. Toute reproduction non autorisée est interdite.
+      - heading "Article 12 — Données Personnelles" [level=3] [ref=f1e130]
+      - paragraph [ref=f1e131]: Dreambis SRL est responsable du traitement des données. Les traitements sont effectués conformément au RGPD.
+      - paragraph [ref=f1e132]:
+        - text: "Droits : accès, rectification, suppression, opposition, portabilité. Contact :"
+        - strong [ref=f1e133]: contact@indebel.be
+      - heading "Article 13 — Cookies" [level=3] [ref=f1e134]
+      - paragraph [ref=f1e135]: La Plateforme utilise uniquement des cookies techniques et statistiques. Les préférences peuvent être gérées via le navigateur.
+      - heading "Article 14 — Droit Applicable et Juridiction" [level=3] [ref=f1e136]
+      - paragraph [ref=f1e137]: Les présentes CGU sont soumises au droit belge. Tout litige relève de la compétence exclusive des tribunaux de Mons.
+      - heading "Article 15 — Acceptation des CGU" [level=3] [ref=f1e138]
+      - paragraph [ref=f1e139]: L’Utilisateur reconnaît avoir pris connaissance des présentes CGU et les accepter sans réserve.
+  - contentinfo [ref=f1e141]:
+    - generic [ref=f1e143]:
+      - generic [ref=f1e144]:
+        - img "Indebel Logo" [ref=f1e145]
+        - paragraph [ref=f1e146]: Indebel est la plateforme de référence pour connecter les entreprises et les indépendants en Belgique.
+      - generic [ref=f1e147]:
+        - heading "Ressources" [level=3] [ref=f1e148]
+        - list [ref=f1e149]:
+          - listitem [ref=f1e150]:
+            - link "Blog" [ref=f1e151] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=f1e152]:
+            - link "FAQs Indépendants" [ref=f1e153] [cursor=pointer]:
+              - /url: /faqs-independants
+          - listitem [ref=f1e154]:
+            - link "FAQs Entreprise" [ref=f1e155] [cursor=pointer]:
+              - /url: /faqs-entreprise
+          - listitem [ref=f1e156]:
+            - link "FAQs Particulier" [ref=f1e157] [cursor=pointer]:
+              - /url: /faqs-particuliers
+          - listitem [ref=f1e158]:
+            - link "Comment ça marche?" [ref=f1e159] [cursor=pointer]:
+              - /url: /how-it-works
+          - listitem [ref=f1e160]:
+            - link "Contact" [ref=f1e161] [cursor=pointer]:
+              - /url: /contact
+      - generic [ref=f1e162]:
+        - heading "Liens Utiles" [level=3] [ref=f1e163]
+        - list [ref=f1e164]:
+          - listitem [ref=f1e165]:
+            - link "Label Indebel" [ref=f1e166] [cursor=pointer]:
+              - /url: /label-indebel
+          - listitem [ref=f1e167]:
+            - link "Nos Secteurs" [ref=f1e168] [cursor=pointer]:
+              - /url: /secteurs
+          - listitem [ref=f1e169]:
+            - link "Responsabilité et obligations" [ref=f1e170] [cursor=pointer]:
+              - /url: /conformite-et-securite
+          - listitem [ref=f1e171]:
+            - link "Politique de confidentialité" [ref=f1e172] [cursor=pointer]:
+              - /url: /politique-de-confidentialite
+          - listitem [ref=f1e173]:
+            - link "CGU & Mentions Légales" [ref=f1e174] [cursor=pointer]:
+              - /url: /cgu
+          - listitem [ref=f1e175]:
+            - link "CGU - Particuliers" [ref=f1e176] [cursor=pointer]:
+              - /url: /cgu-particuliers
+      - generic [ref=f1e177]:
+        - heading "Réseaux Sociaux" [level=3] [ref=f1e178]
+        - generic [ref=f1e179]:
+          - link "" [ref=f1e180] [cursor=pointer]:
+            - /url: https://www.facebook.com/share/1BefEfLns8/
+          - link "" [ref=f1e182] [cursor=pointer]:
+            - /url: https://www.instagram.com/indebel.be?igsh=MTA0Ymw2c2V6bDBnaQ==
+          - link "" [ref=f1e184] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/ind%C3%A9go/
+          - link "" [ref=f1e186] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@indebel
+          - link "" [ref=f1e188] [cursor=pointer]:
+            - /url: https://www.youtube.com/channel/UCXKqrn-OMbJGVlhgpYxRmPg
+        - generic [ref=f1e190]:
+          - generic [ref=f1e191]:
+            - generic [ref=f1e192]: 
+            - generic [ref=f1e193]: 
+            - generic [ref=f1e194]: 
+            - generic [ref=f1e195]: 
+            - generic [ref=f1e196]: 
+          - paragraph [ref=f1e197]: L'une des meilleures plateformes de mise en relation en Belgique.
+    - paragraph [ref=f1e200]:
+      - text: Copyright™ Indebel, Tous droits réservés. Créé par
+      - link "DreamBis" [ref=f1e201] [cursor=pointer]:
+        - /url: https://dreambis.be

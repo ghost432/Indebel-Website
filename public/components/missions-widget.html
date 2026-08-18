@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missions récentes</title>
+    <style>
+        :root {
+            --primary-color: #044CF3;
+            --accent-color: #F2994A;
+            --ink: #111827;
+            --muted: #667085;
+            --line: rgba(4, 76, 243, 0.12);
+            --soft: #f7f9ff;
+        }
+        * { box-sizing: border-box; }
+        html { overflow: hidden; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: transparent;
+            color: var(--ink);
+            line-height: 1.55;
+            overflow: hidden;
+            scrollbar-width: none;
+        }
+        body::-webkit-scrollbar { display: none; }
+        .missions-widget-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 18px 32px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+        }
+        .missions-widget-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        .missions-widget-title {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 850;
+            letter-spacing: -0.035em;
+            margin: 0 0 8px;
+            color: var(--ink);
+        }
+        .missions-widget-subtitle {
+            font-size: 1rem;
+            color: var(--muted);
+            margin: 0;
+        }
+        .missions-widget-view-all {
+            display: inline-flex;
+            align-items: center;
+            gap: .55rem;
+            padding: .78rem 1rem;
+            background: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 800;
+            white-space: nowrap;
+            box-shadow: 0 14px 30px rgba(4, 76, 243, .22);
+        }
+        .missions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+        .mission-card {
+            min-height: 286px;
+            background: #fff;
+            border: 1px solid rgba(4, 76, 243, .12);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 18px 45px rgba(17, 24, 39, .08);
+            transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow: hidden;
+        }
+        .mission-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(4, 76, 243, .30);
+            box-shadow: 0 24px 60px rgba(4, 76, 243, .13);
+        }
+        .mission-card-header { margin-bottom: 14px; }
+        .mission-card-top-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .mission-card-category,
+        .mission-card-type {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 6px;
+            padding: 6px 10px;
+            font-size: .76rem;
+            font-weight: 850;
+            background: #eef4ff;
+            color: #044cf3;
+        }
+        .mission-card-type {
+            background: #fff5eb;
+            color: #c76114;
+        }
+        .mission-card-title {
+            font-size: 1.18rem;
+            line-height: 1.25;
+            font-weight: 850;
+            margin: 0 0 10px;
+            color: var(--ink);
+        }
+        .mission-card-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: .88rem;
+            color: var(--muted);
+        }
+        .mission-card-body {
+            flex: 1;
+            margin-bottom: 16px;
+        }
+        .mission-card-description {
+            margin: 0;
+            color: #4b5563;
+            font-size: .95rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .mission-card-description strong { color: var(--ink); }
+
+        .mission-public-lock {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin: 0 0 14px;
+            padding: 11px 12px;
+            border-radius: 16px;
+            background: rgba(4,76,243,.06);
+            border: 1px solid rgba(4,76,243,.12);
+            color: #475569;
+            font-size: .84rem;
+            font-weight: 700;
+        }
+        .mission-public-lock a,
+        .mission-card-cta {
+            color: #044CF3;
+            font-weight: 850;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .mission-card-actions { margin-bottom: 12px; }
+        .mission-card-cta {
+            display: inline-flex;
+            justify-content: center;
+            width: 100%;
+            padding: 11px 14px;
+            border-radius: 999px;
+            background: #044CF3;
+            color: #fff;
+            box-shadow: 0 12px 26px rgba(4,76,243,.18);
+        }
+
+        .mission-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(17, 24, 39, .08);
+        }
+        .mission-card-date {
+            color: #667085;
+            font-size: .83rem;
+            font-weight: 750;
+            line-height: 1.35;
+        }
+        .mission-card-arrow {
+            flex: 0 0 auto;
+            width: 38px;
+            height: 38px;
+            padding: 8px;
+            border-radius: 999px;
+            background: #eef4ff;
+        }
+        .missions-widget-loading,
+        .missions-widget-error {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--muted);
+            grid-column: 1 / -1;
+        }
+        .missions-widget-error { color: #dc2626; }
+        .missions-slider-container { display: none; }
+        .missions-slider {
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 0;
+            gap: 1rem;
+            display: flex;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .missions-slider::-webkit-scrollbar { display: none; }
+        .missions-slide {
+            flex: 0 0 100%;
+            scroll-snap-align: center;
+        }
+        @media (max-width: 768px) {
+            .missions-widget-container { padding: 18px 14px 24px; }
+            .missions-widget-header { display: block; text-align: center; }
+            .missions-widget-view-all { margin-top: 16px; }
+            .missions-grid { display: none; }
+            .missions-slider-container { display: block; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="missions-widget-container">
+        <header class="missions-widget-header">
+            <div><h2 class="missions-widget-title">Missions récentes</h2>
+            <p class="missions-widget-subtitle">Découvrez les dernières opportunités publiées par les entreprises belges</p></div>
+            <a href="http://localhost:5175/missions" class="missions-widget-view-all">
+                Voir toutes les missions
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </header>
+
+        <!-- Grid version (desktop) -->
+        <div class="missions-grid" id="missionsGrid">
+            <div class="missions-widget-loading">Chargement des missions...</div>
+        </div>
+
+        <!-- Slider version (mobile) -->
+        <div class="missions-slider-container">
+            <div class="missions-slider" id="missionsSlider">
+                <!-- Cards will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const isLocal = window.location.hostname.includes('localhost') || window.location.hostname.includes('127.0.0.1');
+            const API_BASE = isLocal ? 'http://localhost:5000/api' : 'https://pro.indebel.be/api';
+            const DETAIL_BASE = isLocal ? 'http://localhost:5175/missions' : 'https://pro.indebel.be/missions';
+            const LOGIN_URL = isLocal ? 'http://localhost:5175/login' : 'https://pro.indebel.be/login';
+            const LIMIT = 9;
+            const GRID_ID = 'missionsGrid';
+            const SLIDER_ID = 'missionsSlider';
+
+            function formatDate(dateStr) {
+                if (!dateStr) return 'Date non spécifiée';
+                const d = new Date(dateStr);
+                if (isNaN(d.getTime())) return 'Date invalide';
+                return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' });
+            }
+
+            function truncateText(text, maxLength = 120) {
+                if (text.length <= maxLength) return text;
+                return text.slice(0, maxLength).trim() + '…';
+            }
+
+            function formatBudget(type, amount) {
+                if (!amount) return 'Non communiqué';
+                const currency = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' });
+                if (type === 'hourly') return `${currency.format(amount)}/h`;
+                return currency.format(amount);
+            }
+
+            function createCard(mission) {
+                const typeClass = mission.type_mission === 'hourly' ? 'mission-type-hourly' : 'mission-type-fixed';
+                const typeLabel = mission.type_mission === 'hourly' ? 'Horaire' : 'Forfait';
+                const location = mission.ville_mission || mission.adresse_mission || (mission.ville ? `${mission.ville}${mission.region ? ', ' + mission.region : ''}` : 'Belgique');
+                const description = truncateText(mission.description || '', 120);
+                const detailUrl = `${DETAIL_BASE}/${mission.id}`;
+
+                return `
+                    <article class="mission-card" onclick="window.open('${detailUrl}', '_blank')" role="button" tabindex="0">
+                        <div class="mission-card-header">
+                            <div class="mission-card-top-meta">
+                                <span class="mission-card-category">Secteur: ${mission.categorie || 'Non spécifiée'}</span>
+                                <span class="mission-card-type ${typeClass}">${typeLabel}</span>
+                            </div>
+                            <h3 class="mission-card-title">${mission.titre}</h3>
+                            <div class="mission-card-location">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                ${location}
+                            </div>
+                        </div>
+                        <div class="mission-card-body">
+                            <p class="mission-card-description"><strong>Description:</strong> ${description}</p>
+                        </div>
+                        <div class="mission-public-lock"><span>Connectez-vous pour voir les informations complètes et postuler.</span><a href="${LOGIN_URL}" onclick="event.stopPropagation()">Se connecter</a></div>
+                        <div class="mission-card-actions"><a href="${detailUrl}" onclick="event.stopPropagation()" class="mission-card-cta">Voir la mission</a></div>
+                        <div class="mission-card-footer">
+                            <time class="mission-card-date">Date de publication: ${formatDate(mission.date_creation || mission.created_at)}</time>
+                            <svg class="mission-card-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#044CF3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+                        </div>
+                    </article>
+                `;
+            }
+
+            function renderGrid(missions) {
+                const grid = document.getElementById(GRID_ID);
+                if (!grid) return;
+
+                if (!missions || missions.length === 0) {
+                    grid.innerHTML = `
+                        <div class="missions-widget-empty" style="text-align: center; padding: 3rem 1rem; color: var(--text-muted); grid-column: 1 / -1;">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem; opacity: 0.5;">
+                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                            <p style="font-size: 1.125rem; font-weight: 500; margin: 0;">Aucune mission disponible pour le moment</p>
+                            <p style="font-size: 0.875rem; margin-top: 0.5rem;">Revenez plus tard pour découvrir de nouvelles opportunités.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                grid.innerHTML = missions.map(createCard).join('');
+            }
+
+            function renderSlider(missions) {
+                const slider = document.getElementById(SLIDER_ID);
+                if (!slider) return;
+
+                if (!missions || missions.length === 0) {
+                    slider.innerHTML = `
+                        <div class="missions-widget-empty" style="text-align: center; padding: 2rem; color: var(--text-muted); width: 100%;">
+                            <p>Aucune mission disponible.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                slider.innerHTML = missions.map(m => `<div class="missions-slide">${createCard(m)}</div>`).join('');
+            }
+
+            function renderError(message) {
+                const grid = document.getElementById(GRID_ID);
+                const slider = document.getElementById(SLIDER_ID);
+                const errorHtml = `<div class="missions-widget-error">Erreur de chargement : ${message}</div>`;
+                if (grid) grid.innerHTML = errorHtml;
+                if (slider) slider.innerHTML = errorHtml;
+            }
+
+            function notifyParentHeight() {
+                requestAnimationFrame(() => {
+                    const height = Math.ceil(Math.max(
+                        document.documentElement.scrollHeight,
+                        document.body.scrollHeight
+                    ));
+                    try {
+                        window.parent.postMessage({ type: 'indebel:missions-height', height }, '*');
+                    } catch (error) {}
+                });
+            }
+
+            async function fetchMissions() {
+                try {
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 6000);
+
+                    const response = await fetch(`${API_BASE}/missions/publiques?limit=${LIMIT}`, {
+                        signal: controller.signal
+                    }).catch(() => null);
+
+                    clearTimeout(timeoutId);
+
+                    if (response && response.ok) {
+                        const data = await response.json();
+                        if (data.success && Array.isArray(data.data)) return data.data.slice(0, LIMIT);
+                    }
+                    throw new Error('API Missions unreachable');
+                } catch (err) {
+                    console.error('API Missions error:', err);
+                    renderError('Impossible de charger les missions.');
+                    return [];
+                }
+            }
+
+            async function init() {
+                const viewAllBtn = document.querySelector('.missions-widget-view-all');
+                if (viewAllBtn) {
+                    viewAllBtn.setAttribute('href', isLocal ? 'http://localhost:5175/missions' : 'https://pro.indebel.be/missions');
+                }
+                const missions = await fetchMissions();
+                if (!missions) return;
+                if (missions.length === 0) {
+                    try { window.parent.postMessage({ type: 'indebel:missions-empty' }, '*'); } catch (error) {}
+                    document.body.style.display = 'none';
+                    return;
+                }
+                renderGrid(missions);
+                renderSlider(missions);
+                startAutoScroll();
+                notifyParentHeight();
+            }
+
+            function startAutoScroll() {
+                const slider = document.getElementById(SLIDER_ID);
+                if (!slider) return;
+
+                let interval;
+                const scrollAmount = slider.clientWidth;
+                const speed = 3000;
+
+                function scroll() {
+                    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
+                        slider.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        slider.scrollBy({ left: slider.clientWidth, behavior: 'smooth' });
+                    }
+                }
+
+                function start() {
+                    // Check if slider is visible (display block in mobile media query)
+                    if (window.innerWidth <= 768) {
+                        interval = setInterval(scroll, speed);
+                    }
+                }
+
+                function stop() {
+                    clearInterval(interval);
+                }
+
+                window.addEventListener('resize', () => {
+                    stop();
+                    start();
+                });
+
+                slider.addEventListener('touchstart', stop);
+                slider.addEventListener('touchend', start);
+                slider.addEventListener('mouseenter', stop);
+                slider.addEventListener('mouseleave', start);
+
+                start();
+            }
+
+            window.addEventListener('resize', notifyParentHeight);
+
+            // Init when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+</body>
+
+</html>

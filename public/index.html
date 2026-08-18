@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Indebel</title>
+    <meta name="description" id="meta-description"
+        content="Trouvez un artisan verifie en Belgique, comparez plusieurs devis travaux gratuits et lancez votre renovation, isolation, toiture, plomberie ou salle de bain avec Indebel.">
+    <meta name="keywords" id="meta-keywords"
+        content="artisan Belgique, devis travaux Belgique, devis renovation gratuit Belgique, comparer devis travaux, artisan Bruxelles, artisan Liege, artisan Namur, artisan Charleroi, artisan Mons, artisan Brabant Wallon">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <link rel="canonical" href="https://indebel.be/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://indebel.be/">
+    <meta property="og:title" id="og-title" content="Artisan Belgique et devis travaux gratuit | Indebel">
+    <meta property="og:description" id="og-description"
+        content="Comparez des devis travaux gratuits et trouvez un artisan fiable a Bruxelles, Liege, Namur, Charleroi, Mons et partout en Belgique.">
+    <meta property="og:image" content="https://indebel.be/images/devis-particuliers.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" id="twitter-title" content="Artisan Belgique et devis travaux gratuit | Indebel">
+    <meta property="twitter:description" id="twitter-description"
+        content="Renovation, toiture, isolation, plomberie, electricite: trouvez le bon artisan et comparez vos devis travaux en Belgique.">
+    <meta property="twitter:image" content="https://indebel.be/images/devis-particuliers.jpg">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css?v=1785654755222">
+    <link rel="stylesheet" href="css/modern-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .seo-section {
+            padding: 72px 0;
+        }
+
+        .seo-section-alt {
+            background: #f7fbff;
+        }
+
+        .seo-section-header {
+            max-width: 760px;
+            margin: 0 auto 36px;
+            text-align: center;
+        }
+
+        .seo-section-header h2 {
+            color: #45485f;
+            margin-bottom: 14px;
+        }
+
+        .seo-section-header p {
+            color: #627c89;
+            line-height: 1.7;
+        }
+
+        .seo-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .seo-card {
+            background: #fff;
+            border: 1px solid #e1e9f0;
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 14px 30px rgba(69, 72, 95, 0.06);
+        }
+
+        .seo-card h3 {
+            color: #45485f;
+            margin-bottom: 12px;
+        }
+
+        .seo-card p {
+            color: #627c89;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .seo-card a,
+        .seo-link-list a {
+            color: #0284c7;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .seo-link-list {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        }
+
+        .seo-link-pill {
+            display: block;
+            padding: 16px 18px;
+            background: #fff;
+            border: 1px solid #dbe6ef;
+            border-radius: 16px;
+            color: #45485f;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 24px rgba(69, 72, 95, 0.05);
+        }
+
+        .seo-link-pill span {
+            display: block;
+            margin-top: 6px;
+            color: #627c89;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .seo-faq-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .seo-faq-item {
+            background: #fff;
+            border: 1px solid #dfe7ef;
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 10px 24px rgba(69, 72, 95, 0.04);
+        }
+
+        .seo-faq-item h3 {
+            color: #45485f;
+            margin-bottom: 10px;
+        }
+
+        .seo-faq-item p {
+            color: #627c89;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .trust-proof-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .trust-proof-card {
+            background: #fff;
+            border: 1px solid #dfe7ef;
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 12px 28px rgba(69, 72, 95, 0.05);
+        }
+
+        .trust-proof-card h3 {
+            color: #45485f;
+            margin-bottom: 12px;
+        }
+
+        .trust-proof-card p {
+            color: #627c89;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "name": "Indebel",
+                    "url": "https://indebel.be/",
+                    "logo": "https://indebel.be/images/logo.png",
+                    "areaServed": [
+                        "Bruxelles",
+                        "Liege",
+                        "Namur",
+                        "Charleroi",
+                        "Mons",
+                        "Brabant wallon",
+                        "Wallonie"
+                    ],
+                    "knowsAbout": [
+                        "devis travaux",
+                        "renovation",
+                        "artisan local",
+                        "isolation maison",
+                        "plomberie",
+                        "electricite",
+                        "chauffage"
+                    ],
+                    "sameAs": [
+                        "https://www.facebook.com/share/1BefEfLns8/",
+                        "https://www.instagram.com/indebel.be?igsh=MTA0Ymw2c2V6bDBnaQ==",
+                        "https://www.linkedin.com/company/ind%C3%A9go/",
+                        "https://www.tiktok.com/@indebel",
+                        "https://www.youtube.com/channel/UCXKqrn-OMbJGVlhgpYxRmPg"
+                    ]
+                },
+                {
+                    "@type": "WebSite",
+                    "name": "Indebel",
+                    "url": "https://indebel.be/"
+                },
+                {
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "Comment trouver un artisan fiable en Belgique ?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Commencez par decrire clairement vos travaux, comparez plusieurs devis, verifiez les avis et privilegiez les professionnels capables d'expliquer leurs assurances, delais et garanties."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Comment comparer plusieurs devis travaux ?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Comparez le prix global, le detail des postes, les delais, les materiaux prevus, les garanties et la disponibilite reelle de l'artisan avant de signer."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Peut-on obtenir un devis gratuit en 24h ?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Oui, sur les demandes les plus urgentes comme la plomberie, l'electricite ou certains travaux de renovation, Indebel aide a accelerer la mise en relation avec des professionnels disponibles."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Dans quelles villes Indebel aide-t-il a trouver un artisan ?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "La plateforme couvre Bruxelles, Liege, Namur, Charleroi, Mons, le Brabant wallon et plus largement toute la Belgique francophone pour les projets de renovation, depannage et travaux techniques."
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+</head>
+
+<body class="home-page">
+    <!-- Unified Hero Background -->
+    <div class="hero-absolute-bg"></div>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+
+                        <h1 id="hero-title" style="font-size: clamp(2.4rem, 4.5vw, 3.5rem); line-height: 1.15; margin-bottom: 2rem;">Entreprises & indépendants : <br> <span class="highlight">une collaboration
+                                naturelle en Belgique.</span></h1>
+                        <div class="hero-buttons home-hero-actions">
+                            <a href="https://indebel.be/prestataire" class="btn btn-primary"><i class="fas fa-helmet-safety" aria-hidden="true"></i>Je suis Prestataire</a>
+                            <a href="https://indebel.be/recruteur" class="btn btn-outline"><i class="fas fa-briefcase" aria-hidden="true"></i>Je suis
+                                Recruteur</a>
+                            <a href="https://indebel.be/particulier" class="btn btn-hero-devis"><i class="fas fa-house" aria-hidden="true"></i>Je suis
+                                Particulier</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/1.jpeg" alt="Croissance Indebel">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ DEVIS WIDGET — Juste après le Hero ═══ -->
+        <section class="hero-devis-section home-devis-section">
+            <div class="container">
+                <div class="home-devis-shell">
+                    <!-- Widget header -->
+                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:32px;">
+                        <div>
+                            <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(4,76,243,.07); color:#044CF3; padding:6px 14px; border-radius:99px; font-size:.8rem; font-weight:700; font-family:var(--font-heading); margin-bottom:10px; border:1px solid rgba(4,76,243,.15);">
+                                <span style="width:7px;height:7px;background:#22c55e;border-radius:50%;display:inline-block;box-shadow:0 0 0 3px rgba(34,197,94,.25);"></span>
+                                Opportunités en temps réel
+                            </div>
+                            <h2 style="font-family:var(--font-heading); font-size:1.75rem; font-weight:800; color:#0F172A; margin:0 0 6px; line-height:1.2;">Dernières demandes de devis</h2>
+                            <p style="color:#64748B; font-size:.95rem; margin:0;">Des clients recherchent vos compétences <em>en ce moment</em></p>
+                        </div>
+                        <a href="https://pro.indebel.be/devis" style="
+                            display:inline-flex; align-items:center; gap:8px;
+                            padding:11px 22px; background:#044CF3; color:#fff;
+                            border-radius:99px; font-size:.875rem; font-weight:700;
+                            font-family:var(--font-heading); text-decoration:none;
+                            transition:all .2s; white-space:nowrap;
+                            box-shadow:0 4px 15px rgba(4,76,243,.3);
+                        " onmouseover="this.style.transform='translateY(-2px)'; this.style.background='#0338C7';" onmouseout="this.style.transform=''; this.style.background='#044CF3';">
+                            <i class="fas fa-external-link-alt"></i> Voir toutes les demandes
+                        </a>
+                    </div>
+
+                    <!-- Devis Grid (Desktop) -->
+                    <div id="devisGrid" class="devis-grid">
+                        <div style="text-align:center; color:#94A3B8; grid-column:1/-1; padding:3rem; font-family:var(--font-heading);">
+                            <i class="fas fa-circle-notch fa-spin" style="font-size:1.5rem; color:#044CF3; margin-bottom:12px; display:block;"></i>
+                            Chargement des devis...
+                        </div>
+                    </div>
+                    <!-- Devis Slider (Mobile) -->
+                    <div class="devis-slider-container"><div id="devisSlider" class="devis-slider"></div></div>
+
+                    <div style="text-align:center; margin-top:28px; padding-top:24px; border-top:1px solid #F1F5F9;">
+                        <a href="https://pro.indebel.be/demande-devis" style="
+                            display:inline-flex; align-items:center; gap:10px;
+                            padding:14px 32px; background:#0F172A; color:white;
+                            border-radius:99px; font-weight:700; font-size:.95rem;
+                            font-family:var(--font-heading); text-decoration:none;
+                            transition:all .25s;
+                        " onmouseover="this.style.background='#044CF3'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#0F172A'; this.style.transform='';">
+                            <i class="fas fa-file-invoice-dollar"></i> Déposer ma demande de devis gratuit
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        
+
+        <!-- Section Avis Prestataires CTA -->
+        <section class="avis-cta-section" style="padding:60px 0; background:linear-gradient(135deg,#f0f4ff 0%,#e8eeff 100%); border-top:1px solid #dbe4ff;">
+            <div class="container" style="max-width:1200px; margin:0 auto; padding:0 24px;">
+                <div style="display:flex; align-items:center; gap:50px; flex-wrap:wrap;">
+                    <div style="flex:1; min-width:280px;">
+                        <span style="display:inline-block; background:#4f46e5; color:#fff; font-size:0.75rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:4px 12px; border-radius:20px; margin-bottom:16px;">Avis &amp; Réputation</span>
+                        <h2 style="font-family:var(--font-heading,'Inter',sans-serif); font-size:2rem; font-weight:800; color:#0f172a; margin:0 0 16px; line-height:1.2;">
+                            Votre réputation, <span style="color:#4f46e5;">c'est votre meilleur atout</span>
+                        </h2>
+                        <p style="color:#475569; font-size:1.05rem; line-height:1.7; margin:0 0 28px;">
+                            Les particuliers peuvent désormais laisser un avis sur votre profil directement depuis notre plateforme. Consultez les profils de nos prestataires certifiés et découvrez leurs évaluations.
+                        </p>
+                        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+                            <a href="https://pro.indebel.be/avis-particulier"
+                               style="display:inline-flex; align-items:center; gap:8px; background:#4f46e5; color:#fff; text-decoration:none; padding:14px 28px; border-radius:10px; font-weight:700; font-size:0.95rem; transition:all .2s; box-shadow:0 4px 15px rgba(79,70,229,0.3);">
+                                ⭐ Voir les avis prestataires
+                            </a>
+                            <a href="https://pro.indebel.be/avis-particulier"
+                               style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:#4f46e5; text-decoration:none; padding:14px 28px; border-radius:10px; font-weight:700; font-size:0.95rem; border:2px solid #4f46e5; transition:all .2s;">
+                                ✍️ Donner mon avis
+                            </a>
+                        </div>
+                    </div>
+                    <div style="flex:1; min-width:280px; max-width:520px;">
+                        <img src="/images/avis-realiste.png" alt="Avis prestataires Indebel" 
+                             style="width:100%; height:360px; object-fit:cover; border-radius:16px; box-shadow:0 20px 40px rgba(0,0,0,0.1);"
+                             loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Missions Widget Section -->
+        <section id="homeMissionsSection" class="restored-missions-section home-missions-section">
+            <div class="container">
+                <div class="widget-wrapper home-missions-widget">
+                    <iframe id="homeMissionsWidget" src="/components/missions-widget.html?v=20260802-auto-height" title="Missions récentes"></iframe>
+                </div>
+            </div>
+        </section>
+    <script>
+      window.addEventListener('message', function(event) {
+        if (!event || !event.data) return;
+        if (event.data.type === 'indebel:missions-empty') {
+          var section = document.getElementById('homeMissionsSection');
+          if (section) section.style.display = 'none';
+        }
+        if (event.data.type === 'indebel:missions-height' && Number.isFinite(event.data.height)) {
+          var widget = document.getElementById('homeMissionsWidget');
+          if (widget && event.source === widget.contentWindow) widget.style.height = Math.max(420, event.data.height) + 'px';
+        }
+      });
+    </script>
+
+        <!-- Trust Section -->
+        <section class="trust-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Ils nous font confiance</h2>
+                </div>
+                <div class="partners-grid">
+                    <div class="partners-track">
+                        <!-- First Set -->
+                        <div class="partner-item"><a href="/partenaire-details.html?id=gestionpro"><img src="images/partner/02-01.webp" alt="Partner 1"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=acerta"><img src="images/partner/29aca6_682d82f9dff74532b88b50c7ee21a1admv2.webp" alt="Partner 2"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=dreambis"><img src="images/partner/Logo-transparent-012-_1_-1536x432-1.webp" alt="Partner 3"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=leadup"><img src="images/partner/Screenshot_20250407_121629_Gallery.webp" alt="Partner 4"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=ucm"><img src="images/partner/WhatsApp-Image-2025-05-07-at-17.14.27-1.webp" alt="Partner 5"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=lepetitbureau"><img src="images/partner/logo-lepetitbureau2.webp" alt="Partner 6"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=investconseil"><img src="images/partner/telechargement.webp" alt="Partner 7"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=siegesocial"><img src="images/partners/partner1.jpeg" alt="Partner 8"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=avium"><img src="images/partners/partner2.jpeg" alt="Partner 9"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=bamconsult"><img src="images/partners/partner3.jpeg" alt="Partner 10"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=microstart"><img src="images/partner-new.jpeg" alt="Partner 11"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=workall"><img src="images/workall.jpeg" alt="Partner 12"></a></div>
+
+                        <!-- Duplicate Set for Infinite Scroll -->
+                        <div class="partner-item"><a href="/partenaire-details.html?id=gestionpro"><img src="images/partner/02-01.webp" alt="Partner 1"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=acerta"><img src="images/partner/29aca6_682d82f9dff74532b88b50c7ee21a1admv2.webp" alt="Partner 2"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=dreambis"><img src="images/partner/Logo-transparent-012-_1_-1536x432-1.webp" alt="Partner 3"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=leadup"><img src="images/partner/Screenshot_20250407_121629_Gallery.webp" alt="Partner 4"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=ucm"><img src="images/partner/WhatsApp-Image-2025-05-07-at-17.14.27-1.webp" alt="Partner 5"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=lepetitbureau"><img src="images/partner/logo-lepetitbureau2.webp" alt="Partner 6"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=investconseil"><img src="images/partner/telechargement.webp" alt="Partner 7"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=siegesocial"><img src="images/partners/partner1.jpeg" alt="Partner 8"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=avium"><img src="images/partners/partner2.jpeg" alt="Partner 9"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=bamconsult"><img src="images/partners/partner3.jpeg" alt="Partner 10"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=microstart"><img src="images/partner-new.jpeg" alt="Partner 11"></a></div>
+                        <div class="partner-item"><a href="/partenaire-details.html?id=workall"><img src="images/workall.jpeg" alt="Partner 12"></a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </section>
+
+        <!-- Modern unified sections start here -->
+        
+        <!-- Modern How It Works (Bento Style) -->
+        <section class="ui-section" style="background: var(--ui-surface-alt);">
+            <div class="ui-container">
+                <div class="ui-text-center ui-mx-auto" style="max-width: 800px;">
+                    <h2 class="ui-heading">Comment ça marche ?</h2>
+                    <p class="ui-subheading ui-mx-auto">La simplicité au service de vos projets. Une méthode fluide, transparente et sécurisée pour vous connecter aux meilleurs talents belges.</p>
+                </div>
+                
+                <div class="ui-bento-grid">
+                    <div class="ui-bento-card ui-hover-lift" style="grid-column: span 4;">
+                        <div class="ui-icon-wrapper ui-icon-primary">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: var(--ui-text-main); line-height: 1.25;">1. Déposez votre projet</h3>
+                        <p style="color: var(--ui-text-muted); line-height: 1.7;">Recruteur ou particulier, décrivez votre besoin en quelques minutes. Prestataire, accédez à des devis qualifiés correspondants à vos compétences.</p>
+                    </div>
+                    
+                    <div class="ui-bento-card ui-hover-lift" style="grid-column: span 4;">
+                        <div class="ui-icon-wrapper ui-icon-secondary">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: var(--ui-text-main); line-height: 1.25;">2. Matchez avec les talents</h3>
+                        <p style="color: var(--ui-text-muted); line-height: 1.7;">Recevez des propositions ciblées ou sélectionnez des profils fiables grâce aux portfolios détaillés, compétences certifiées et avis clients.</p>
+                    </div>
+                    
+                    <div class="ui-bento-card ui-hover-lift" style="grid-column: span 4;">
+                        <div class="ui-icon-wrapper ui-icon-dark">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: var(--ui-text-main); line-height: 1.25;">3. Collaborez en sérénité</h3>
+                        <p style="color: var(--ui-text-muted); line-height: 1.7;">Échangez directement, sous-traitez efficacement et sécurisez vos projets grâce à un environnement transparent et hautement collaboratif.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modern Stats Section (Overlapping) -->
+        <section class="home-stats-section" style="position: relative; background: var(--ui-surface); padding-bottom: 100px;">
+            <div class="ui-container">
+                <div class="ui-stats-container">
+                    <div class="ui-stat-item">
+                        <div class="ui-stat-num">1k+</div>
+                        <div class="ui-stat-label">Missions Actives</div>
+                    </div>
+                    <div class="ui-stat-item">
+                        <div class="ui-stat-num">600+</div>
+                        <div class="ui-stat-label">Prestataires Vérifiés</div>
+                    </div>
+                    <div class="ui-stat-item">
+                        <div class="ui-stat-num">300+</div>
+                        <div class="ui-stat-label">Devis Quotidiens</div>
+                    </div>
+                    <div class="ui-stat-item">
+                        <div class="ui-stat-num">100+</div>
+                        <div class="ui-stat-label">Recruteurs Connectés</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modern Profiles Bento UI -->
+        <section class="ui-section" style="background: var(--ui-surface);">
+            <div class="ui-container">
+                <div class="ui-text-center ui-mx-auto" style="max-width: 800px;">
+                    <h2 class="ui-heading">Votre profil, votre espace</h2>
+                    <p class="ui-subheading ui-mx-auto">Que vous cherchiez un artisan, un talent freelance ou de nouvelles missions, Indebel propose une expérience sur-mesure.</p>
+                </div>
+                
+                <div class="ui-bento-grid">
+                    <!-- Particulier Card -->
+                    <div class="ui-bento-card" style="grid-column: span 6; background: linear-gradient(145deg, #fff9f5, #fff); border-color: rgba(251, 100, 28, 0.2); padding: clamp(1.5rem, 5vw, 50px);">
+                        <span style="background: rgba(251, 100, 28, 0.1); color: #FB641C; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Espace Particulier</span>
+                        <h3 style="font-size: 2rem; font-weight: 800; margin: 20px 0 16px; color: var(--ui-text-main); line-height: 1.15;">Demandez vos devis travaux</h3>
+                        <p style="color: var(--ui-text-muted); line-height: 1.6; margin-bottom: 24px;">Besoin d'un service, de travaux ou d'une prestation spécifique ? Recevez plusieurs devis gratuits et comparez les artisans.</p>
+                        <ul style="margin-bottom: 30px; display: flex; flex-direction: column; gap: 12px;">
+                            <li style="display: flex; align-items: center; gap: 10px; color: #334155; font-weight: 500;"><i class="fas fa-check-circle" style="color: #FB641C;"></i> Décrivez votre projet</li>
+                            <li style="display: flex; align-items: center; gap: 10px; color: #334155; font-weight: 500;"><i class="fas fa-check-circle" style="color: #FB641C;"></i> Recevez plusieurs devis gratuits</li>
+                        </ul>
+                        <a href="/particulier" class="ui-btn" style="background: #FB641C; color: white;">Trouver un professionnel <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <!-- Prestataire Card -->
+                    <div class="ui-bento-card" style="grid-column: span 6; background: linear-gradient(145deg, #f0fdfa, #fff); border-color: rgba(0, 191, 179, 0.2); padding: clamp(1.5rem, 5vw, 50px);">
+                        <span style="background: rgba(0, 191, 179, 0.1); color: #00BFB3; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Espace Prestataire</span>
+                        <h3 style="font-size: 2rem; font-weight: 800; margin: 20px 0 16px; color: var(--ui-text-main); line-height: 1.15;">Boostez votre activité</h3>
+                        <p style="color: var(--ui-text-muted); line-height: 1.6; margin-bottom: 24px;">Recevez des demandes de devis qualifiées et des offres de missions correspondant exactement à vos compétences et à votre région.</p>
+                        <ul style="margin-bottom: 30px; display: flex; flex-direction: column; gap: 12px;">
+                            <li style="display: flex; align-items: center; gap: 10px; color: #334155; font-weight: 500;"><i class="fas fa-check-circle" style="color: #00BFB3;"></i> Profil professionnel public</li>
+                            <li style="display: flex; align-items: center; gap: 10px; color: #334155; font-weight: 500;"><i class="fas fa-check-circle" style="color: #00BFB3;"></i> Leads travaux & freelances</li>
+                        </ul>
+                        <a href="/prestataire" class="ui-btn" style="background: #00BFB3; color: white;">Proposer mes services <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <!-- Recruteur Full Width Card -->
+                    <div class="ui-bento-card" style="grid-column: span 12; background: linear-gradient(145deg, #f8fafc, #fff); padding: clamp(1.5rem, 5vw, 50px); display: flex; align-items: center; gap: clamp(20px, 4vw, 40px); flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 250px;">
+                            <span style="background: rgba(15, 23, 42, 0.05); color: var(--ui-dark); padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Espace Recruteur & Entreprise</span>
+                            <h3 style="font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; margin: 20px 0 16px; color: var(--ui-text-main); line-height: 1.15;">Trouvez les meilleurs talents</h3>
+                            <p style="color: var(--ui-text-muted); line-height: 1.6; font-size: 1.1rem; margin-bottom: 24px;">Recrutez des indépendants qualifiés pour vos missions ponctuelles ou vos chantiers en sous-traitance.</p>
+                            <a href="/recruteur" class="ui-btn ui-btn-primary">Je recrute un talent <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div style="flex: 1; min-width: 250px; border-radius: 20px; overflow: hidden; box-shadow: var(--ui-shadow-lg);">
+                            <img src="images/team.jpeg" alt="Equipe de recruteurs" style="width: 100%; height: 300px; object-fit: cover; display: block;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modern Sectors Section -->
+        <section class="ui-section home-sectors-section">
+            <div class="ui-container">
+                <div class="ui-text-center ui-mx-auto home-sectors-heading">
+                    <p class="home-section-kicker">Les métiers qui font la Belgique</p>
+                    <h2 class="ui-heading">Nos secteurs d'activités</h2>
+                    <p class="ui-subheading ui-mx-auto">Explorez les expertises disponibles et trouvez rapidement le professionnel adapté à votre projet.</p>
+                </div>
+                <div class="sectors-grid" id="sectors-container">
+                    <!-- Loaded dynamically via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Modern CTA Growth -->
+        <section class="ui-section home-growth-section">
+            <div class="ui-container">
+                <div class="ui-cta-gradient" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; padding: clamp(1.5rem, 5vw, 60px);">
+                    <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: white; margin-bottom: 20px; z-index: 2; line-height: 1.15;">Rejoignez la plateforme<br>de référence en Belgique</h2>
+                    <p style="font-size: 1.2rem; color: rgba(255,255,255,0.9); max-width: 600px; margin-bottom: 40px; z-index: 2; line-height: 1.6;">Publiez une mission, recevez des devis qualifiés et échangez avec des professionnels dans un parcours plus clair et rapide.</p>
+                    <div style="display: flex; gap: 20px; z-index: 2; flex-wrap: wrap; justify-content: center;">
+                        <a href="https://pro.indebel.be/register-employer" class="ui-btn ui-btn-white">
+                            Créer mon compte Recruteur
+                        </a>
+                        <a href="https://pro.indebel.be/register?type=freelancer" class="ui-btn" style="background: rgba(255,255,255,0.1); color: white; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                            Créer mon compte Prestataire
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section class="blog-section home-news-section">
+            <div class="container">
+                <div class="section-header text-center home-news-heading">
+                    <p class="home-section-kicker">Conseils et actualités</p>
+                    <h2>Dernières Actualités</h2>
+                    <p>Guides pratiques, tendances et informations utiles pour faire avancer vos projets et votre activité.</p>
+                </div>
+                <div class="blog-grid-4" id="blog-indebel-container">
+                    <!-- Loaded dynamically via JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Inlined -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <img src="images/logo.png" alt="Indebel Logo" class="footer-logo">
+                    <p class="footer-description">
+                        Indebel est la plateforme de référence pour connecter les entreprises et les indépendants en
+                        Belgique.
+                    </p>
+                </div>
+                <div class="footer-col footer-links">
+                    <h3>Ressources</h3>
+                    <ul>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/faqs-independants">FAQs Indépendants</a></li>
+                        <li><a href="/faqs-entreprise">FAQs Entreprise</a></li>
+                        <li><a href="/faqs-particuliers">FAQs Particulier</a></li>
+                        <li><a href="/how-it-works">Comment ça marche?</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-links">
+                    <h3>Liens Utiles</h3>
+                    <ul>
+                        <li><a href="/label-indebel">Label Indebel</a></li>
+                        <li><a href="/secteurs">Nos Secteurs</a></li>
+                        <li><a href="/conformite-et-securite">Responsabilité et obligations</a></li>
+                        <li><a href="/politique-de-confidentialite">Politique de confidentialité</a></li>
+                        <li><a href="/cgu">CGU & Mentions Légales</a></li>
+                        <li><a href="/cgu-particuliers">CGU - Particuliers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-social">
+                    <h3>Réseaux Sociaux</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/1BefEfLns8/" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/indebel.be?igsh=MTA0Ymw2c2V6bDBnaQ==" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/ind%C3%A9go/" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.tiktok.com/@indebel" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/channel/UCXKqrn-OMbJGVlhgpYxRmPg" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                    <!-- Trust Badge moved here as requested -->
+                    <div class="footer-trust-badge">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p>L'une des meilleures plateformes de mise en relation en Belgique.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>Copyright™ Indebel, Tous droits réservés. Créé par <a href="https://dreambis.be"
+                        target="_blank">DreamBis</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/layout-loader.js?v=20260802-home-background"></script>
+    <script src="js/devis-widget.js?v=20260802-home-widgets"></script>
+    <script src="js/blog-loader.js?v=1785654755222"></script>
+    <script src="js/main.js?v=20260802-home-sectors"></script>
+
+    <!-- Welcome Popup -->
+    <div id="welcomePopup" class="welcome-popup-overlay"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.5s ease;">
+        <div class="welcome-popup-content"
+            style="background: white; width: 90%; max-width: 500px; border-radius: 20px; overflow: hidden; position: relative; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); transform: translateY(20px); transition: transform 0.5s ease;">
+            <button id="closePopup"
+                style="position: absolute; top: 15px; right: 20px; background: rgba(255,255,255,0.8); border: none; font-size: 24px; cursor: pointer; color: #333; z-index: 10; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.3s;">&times;</button>
+            <div class="popup-image"
+                style="width: 100%; height: 250px; background: url('images/welcome-indebel.png') no-repeat center center; background-size: cover;">
+            </div>
+            <div style="padding: 30px; text-align: center;">
+                <h2 style="color: #45485f; font-size: 24px; margin-bottom: 15px; font-weight: 700;">Bienvenue sur
+                    Indebel</h2>
+                <p style="color: #627C89; font-size: 16px; line-height: 1.6;">La plateforme de mise en relation 100%
+                    belge dédiée à l'excellence et aux opportunités professionnelles.</p>
+                <div style="margin-top: 25px;">
+                    <button class="btn btn-primary" onclick="closeWelcomePopup()"
+                        style="width: 100%; padding: 12px; font-weight: 600;">Commencer l'aventure</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load Global Settings for SEO and UI
+
+        function closeWelcomePopup() {
+            const overlay = document.getElementById('welcomePopup');
+            const content = overlay.querySelector('.welcome-popup-content');
+            overlay.style.opacity = '0';
+            content.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 500);
+            localStorage.setItem('welcomeShown', 'true');
+        }
+
+        function showWelcomePopup() {
+            if (localStorage.getItem('welcomeShown')) return;
+
+            const overlay = document.getElementById('welcomePopup');
+            const content = overlay.querySelector('.welcome-popup-content');
+            overlay.style.display = 'flex';
+
+            // Force reflow
+            overlay.offsetHeight;
+
+            overlay.style.opacity = '1';
+            content.style.transform = 'translateY(0)';
+
+            // Auto-close after 30 seconds
+            setTimeout(() => {
+                if (overlay.style.display === 'flex') {
+                    closeWelcomePopup();
+                }
+            }, 30000);
+        }
+
+        document.getElementById('closePopup').addEventListener('click', closeWelcomePopup);
+
+        // Show after a small delay
+        setTimeout(showWelcomePopup, 1000);
+
+        async function applySettings() {
+            try {
+                const res = await fetch('/api/admin/settings');
+                const settings = await res.json();
+
+                if (settings.site_name && settings.site_tagline) {
+                    document.title = `${settings.site_name} - ${settings.site_tagline}`;
+                    const ogTitle = document.getElementById('og-title');
+                    if (ogTitle) ogTitle.content = document.title;
+                }
+
+                if (settings.seo_description) {
+                    const metaDesc = document.getElementById('meta-description');
+                    if (metaDesc) metaDesc.content = settings.seo_description;
+                    const ogDesc = document.getElementById('og-description');
+                    if (ogDesc) ogDesc.content = settings.seo_description;
+                }
+
+                if (settings.seo_keywords) {
+                    const metaKeys = document.getElementById('meta-keywords');
+                    if (metaKeys) metaKeys.content = settings.seo_keywords;
+                }
+
+                // Update Social Links in footer if they exist
+                // This would need to target specific selectors once the footer is loaded/present
+            } catch (e) {
+                console.warn('Could not load site settings');
+            }
+        }
+        applySettings();
+    </script>
+</body>
+
+</html>

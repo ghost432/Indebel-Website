@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Partenaire | Indebel</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modern-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .partner-details-hero {
+            background-color: #f7f9fd;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        .partner-details-hero h1 {
+            color: #1a2b4b;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .partner-details-hero p {
+            color: #627C89;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .partner-content-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        .partner-details-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            border: 1px solid #f1f5f9;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .partner-details-logo {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .partner-details-logo img {
+            max-height: 120px;
+            max-width: 250px;
+            object-fit: contain;
+        }
+        .partner-text-content {
+            color: #334155;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        .partner-text-content h3 {
+            color: #1a2b4b;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .partner-text-content p {
+            margin-bottom: 20px;
+        }
+        .partner-action {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .btn-partner-visit {
+            background-color: #F2994A;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .btn-partner-visit:hover {
+            background-color: #d88133;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(242, 153, 74, 0.3);
+            color: white;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #627C89;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: color 0.2s;
+        }
+        .back-link:hover {
+            color: #1a2b4b;
+        }
+        
+        #error-message {
+            display: none;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .partner-details-card {
+                padding: 30px 20px;
+            }
+            .partner-details-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body class="partner-details-page">
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="partner-details-hero">
+            <div class="container">
+                <h1 id="hero-title">Partenaire Indebel</h1>
+                <p id="hero-subtitle">Chargement des informations du partenaire...</p>
+            </div>
+        </section>
+
+        <section class="partner-content-section">
+            <div class="container">
+                <a href="/nos-partenaires.html" class="back-link"><i class="fas fa-arrow-left"></i> Retour aux partenaires</a>
+                
+                <div id="partner-content" class="partner-details-card" style="display:none;">
+                    <div class="partner-details-logo">
+                        <img id="partner-logo" src="" alt="Logo">
+                    </div>
+                    
+                    <div id="partner-description" class="partner-text-content">
+                        <!-- Content injected via JS -->
+                    </div>
+                </div>
+                
+                <div id="error-message">
+                    <h2>Partenaire introuvable</h2>
+                    <p>Le partenaire que vous recherchez n'existe pas ou le lien est incorrect.</p>
+                    <a href="/nos-partenaires.html" class="btn-partner-visit" style="margin-top: 20px;">Voir tous les partenaires</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="/js/partners-data.js?v=2"></script>
+    <script>
+        (function() {
+            try {
+                console.log("Initialisation du partenaire...");
+                const urlParams = new URLSearchParams(window.location.search);
+                const partnerId = urlParams.get('id');
+                console.log("Partner ID:", partnerId);
+                
+                const partnerContent = document.getElementById('partner-content');
+                const errorMessage = document.getElementById('error-message');
+                
+                if (partnerId && typeof partnersData !== 'undefined' && partnersData[partnerId]) {
+                    const data = partnersData[partnerId];
+                    console.log("Données trouvées:", data.name);
+                    
+                    // Update Meta & Title
+                    document.title = data.name + ' - Partenaire | Indebel';
+                    document.getElementById('hero-title').textContent = data.name;
+                    document.getElementById('hero-subtitle').textContent = data.subtitle;
+                    
+                    // Update Card
+                    document.getElementById('partner-logo').src = "/" + data.logo;
+                    document.getElementById('partner-logo').alt = 'Logo ' + data.name;
+                    document.getElementById('partner-description').innerHTML = data.description;
+                    
+                    partnerContent.style.display = 'block';
+                    errorMessage.style.display = 'none';
+                } else {
+                    console.warn("Partenaire non trouvé ou données indisponibles");
+                    partnerContent.style.display = 'none';
+                    errorMessage.style.display = 'block';
+                    document.getElementById('hero-title').textContent = 'Partenaire introuvable';
+                    document.getElementById('hero-subtitle').textContent = "Oups, il semble que ce partenaire n'existe pas.";
+                }
+            } catch (err) {
+                console.error("Erreur d'initialisation:", err);
+                document.getElementById('hero-subtitle').textContent = 'Erreur: ' + err.message;
+            }
+        })();
+    </script>
+    <script src="js/layout-loader.js"></script>
+</body>
+</html>

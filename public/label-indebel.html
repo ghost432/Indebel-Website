@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Label Indebel - La marque de confiance | Indebel</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css?v=1785654755222">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .label-hero {
+            padding: 60px 0 60px;
+            background-color: #fdfdfd;
+        }
+
+        .label-hero h1 {
+            font-size: 3.5rem;
+            color: #45485f;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .label-hero .subtitle {
+            font-size: 1.25rem;
+            color: #627C89;
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+
+        .section-label {
+            padding: 100px 0;
+        }
+
+        .bg-light-blue {
+            background-color: #f2fdff;
+        }
+
+        .bg-white {
+            background-color: #ffffff;
+        }
+
+        .flex-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .flex-container.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .flex-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .flex-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .flex-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-label h2 {
+            font-size: 2.5rem;
+            color: #45485f;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .section-label p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #627C89;
+            margin-bottom: 20px;
+        }
+
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #45485f;
+        }
+
+        .check-list i {
+            color: #ff9800;
+            font-size: 1.3rem;
+            margin-top: 3px;
+        }
+
+        .label-badge-hero {
+            width: 300px;
+            height: auto;
+        }
+
+        .footer-cta-label {
+            background: #ffffff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .cta-label-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-label-container h2 {
+            font-size: 2.8rem;
+            color: #45485f;
+            margin-bottom: 40px;
+        }
+
+        .cta-label-container .badge-img {
+            width: 150px;
+            margin-bottom: 30px;
+        }
+
+        .btn-navy {
+            background-color: #1a2b4b;
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-navy:hover {
+            background-color: #0d1729;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 992px) {
+            .flex-container {
+                gap: 40px;
+            }
+
+            .label-hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .label-hero {
+                text-align: center;
+            }
+
+            .label-hero .subtitle {
+                margin: 0 auto 40px;
+            }
+
+            .flex-container {
+                text-align: center;
+            }
+
+            .check-list li {
+                justify-content: center;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body class="label-page">
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="label-hero">
+            <div class="container">
+                <div class="flex-container">
+                    <div class="flex-content">
+                        <h1>Label Indebel – La marque de confiance des indépendants de Belgique</h1>
+                        <p class="subtitle">Le label de référence qui certifie l'excellence et l'engagement des
+                            professionnels belges.</p>
+                    </div>
+                    <div class="flex-image" style="display: flex; justify-content: center;">
+                        <img src="images/label-badge.png" alt="Label Indebel Badge" class="label-badge-hero"
+                            style="box-shadow: none;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission du label -->
+        <section class="section-label bg-white">
+            <div class="container">
+                <div class="flex-container">
+                    <div class="flex-content">
+                        <h2>Mission du label</h2>
+                        <p>Le Label Indebel valorise les indépendants qui s’engagent à exercer leur activité avec
+                            sérieux, transparence et respect de leurs clients.</p>
+                        <p>Il représente la communauté des indépendants belges qui partagent des valeurs communes de
+                            qualité, d’éthique et de collaboration.</p>
+                    </div>
+                    <div class="flex-image">
+                        <img src="images/mission.webp" alt="Mission Label Indebel">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Objectif -->
+        <section class="section-label bg-light-blue">
+            <div class="container">
+                <div class="flex-container reverse">
+                    <div class="flex-content">
+                        <h2>Objectif</h2>
+                        <ul class="check-list">
+                            <li><i class="fas fa-check-circle"></i> Renforcer la confiance entre indépendants et
+                                entreprises.</li>
+                            <li><i class="fas fa-check-circle"></i> Donner de la visibilité aux professionnels
+                                responsables.</li>
+                            <li><i class="fas fa-check-circle"></i> Promouvoir le savoir-faire belge indépendant à
+                                travers une marque reconnue.</li>
+                        </ul>
+                    </div>
+                    <div class="flex-image">
+                        <img src="images/objectif.jpg" alt="Objectifs Label Indebel">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Valeurs du Label Indebel -->
+        <section class="section-label bg-white">
+            <div class="container">
+                <div class="flex-container">
+                    <div class="flex-content">
+                        <h2>Les Valeurs du Label Indebel</h2>
+                        <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 30px;">
+                            <!-- Professionnalisme -->
+                            <div style="display: flex; gap: 16px; align-items: flex-start; background: #fdfdfd; padding: 18px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+                                <div style="background: rgba(242, 153, 74, 0.1); width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fas fa-medal" style="color: #F2994A; font-size: 1.1rem;"></i>
+                                </div>
+                                <div>
+                                    <h3 style="font-size: 1.1rem; font-weight: 700; color: #1e293b; margin: 0 0 4px;">Professionnalisme</h3>
+                                    <p style="font-size: 0.95rem; color: #64748b; margin: 0; line-height: 1.5;">Un travail rigoureux, des engagements tenus.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Fiabilité -->
+                            <div style="display: flex; gap: 16px; align-items: flex-start; background: #fdfdfd; padding: 18px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+                                <div style="background: rgba(4, 76, 243, 0.1); width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fas fa-shield-alt" style="color: #044CF3; font-size: 1.1rem;"></i>
+                                </div>
+                                <div>
+                                    <h3 style="font-size: 1.1rem; font-weight: 700; color: #1e293b; margin: 0 0 4px;">Fiabilité</h3>
+                                    <p style="font-size: 0.95rem; color: #64748b; margin: 0; line-height: 1.5;">Une communication claire et un respect mutuel.</p>
+                                </div>
+                            </div>
+
+                            <!-- Transparence -->
+                            <div style="display: flex; gap: 16px; align-items: flex-start; background: #fdfdfd; padding: 18px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+                                <div style="background: rgba(34, 197, 94, 0.1); width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fas fa-eye" style="color: #22c55e; font-size: 1.1rem;"></i>
+                                </div>
+                                <div>
+                                    <h3 style="font-size: 1.1rem; font-weight: 700; color: #1e293b; margin: 0 0 4px;">Transparence</h3>
+                                    <p style="font-size: 0.95rem; color: #64748b; margin: 0; line-height: 1.5;">Des tarifs, délais et méthodes de travail clairs.</p>
+                                </div>
+                            </div>
+
+                            <!-- Solidarité -->
+                            <div style="display: flex; gap: 16px; align-items: flex-start; background: #fdfdfd; padding: 18px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+                                <div style="background: rgba(236, 72, 153, 0.1); width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fas fa-users" style="color: #ec4899; font-size: 1.1rem;"></i>
+                                </div>
+                                <div>
+                                    <h3 style="font-size: 1.1rem; font-weight: 700; color: #1e293b; margin: 0 0 4px;">Solidarité</h3>
+                                    <p style="font-size: 0.95rem; color: #64748b; margin: 0; line-height: 1.5;">Une communauté qui partage, s’entraide et grandit ensemble.</p>
+                                </div>
+                            </div>
+
+                            <!-- Innovation -->
+                            <div style="display: flex; gap: 16px; align-items: flex-start; background: #fdfdfd; padding: 18px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+                                <div style="background: rgba(168, 85, 247, 0.1); width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fas fa-lightbulb" style="color: #a855f7; font-size: 1.1rem;"></i>
+                                </div>
+                                <div>
+                                    <h3 style="font-size: 1.1rem; font-weight: 700; color: #1e293b; margin: 0 0 4px;">Innovation</h3>
+                                    <p style="font-size: 0.95rem; color: #64748b; margin: 0; line-height: 1.5;">Une ouverture constante à l’évolution du travail indépendant.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-image">
+                        <img src="images/valeurs.jpg" alt="Valeurs Label Indebel">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage du label -->
+        <section class="section-label bg-light-blue">
+            <div class="container">
+                <div class="flex-container reverse">
+                    <div class="flex-content">
+                        <h2>Usage du label</h2>
+                        <p>Les prestataires labellisés pourront :</p>
+                        <ul class="check-list">
+                            <li><i class="fas fa-check-circle"></i> Afficher le badge “Label Indebel” sur leur profil,
+                                site, CV ou signature email.</li>
+                            <li><i class="fas fa-check-circle"></i> Être mis en avant dans les recherches sur la
+                                plateforme.</li>
+                            <li><i class="fas fa-check-circle"></i> Participer à des campagnes de visibilité “Les pros
+                                labellisés Indebel”.</li>
+                        </ul>
+                    </div>
+                    <div class="flex-image">
+                        <img src="images/usage.jpg" alt="Usage Label Indebel">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Critères d’obtention -->
+        <section class="section-label bg-white">
+            <div class="container">
+                <div class="flex-container">
+                    <div class="flex-content">
+                        <h2>Critères d’obtention</h2>
+                        <p>Pour obtenir le Label Indebel, le membre doit :</p>
+                        <ul class="check-list">
+                            <li><i class="fas fa-check-circle"></i> Être inscrit et actif sur la plateforme Indebel.
+                            </li>
+                            <li><i class="fas fa-check-circle"></i> Avoir complété son profil professionnel à 100 %.
+                            </li>
+                            <li><i class="fas fa-check-circle"></i> Avoir souscrit à un forfait standard ou Pro.</li>
+                            <li><i class="fas fa-check-circle"></i> Avoir reçu au moins trois recommandations ou
+                                évaluations positives de la part des recruteurs.</li>
+                            <li><i class="fas fa-check-circle"></i> S’engager à respecter la Charte Indebel de bonne
+                                collaboration.</li>
+                        </ul>
+                    </div>
+                    <div class="flex-image">
+                        <img src="images/criteres.jpg" alt="Critères Label Indebel">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="footer-cta-label">
+            <div class="container">
+                <div class="cta-label-container">
+                    <h2>La confiance se construit ensemble</h2>
+                    <div class="label-cta-actions">
+                        <img src="images/label-badge.png" alt="Logo officiel du Label Indebel" class="badge-img">
+                        <a href="https://pro.indebel.be/register" class="btn-navy">Vérifier mon éligibilité</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/layout-loader.js?v=20260801-header-footer-2"></script>
+</body>
+
+</html>

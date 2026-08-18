@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment ça marche? - Indebel</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=1785654755222">
+    <style>
+        .page-header {
+            background: #fdfdfd;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .hero-images img {
+            max-height: 250px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            color: #45485f;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .page-header .intro-text {
+            font-size: 1.25rem;
+            color: #627C89;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .how-it-works-section {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 100px;
+        }
+
+        .how-it-works-section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .section-image {
+            flex: 1;
+        }
+
+        .section-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-content {
+            flex: 1;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(251, 100, 28, 0.1);
+            color: var(--secondary-color);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-content h2 {
+            font-size: 2.2rem;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: #627C89;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+
+        .step-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        .step-text p {
+            color: #627C89;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .step-checklist {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 8px;
+        }
+
+        .step-checklist li {
+            position: relative;
+            padding-left: 25px;
+            font-size: 0.9rem;
+            color: #627C89;
+        }
+
+        .step-checklist li i {
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 991px) {
+
+            .how-it-works-section,
+            .how-it-works-section:nth-child(even) {
+                flex-direction: column;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .step-item {
+                text-align: left;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-images {
+                flex-direction: column;
+            }
+        }
+
+        .cta-center {
+            text-align: center;
+            padding: 60px 0;
+            background: #fcfcfc;
+            border-top: 1px solid #eee;
+        }
+
+        .steps-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 991px) {
+            .steps-grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="how-page">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="page-header">
+            <div class="container">
+                <span class="how-hero-kicker">Le parcours Indebel</span>
+                <h1>Comment ça marche ?</h1>
+                <p class="intro-text">
+                    Indebel simplifie la mise en relation entre entreprises, indépendants et particuliers.
+                    Grâce à une plateforme intuitive, chaque utilisateur peut trouver rapidement un prestataire,
+                    une mission ou un service adapté à ses besoins.
+                </p>
+                <div class="hero-images" aria-label="Les profils réunis sur Indebel">
+                    <img src="images/how-it-works/hero-deco.png" alt="Deco Illustration">
+                    <img src="images/how-it-works/hero-group.png" alt="Group Illustration">
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+
+                <!-- Section: Indépendants -->
+                <div class="how-it-works-section journey-freelancer">
+                    <div class="section-image">
+                        <img src="images/how-it-works/indep.jpg" alt="Pour les Prestataires">
+                    </div>
+                    <div class="section-content">
+                        <span class="section-tag">Pour les Prestataires</span>
+                        <h2>Développez votre activité</h2>
+                        <p class="section-description">Trouvez des missions professionnelles ou répondez à des demandes
+                            de devis.</p>
+
+                        <div class="steps-grid-2">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-text">
+                                    <h4>Créez votre profil gratuitement</h4>
+                                    <p>Inscrivez-vous en quelques clics :</p>
+                                    <ul class="step-checklist">
+                                        <li><i class="fas fa-check-circle"></i> Nom, prénom, email, téléphone</li>
+                                        <li><i class="fas fa-check-circle"></i> Adresse et numéro BCE</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-text">
+                                    <h4>Complétez votre profil professionnel</h4>
+                                    <p>Ajoutez vos compétences, secteur et documents (assurance).</p>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-text">
+                                    <h4>Vérifiez votre identité</h4>
+                                    <p>Gagnez en crédibilité et priorité dans les résultats de recherche.</p>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">4</div>
+                                <div class="step-text">
+                                    <h4>Postulez ou répondez aux devis</h4>
+                                    <p>Consultez les missions entreprises et devis particuliers via votre tableau de
+                                        bord.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">5</div>
+                                <div class="step-text">
+                                    <h4>Recevez les réponses</h4>
+                                    <p>Notification immédiate après sélection par un client.</p>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">6</div>
+                                <div class="step-text">
+                                    <h4>Réalisez la prestation</h4>
+                                    <p>Effectuez la mission et recevez des évaluations pour booster votre profil.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: Entreprises -->
+                <div class="how-it-works-section journey-employer">
+                    <div class="section-image">
+                        <img src="images/how-it-works/entreprise.jpg" alt="Pour les Entreprises">
+                    </div>
+                    <div class="section-content">
+                        <span class="section-tag">Pour les Entreprises</span>
+                        <h2>Trouvez des sous-traitants qualifiés</h2>
+                        <p class="section-description">Répondez rapidement à vos besoins opérationnels en recrutant des
+                            experts.</p>
+
+                        <div class="steps-grid-2">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-text">
+                                    <h4>Créez votre compte entreprise</h4>
+                                    <p>Renseignez votre raison sociale, BCE et coordonnées du responsable.</p>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-text">
+                                    <h4>Complétez votre profil</h4>
+                                    <p>Détails de l'activité et compétences recherchées.</p>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-text">
+                                    <h4>Publiez votre mission</h4>
+                                    <p>Décrivez la tâche, lieu, durée et type de rémunération.</p>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">4</div>
+                                <div class="step-text">
+                                    <h4>Sélectionnez le prestataire</h4>
+                                    <p>Comparez les profils et choisissez l’indépendant idéal.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: Particuliers -->
+                <div class="how-it-works-section journey-individual">
+                    <div class="section-image">
+                        <img src="images/how-it-works/particuliers.jpg" alt="Pour les Particuliers">
+                    </div>
+                    <div class="section-content">
+                        <span class="section-tag">Pour les Particuliers</span>
+                        <h2>Trouvez un professionnel proche</h2>
+                        <p class="section-description">Idéal pour vos travaux, dépannages ou services à domicile.</p>
+
+                        <div class="steps-grid-2">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-text">
+                                    <h4>Déposez votre demande de devis</h4>
+                                    <p>Précisez la nature du projet, lieu, période et ajoutez des photos.</p>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-text">
+                                    <h4>Recevez des réponses</h4>
+                                    <p>Réception de propositions ou devis de professionnels qualifiés.</p>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-text">
+                                    <h4>Choisissez votre prestataire</h4>
+                                    <p>Comparez profils, évaluations et tarifs en toute simplicité.</p>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">4</div>
+                                <div class="step-text">
+                                    <h4>Réalisez votre projet</h4>
+                                    <p>Prestation suivie d'une évaluation pour aider la communauté.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/layout-loader.js?v=20260801-header-footer-2"></script>
+</body>
+
+</html>

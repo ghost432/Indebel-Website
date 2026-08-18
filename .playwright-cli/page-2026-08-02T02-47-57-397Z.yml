@@ -1,0 +1,582 @@
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]: BIENVENUE 😊 ! Indebel, la plateforme d’indépendants 100% belge
+      - generic [ref=e8] [cursor=pointer]: 
+    - generic [ref=e9]:
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - link "" [ref=e13] [cursor=pointer]:
+            - /url: https://www.facebook.com/share/1BefEfLns8/
+          - link "" [ref=e15] [cursor=pointer]:
+            - /url: https://www.instagram.com/indebel.be?igsh=MTA0Ymw2c2V6bDBnaQ==
+          - link "" [ref=e17] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/ind%C3%A9go/
+          - link "" [ref=e19] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@indebel
+          - link "" [ref=e21] [cursor=pointer]:
+            - /url: https://www.youtube.com/channel/UCXKqrn-OMbJGVlhgpYxRmPg
+        - generic [ref=e23]:
+          - link "Espace Particulier" [ref=e24] [cursor=pointer]:
+            - /url: /particulier
+          - text: "|"
+          - link "Espace Prestataire" [ref=e25] [cursor=pointer]:
+            - /url: /prestataire
+          - text: "|"
+          - link "Espace Recruteur" [ref=e26] [cursor=pointer]:
+            - /url: /recruteur
+      - banner [ref=e27]:
+        - generic [ref=e29]:
+          - link [ref=e31] [cursor=pointer]:
+            - /url: /
+            - img "Indebel Logo" [ref=e32]
+          - navigation [ref=e33]:
+            - list [ref=e34]:
+              - listitem [ref=e35]:
+                - link "Notre plateforme" [ref=e36] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e37]:
+                - link "Nos secteurs" [ref=e38] [cursor=pointer]:
+                  - /url: /secteurs
+              - listitem [ref=e39]:
+                - link "Nos offres " [ref=e40] [cursor=pointer]:
+                  - /url: "#"
+                  - text: Nos offres
+                  - generic [ref=e41]: 
+              - listitem [ref=e42]:
+                - link "Label Indebel" [ref=e43] [cursor=pointer]:
+                  - /url: /label-indebel
+              - listitem [ref=e44]:
+                - link "Comment ça marche?" [ref=e45] [cursor=pointer]:
+                  - /url: /how-it-works
+              - listitem [ref=e46]:
+                - link "À propos" [ref=e47] [cursor=pointer]:
+                  - /url: /a-propos-de-nous
+          - link "Se connecter" [ref=e49] [cursor=pointer]:
+            - /url: https://pro.indebel.be/login
+  - main [ref=e50]:
+    - generic [ref=e53]:
+      - generic [ref=e54]:
+        - 'heading "Entreprises & indépendants : une collaboration naturelle en Belgique." [level=1] [ref=e55]'
+        - paragraph [ref=e56]: Épanouissez-vous dans un système d'indépendants florissant dédié à l'excellence et aux opportunités illimitées.
+        - generic [ref=e57]:
+          - link "Je suis Prestataire" [ref=e58] [cursor=pointer]:
+            - /url: https://indebel.be/prestataire
+          - link "Je suis Recruteur" [ref=e59] [cursor=pointer]:
+            - /url: https://indebel.be/recruteur
+          - link "Je suis Particulier" [ref=e60] [cursor=pointer]:
+            - /url: https://indebel.be/particulier
+      - img "Croissance Indebel" [ref=e62]
+    - generic [ref=e65]:
+      - generic [ref=e66]:
+        - generic [ref=e67]:
+          - generic [ref=e68]: Opportunités en temps réel
+          - heading "Dernières demandes de devis" [level=2] [ref=e70]
+          - paragraph [ref=e71]:
+            - text: Des clients recherchent vos compétences
+            - emphasis [ref=e72]: en ce moment
+        - link " Voir toutes les demandes" [ref=e73] [cursor=pointer]:
+          - /url: https://pro.indebel.be/devis
+          - generic [ref=e74]: 
+          - text: Voir toutes les demandes
+      - generic [ref=e75]:
+        - button "Rénovation complète salle de bain - Ixelles, Bruxelles-Capitale" [ref=e76] [cursor=pointer]:
+          - generic [ref=e77]:
+            - generic [ref=e78]:
+              - generic [ref=e79]:
+                - generic [ref=e80]: 
+                - text: Plomberie & Sanitaire
+              - generic [ref=e81]:
+                - generic [ref=e82]: 
+                - text: Urgent
+            - heading "Rénovation complète salle de bain" [level=3] [ref=e83]
+            - generic [ref=e84]:
+              - generic [ref=e85]: 
+              - text: Ixelles, Bruxelles-Capitale
+          - paragraph [ref=e87]:
+            - strong [ref=e88]: "Description:"
+            - text: Nous souhaitons refaire entièrement notre salle de bain de 10m2. Dépose de l'ancienne baignoire, installation d'une douche à l'itali…
+          - link "Voir la demande" [ref=e90]:
+            - /url: http://localhost:5175/devis/50
+          - time [ref=e92]:
+            - generic [ref=e93]: 
+            - text: Date non spécifiée
+        - button "Test popup quota - installation luminaire - Bruxelles, Bruxelles-Capitale" [ref=e96] [cursor=pointer]:
+          - generic [ref=e97]:
+            - generic [ref=e98]:
+              - generic [ref=e99]:
+                - generic [ref=e100]: 
+                - text: Électricité
+              - generic [ref=e101]:
+                - generic [ref=e102]: 
+                - text: Normal
+            - heading "Test popup quota - installation luminaire" [level=3] [ref=e103]
+            - generic [ref=e104]:
+              - generic [ref=e105]: 
+              - text: Bruxelles, Bruxelles-Capitale
+          - paragraph [ref=e107]:
+            - strong [ref=e108]: "Description:"
+            - text: Deuxième demande de test créée par Codex pour vérifier que le popup de quota apparaît quand le prestataire a déjà 9 vues détail.
+          - link "Voir la demande" [ref=e110]:
+            - /url: http://localhost:5175/devis/49
+          - time [ref=e112]:
+            - generic [ref=e113]: 
+            - text: 9 août 2026
+        - button "sonnerie appartement en panne - Sint-Genesius-Rode, Région Flamande" [ref=e116] [cursor=pointer]:
+          - generic [ref=e117]:
+            - generic [ref=e118]:
+              - generic [ref=e119]:
+                - generic [ref=e120]: 
+                - text: Rénovation & Construction
+              - generic [ref=e121]:
+                - generic [ref=e122]: 
+                - text: Urgent
+            - heading "sonnerie appartement en panne" [level=3] [ref=e123]
+            - generic [ref=e124]:
+              - generic [ref=e125]: 
+              - text: Sint-Genesius-Rode, Région Flamande
+          - paragraph [ref=e127]:
+            - strong [ref=e128]: "Description:"
+            - text: La sonnerie de mon appartement ne marche plus. Besoins d'un petit dépannage.
+          - link "Voir la demande" [ref=e130]:
+            - /url: http://localhost:5175/devis/41
+          - time [ref=e132]:
+            - generic [ref=e133]: 
+            - text: 14 juil. 2026
+        - button "Carrelage sol et mur - Genk, Région Flamande" [ref=e136] [cursor=pointer]:
+          - generic [ref=e137]:
+            - generic [ref=e138]:
+              - generic [ref=e139]:
+                - generic [ref=e140]: 
+                - text: Rénovation & Construction
+              - generic [ref=e141]:
+                - generic [ref=e142]: 
+                - text: Urgent
+            - heading "Carrelage sol et mur" [level=3] [ref=e143]
+            - generic [ref=e144]:
+              - generic [ref=e145]: 
+              - text: Genk, Région Flamande
+          - paragraph [ref=e147]:
+            - strong [ref=e148]: "Description:"
+            - text: Carrelage sol et mur
+          - link "Voir la demande" [ref=e150]:
+            - /url: http://localhost:5175/devis/40
+          - time [ref=e152]:
+            - generic [ref=e153]: 
+            - text: 12 juil. 2026
+        - button "Réparation portail en métal - Genappe, Région Wallonne" [ref=e156] [cursor=pointer]:
+          - generic [ref=e157]:
+            - generic [ref=e158]:
+              - generic [ref=e159]:
+                - generic [ref=e160]: 
+                - text: Rénovation & Construction
+              - generic [ref=e161]:
+                - generic [ref=e162]: 
+                - text: Urgent
+            - heading "Réparation portail en métal" [level=3] [ref=e163]
+            - generic [ref=e164]:
+              - generic [ref=e165]: 
+              - text: Genappe, Région Wallonne
+          - paragraph [ref=e167]:
+            - strong [ref=e168]: "Description:"
+            - text: Bonjour, je cherche un professionel capable de réparer des charnières d un portail en métal soudé, de même que réparer le système d…
+          - link "Voir la demande" [ref=e170]:
+            - /url: http://localhost:5175/devis/39
+          - time [ref=e172]:
+            - generic [ref=e173]: 
+            - text: 10 juil. 2026
+        - button "Reparations - Vilvoorde, Région Flamande" [ref=e176] [cursor=pointer]:
+          - generic [ref=e177]:
+            - generic [ref=e178]:
+              - generic [ref=e179]:
+                - generic [ref=e180]: 
+                - text: Rénovation & Construction
+              - generic [ref=e181]:
+                - generic [ref=e182]: 
+                - text: Urgent
+            - heading "Reparations" [level=3] [ref=e183]
+            - generic [ref=e184]:
+              - generic [ref=e185]: 
+              - text: Vilvoorde, Région Flamande
+          - paragraph [ref=e187]:
+            - strong [ref=e188]: "Description:"
+            - text: Bonjour nous avons besoin d un menuisier pour avoir son avis au sujet de notre veranda exterieure qui pourri svp? Merci beaucoup
+          - link "Voir la demande" [ref=e190]:
+            - /url: http://localhost:5175/devis/38
+          - time [ref=e192]:
+            - generic [ref=e193]: 
+            - text: Date non spécifiée
+        - button "Menuiserie - Ottignies-Louvain-la-Neuve, Région Wallonne" [ref=e196] [cursor=pointer]:
+          - generic [ref=e197]:
+            - generic [ref=e198]:
+              - generic [ref=e199]:
+                - generic [ref=e200]: 
+                - text: Rénovation & Construction
+              - generic [ref=e201]:
+                - generic [ref=e202]: 
+                - text: Normal
+            - heading "Menuiserie" [level=3] [ref=e203]
+            - generic [ref=e204]:
+              - generic [ref=e205]: 
+              - text: Ottignies-Louvain-la-Neuve, Région Wallonne
+          - paragraph [ref=e207]:
+            - strong [ref=e208]: "Description:"
+            - text: Remplacement d'un chambranle de porte intérieur
+          - link "Voir la demande" [ref=e210]:
+            - /url: http://localhost:5175/devis/37
+          - time [ref=e212]:
+            - generic [ref=e213]: 
+            - text: 20 juil. 2026
+        - button "Pose d'auvent sur ma terrasse - Seraing, Région Wallonne" [ref=e216] [cursor=pointer]:
+          - generic [ref=e217]:
+            - generic [ref=e218]:
+              - generic [ref=e219]:
+                - generic [ref=e220]: 
+                - text: Rénovation & Construction
+              - generic [ref=e221]:
+                - generic [ref=e222]: 
+                - text: Normal
+            - heading "Pose d'auvent sur ma terrasse" [level=3] [ref=e223]
+            - generic [ref=e224]:
+              - generic [ref=e225]: 
+              - text: Seraing, Région Wallonne
+          - paragraph [ref=e227]:
+            - strong [ref=e228]: "Description:"
+            - text: Bonjour, Nous venons d'acheter 2 auvents pour notre terrasse et nous aimerions avoir de l'aide pour leur pose. Merci de vos réponse…
+          - link "Voir la demande" [ref=e230]:
+            - /url: http://localhost:5175/devis/36
+          - time [ref=e232]:
+            - generic [ref=e233]: 
+            - text: 13 juil. 2026
+        - button "Création sortie hotte de cuisine sur toiture plate - Quaregnon, Région Wallonne" [ref=e236] [cursor=pointer]:
+          - generic [ref=e237]:
+            - generic [ref=e238]:
+              - generic [ref=e239]:
+                - generic [ref=e240]: 
+                - text: Rénovation & Construction
+              - generic [ref=e241]:
+                - generic [ref=e242]: 
+                - text: Normal
+            - heading "Création sortie hotte de cuisine sur toiture plate" [level=3] [ref=e243]
+            - generic [ref=e244]:
+              - generic [ref=e245]: 
+              - text: Quaregnon, Région Wallonne
+          - paragraph [ref=e247]:
+            - strong [ref=e248]: "Description:"
+            - text: Création d’une sortie de hotte de cuisine sur toiture plate. Carottage à faire
+          - link "Voir la demande" [ref=e250]:
+            - /url: http://localhost:5175/devis/35
+          - time [ref=e252]:
+            - generic [ref=e253]: 
+            - text: Date non spécifiée
+      - text:                                    
+      - link " Déposer ma demande de devis gratuit" [ref=e257] [cursor=pointer]:
+        - /url: https://pro.indebel.be/demande-devis
+        - generic [ref=e258]: 
+        - text: Déposer ma demande de devis gratuit
+    - generic [ref=e261]:
+      - generic [ref=e262]:
+        - generic [ref=e263]: Avis & Réputation
+        - heading "Votre réputation, c'est votre meilleur atout" [level=2] [ref=e264]
+        - paragraph [ref=e265]: Les particuliers peuvent désormais laisser un avis sur votre profil directement depuis notre plateforme. Consultez les profils de nos prestataires certifiés et découvrez leurs évaluations.
+        - generic [ref=e266]:
+          - link "⭐ Voir les avis prestataires" [ref=e267] [cursor=pointer]:
+            - /url: https://pro.indebel.be/avis-particulier
+          - link "✍️ Donner mon avis" [ref=e268] [cursor=pointer]:
+            - /url: https://pro.indebel.be/avis-particulier
+      - img "Avis prestataires Indebel" [ref=e270]
+    - iframe [ref=e274]:
+      - generic [ref=f1e2]:
+        - banner [ref=f1e3]:
+          - generic [ref=f1e4]:
+            - heading "Missions récentes" [level=2] [ref=f1e5]
+            - paragraph [ref=f1e6]: Découvrez les dernières opportunités publiées par les entreprises belges
+          - link "Voir toutes les missions" [ref=f1e7] [cursor=pointer]:
+            - /url: http://localhost:5175/missions
+        - generic [ref=f1e10]:
+          - 'button "Secteur: Design & UX Forfait Mission Test - Non Postulée - Création de Logo 123 Rue de Test, Bruxelles Description: Nous recherchons un designer pour créer un logo minimaliste. Connectez-vous pour voir les informations complètes et postuler. Se connecter Voir la mission Date de publication: 29 juil. 2026" [ref=f1e11] [cursor=pointer]':
+            - generic [ref=f1e12]:
+              - generic [ref=f1e13]:
+                - generic [ref=f1e14]: "Secteur: Design & UX"
+                - generic [ref=f1e15]: Forfait
+              - heading "Mission Test - Non Postulée - Création de Logo" [level=3] [ref=f1e16]
+              - generic [ref=f1e17]: 123 Rue de Test, Bruxelles
+            - paragraph [ref=f1e22]:
+              - strong [ref=f1e23]: "Description:"
+              - text: Nous recherchons un designer pour créer un logo minimaliste.
+            - generic [ref=f1e24]:
+              - generic [ref=f1e25]: Connectez-vous pour voir les informations complètes et postuler.
+              - link "Se connecter" [ref=f1e26]:
+                - /url: http://localhost:5175/login
+            - link "Voir la mission" [ref=f1e28]:
+              - /url: http://localhost:5175/missions/8
+            - time [ref=f1e30]: "Date de publication: 29 juil. 2026"
+          - 'button "Secteur: Développement Forfait Mission Test - Intégration React 123 Rue de Test, Bruxelles Description: Intégration UI de l''application Indebel. Connectez-vous pour voir les informations complètes et postuler. Se connecter Voir la mission Date de publication: 29 juil. 2026" [ref=f1e33] [cursor=pointer]':
+            - generic [ref=f1e34]:
+              - generic [ref=f1e35]:
+                - generic [ref=f1e36]: "Secteur: Développement"
+                - generic [ref=f1e37]: Forfait
+              - heading "Mission Test - Intégration React" [level=3] [ref=f1e38]
+              - generic [ref=f1e39]: 123 Rue de Test, Bruxelles
+            - paragraph [ref=f1e44]:
+              - strong [ref=f1e45]: "Description:"
+              - text: Intégration UI de l'application Indebel.
+            - generic [ref=f1e46]:
+              - generic [ref=f1e47]: Connectez-vous pour voir les informations complètes et postuler.
+              - link "Se connecter" [ref=f1e48]:
+                - /url: http://localhost:5175/login
+            - link "Voir la mission" [ref=f1e50]:
+              - /url: http://localhost:5175/missions/17
+            - time [ref=f1e52]: "Date de publication: 29 juil. 2026"
+          - 'button "Secteur: Design & UX Forfait Mission Test - UI Design Freelancer 123 Rue de Test, Bruxelles Description: Ceci est une mission de test pour visualiser les nouvelles interfaces de la plateforme Indebel. Connectez-vous pour voir les informations complètes et postuler. Se connecter Voir la mission Date de publication: 29 juil. 2026" [ref=f1e55] [cursor=pointer]':
+            - generic [ref=f1e56]:
+              - generic [ref=f1e57]:
+                - generic [ref=f1e58]: "Secteur: Design & UX"
+                - generic [ref=f1e59]: Forfait
+              - heading "Mission Test - UI Design Freelancer" [level=3] [ref=f1e60]
+              - generic [ref=f1e61]: 123 Rue de Test, Bruxelles
+            - paragraph [ref=f1e66]:
+              - strong [ref=f1e67]: "Description:"
+              - text: Ceci est une mission de test pour visualiser les nouvelles interfaces de la plateforme Indebel.
+            - generic [ref=f1e68]:
+              - generic [ref=f1e69]: Connectez-vous pour voir les informations complètes et postuler.
+              - link "Se connecter" [ref=f1e70]:
+                - /url: http://localhost:5175/login
+            - link "Voir la mission" [ref=f1e72]:
+              - /url: http://localhost:5175/missions/7
+            - time [ref=f1e74]: "Date de publication: 29 juil. 2026"
+    - generic [ref=e276]:
+      - heading "Ils nous font confiance" [level=2] [ref=e278]
+      - generic [ref=e280]:
+        - img "Partner 1" [ref=e282]
+        - img "Partner 2" [ref=e284]
+        - img "Partner 3" [ref=e286]
+        - img "Partner 4" [ref=e288]
+        - img "Partner 5" [ref=e290]
+        - img "Partner 6" [ref=e292]
+        - img "Partner 7" [ref=e294]
+        - img "Partner 8" [ref=e296]
+        - img "Partner 9" [ref=e298]
+        - img "Partner 10" [ref=e300]
+        - img "Partner 1" [ref=e302]
+        - img "Partner 2" [ref=e304]
+        - img "Partner 3" [ref=e306]
+        - img "Partner 4" [ref=e308]
+        - img "Partner 5" [ref=e310]
+        - img "Partner 6" [ref=e312]
+        - img "Partner 7" [ref=e314]
+        - img "Partner 8" [ref=e316]
+        - img "Partner 9" [ref=e318]
+        - img "Partner 10" [ref=e320]
+    - generic [ref=e322]:
+      - generic [ref=e323]:
+        - heading "Comment ça marche ?" [level=2] [ref=e324]
+        - paragraph [ref=e325]: La simplicité au service de vos projets. Une méthode fluide, transparente et sécurisée pour vous connecter aux meilleurs talents belges.
+      - generic [ref=e326]:
+        - generic [ref=e327]:
+          - generic [ref=e328]: 
+          - heading "1. Déposez votre projet" [level=3] [ref=e330]
+          - paragraph [ref=e331]: Recruteur ou particulier, décrivez votre besoin en quelques minutes. Prestataire, accédez à des devis qualifiés correspondants à vos compétences.
+        - generic [ref=e332]:
+          - generic [ref=e333]: 
+          - heading "2. Matchez avec les talents" [level=3] [ref=e335]
+          - paragraph [ref=e336]: Recevez des propositions ciblées ou sélectionnez des profils fiables grâce aux portfolios détaillés, compétences certifiées et avis clients.
+        - generic [ref=e337]:
+          - generic [ref=e338]: 
+          - heading "3. Collaborez en sérénité" [level=3] [ref=e340]
+          - paragraph [ref=e341]: Échangez directement, sous-traitez efficacement et sécurisez vos projets grâce à un environnement transparent et hautement collaboratif.
+    - generic [ref=e344]:
+      - generic [ref=e345]:
+        - generic [ref=e346]: 1k+
+        - generic [ref=e347]: Missions Actives
+      - generic [ref=e348]:
+        - generic [ref=e349]: 600+
+        - generic [ref=e350]: Prestataires Vérifiés
+      - generic [ref=e351]:
+        - generic [ref=e352]: 300+
+        - generic [ref=e353]: Devis Quotidiens
+      - generic [ref=e354]:
+        - generic [ref=e355]: 100+
+        - generic [ref=e356]: Recruteurs Connectés
+    - generic [ref=e358]:
+      - generic [ref=e359]:
+        - heading "Votre profil, votre espace" [level=2] [ref=e360]
+        - paragraph [ref=e361]: Que vous cherchiez un artisan, un talent freelance ou de nouvelles missions, Indebel propose une expérience sur-mesure.
+      - generic [ref=e362]:
+        - generic [ref=e363]:
+          - text: Espace Particulier
+          - heading "Demandez vos devis travaux" [level=3] [ref=e364]
+          - paragraph [ref=e365]: Besoin d'un service, de travaux ou d'une prestation spécifique ? Recevez plusieurs devis gratuits et comparez les artisans.
+          - list [ref=e366]:
+            - listitem [ref=e367]:
+              - generic [ref=e368]: 
+              - text: Décrivez votre projet
+            - listitem [ref=e369]:
+              - generic [ref=e370]: 
+              - text: Recevez plusieurs devis gratuits
+          - link "Trouver un professionnel " [ref=e371] [cursor=pointer]:
+            - /url: /particulier
+            - text: Trouver un professionnel
+            - generic [ref=e372]: 
+        - generic [ref=e373]:
+          - text: Espace Prestataire
+          - heading "Boostez votre activité" [level=3] [ref=e374]
+          - paragraph [ref=e375]: Recevez des demandes de devis qualifiées et des offres de missions correspondant exactement à vos compétences et à votre région.
+          - list [ref=e376]:
+            - listitem [ref=e377]:
+              - generic [ref=e378]: 
+              - text: Profil professionnel public
+            - listitem [ref=e379]:
+              - generic [ref=e380]: 
+              - text: Leads travaux & freelances
+          - link "Proposer mes services " [ref=e381] [cursor=pointer]:
+            - /url: /prestataire
+            - text: Proposer mes services
+            - generic [ref=e382]: 
+        - generic [ref=e383]:
+          - generic [ref=e384]:
+            - text: Espace Recruteur & Entreprise
+            - heading "Trouvez les meilleurs talents" [level=3] [ref=e385]
+            - paragraph [ref=e386]: Recrutez des indépendants qualifiés pour vos missions ponctuelles ou vos chantiers en sous-traitance.
+            - link "Je recrute un talent " [ref=e387] [cursor=pointer]:
+              - /url: /recruteur
+              - text: Je recrute un talent
+              - generic [ref=e388]: 
+          - img "Equipe de recruteurs" [ref=e390]
+    - generic [ref=e392]:
+      - generic [ref=e393]:
+        - paragraph [ref=e394]: Les métiers qui font la Belgique
+        - heading "Nos secteurs d'activités" [level=2] [ref=e395]
+        - paragraph [ref=e396]: Explorez les expertises disponibles et trouvez rapidement le professionnel adapté à votre projet.
+      - generic [ref=e397]:
+        - generic [ref=e398]:
+          - generic [ref=e399]: 
+          - generic [ref=e400]: Rénovation et Construction
+        - generic [ref=e401]:
+          - generic [ref=e402]: 
+          - generic [ref=e403]: Transport et Logistique
+        - generic [ref=e404]:
+          - generic [ref=e405]: 
+          - generic [ref=e406]: Nettoyage et Multiservices
+    - generic [ref=e409]:
+      - heading "Rejoignez la plateforme de référence en Belgique" [level=2] [ref=e410]: Rejoignez la plateformede référence en Belgique
+      - paragraph [ref=e411]: Publiez une mission, recevez des devis qualifiés et échangez avec des professionnels dans un parcours plus clair et rapide.
+      - generic [ref=e412]:
+        - link "Créer mon compte Recruteur" [ref=e413] [cursor=pointer]:
+          - /url: https://pro.indebel.be/register-employer
+        - link "Créer mon compte Prestataire" [ref=e414] [cursor=pointer]:
+          - /url: https://pro.indebel.be/register?type=freelancer
+    - generic [ref=e416]:
+      - generic [ref=e417]:
+        - paragraph [ref=e418]: Conseils et actualités
+        - heading "Dernières Actualités" [level=2] [ref=e419]
+        - paragraph [ref=e420]: Guides pratiques, tendances et informations utiles pour faire avancer vos projets et votre activité.
+      - generic [ref=e421]:
+        - article [ref=e422]:
+          - 'img "Contrat, devis, bon de commande : quelles différences ?" [ref=e424]'
+          - generic [ref=e425]:
+            - 'heading "Contrat, devis, bon de commande : quelles différences ?" [level=3] [ref=e426]'
+            - paragraph [ref=e427]: Quand vous faites appel à un prestataire (plombier, coach, jardinier, graphiste…), vous entendez souvent parler de devis, bon de commande ou contrat. Mais quelle est vraiment la différence entre ces documents ? Et surtout, à quoi servent-ils pour vous, particulier, ou pour le prestataire ?Comprendre ces distinctions permet de sécuriser...
+            - link "Lire la suite " [ref=e428] [cursor=pointer]:
+              - /url: /blog-articles?id=67
+              - text: Lire la suite
+              - generic [ref=e429]: 
+        - article [ref=e430]:
+          - img "5 conseils pour choisir le bon prestataire" [ref=e432]
+          - generic [ref=e433]:
+            - heading "5 conseils pour choisir le bon prestataire" [level=3] [ref=e434]
+            - paragraph [ref=e435]: Choisir un prestataire pour des travaux, une mission de transport, de logistique ou de nettoyage n’est jamais anodin. Un mauvais choix peut entraîner des retards, des surcoûts ou une qualité de service décevante. Pour éviter les mauvaises surprises, voici 5 conseils essentiels pour sélectionner le bon prestataire et collaborer en...
+            - link "Lire la suite " [ref=e436] [cursor=pointer]:
+              - /url: /blog-articles?id=53
+              - text: Lire la suite
+              - generic [ref=e437]: 
+        - article [ref=e438]:
+          - 'img "Rénovation en Belgique : les travaux les plus demandés en 2026" [ref=e440]'
+          - generic [ref=e441]:
+            - 'heading "Rénovation en Belgique : les travaux les plus demandés en 2026" [level=3] [ref=e442]'
+            - paragraph [ref=e443]: En 2026, la rénovation en Belgique est fortement dictée par les impératifs énergétiques (PEB), la hausse du coût de l'énergie et la nécessité de rafraîchir le parc immobilier ancien. Les travaux les plus demandés se concentrent sur l'amélioration de la performance thermique, le remplacement des systèmes de chauffage et l'optimisation de...
+            - link "Lire la suite " [ref=e444] [cursor=pointer]:
+              - /url: /blog-articles?id=60
+              - text: Lire la suite
+              - generic [ref=e445]: 
+        - article [ref=e446]:
+          - 'img "Le Label Indebel : gage de qualité pour vos clients" [ref=e448]'
+          - generic [ref=e449]:
+            - 'heading "Le Label Indebel : gage de qualité pour vos clients" [level=3] [ref=e450]'
+            - paragraph [ref=e451]: "Le Label Indebel : gage de qualité pour vos clientsDans un marché où la confiance est devenue un critère décisif, se démarquer en tant qu’indépendant ne repose plus uniquement sur les compétences techniques. Les clients – entreprises comme particuliers – recherchent aujourd’hui des professionnels fiables, transparents et engagés.C’est dans cette..."
+            - link "Lire la suite " [ref=e452] [cursor=pointer]:
+              - /url: /blog-articles?id=57
+              - text: Lire la suite
+              - generic [ref=e453]: 
+  - contentinfo [ref=e454]:
+    - generic [ref=e456]:
+      - generic [ref=e457]:
+        - img "Indebel Logo" [ref=e458]
+        - paragraph [ref=e459]: Indebel est la plateforme de référence pour connecter les entreprises et les indépendants en Belgique.
+      - generic [ref=e460]:
+        - heading "Ressources" [level=3] [ref=e461]
+        - list [ref=e462]:
+          - listitem [ref=e463]:
+            - link "Blog" [ref=e464] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=e465]:
+            - link "FAQs Indépendants" [ref=e466] [cursor=pointer]:
+              - /url: /faqs-independants
+          - listitem [ref=e467]:
+            - link "FAQs Entreprise" [ref=e468] [cursor=pointer]:
+              - /url: /faqs-entreprise
+          - listitem [ref=e469]:
+            - link "FAQs Particulier" [ref=e470] [cursor=pointer]:
+              - /url: /faqs-particuliers
+          - listitem [ref=e471]:
+            - link "Comment ça marche?" [ref=e472] [cursor=pointer]:
+              - /url: /how-it-works
+          - listitem [ref=e473]:
+            - link "Contact" [ref=e474] [cursor=pointer]:
+              - /url: /contact
+      - generic [ref=e475]:
+        - heading "Liens Utiles" [level=3] [ref=e476]
+        - list [ref=e477]:
+          - listitem [ref=e478]:
+            - link "Label Indebel" [ref=e479] [cursor=pointer]:
+              - /url: /label-indebel
+          - listitem [ref=e480]:
+            - link "Nos Secteurs" [ref=e481] [cursor=pointer]:
+              - /url: /secteurs
+          - listitem [ref=e482]:
+            - link "Responsabilité et obligations" [ref=e483] [cursor=pointer]:
+              - /url: /conformite-et-securite
+          - listitem [ref=e484]:
+            - link "Politique de confidentialité" [ref=e485] [cursor=pointer]:
+              - /url: /politique-de-confidentialite
+          - listitem [ref=e486]:
+            - link "CGU & Mentions Légales" [ref=e487] [cursor=pointer]:
+              - /url: /cgu
+          - listitem [ref=e488]:
+            - link "CGU - Particuliers" [ref=e489] [cursor=pointer]:
+              - /url: /cgu-particuliers
+      - generic [ref=e490]:
+        - heading "Réseaux Sociaux" [level=3] [ref=e491]
+        - generic [ref=e492]:
+          - link "" [ref=e493] [cursor=pointer]:
+            - /url: https://www.facebook.com/share/1BefEfLns8/
+          - link "" [ref=e495] [cursor=pointer]:
+            - /url: https://www.instagram.com/indebel.be?igsh=MTA0Ymw2c2V6bDBnaQ==
+          - link "" [ref=e497] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/ind%C3%A9go/
+          - link "" [ref=e499] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@indebel
+          - link "" [ref=e501] [cursor=pointer]:
+            - /url: https://www.youtube.com/channel/UCXKqrn-OMbJGVlhgpYxRmPg
+        - generic [ref=e503]:
+          - generic [ref=e504]:
+            - generic [ref=e505]: 
+            - generic [ref=e506]: 
+            - generic [ref=e507]: 
+            - generic [ref=e508]: 
+            - generic [ref=e509]: 
+          - paragraph [ref=e510]: L'une des meilleures plateformes de mise en relation en Belgique.
+    - paragraph [ref=e513]:
+      - text: Copyright™ Indebel, Tous droits réservés. Créé par
+      - link "DreamBis" [ref=e514] [cursor=pointer]:
+        - /url: https://dreambis.be
