@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "trade": {
+    "requiresSourceId": true,
+    "requiresSpecificEditorialContent": true,
+    "allowedTypes": ["A", "B"]
+  },
+  "locality": {
+    "requiresNisCode": true,
+    "requiresSpecificEditorialContent": true,
+    "maximumPriorityForInitialIndexing": 2
+  },
+  "combination": {
+    "mode": "allowlist",
+    "minimumProfessionals": 3,
+    "minimumValidatedRequests": 1,
+    "minimumDistinctiveSignals": 3,
+    "allowlist": [
+      {"trade":"plombier","locality":"bruxelles","validated":true,"signals":["legacy-landing","specific-editorial-content","validated-locality"],"note":"Cible historique /plombier-bruxelles.html; stock professionnel à reconfirmer avant production."},
+      {"trade":"electricien","locality":"bruxelles","validated":true,"signals":["legacy-landing","specific-editorial-content","validated-locality"],"note":"Cible historique /electricien-bruxelles.html; stock professionnel à reconfirmer avant production."},
+      {"trade":"chauffagiste","locality":"liege","validated":true,"signals":["legacy-landing","specific-editorial-content","validated-locality"],"note":"Cible historique /chauffagiste-liege.html; stock professionnel à reconfirmer avant production."}
+    ]
+  },
+  "underThresholdBehavior": "not-generated",
+  "sitemapIncludesOnlyIndexable": true,
+  "documentation": "Les volumes de profils et le mapping métier-demande ne sont pas assez fiables pour une ouverture automatique. L’allowlist reste obligatoire jusqu’à disponibilité d’agrégats SEO validés."
+}
