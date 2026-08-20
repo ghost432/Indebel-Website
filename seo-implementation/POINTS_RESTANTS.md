@@ -1,10 +1,23 @@
 # Points restant à valider avant production
 
+## Bloquants de recette
+
+1. Confirmer la branche, le commit, le déclencheur et le processus de redémarrage Plesk/Express du site public.
+2. Confirmer la priorité entre les routes Express et les fichiers statiques `public/sitemap*.xml`.
+3. Retirer du dépôt et faire tourner le secret JWT présent dans la configuration PM2 de l’application.
+
+## Données à structurer
+
+1. Créer un endpoint d’agrégation SEO read-only sans données de contact.
+2. Structurer à terme la commune des profils par code NIS.
+3. Persister les compétences par identifiant plutôt que par libellé libre.
+4. Ne rouvrir une combinaison qu’après 3 professionnels locaux et 1 demande validée avec mapping vérifié.
+
 ## Bloquants métier
 
-1. Confirmer le stock réel de professionnels pour `plombier × Bruxelles`, `électricien × Bruxelles` et `chauffagiste × Liège`. L’allowlist reprend les landings historiques, mais le mapping profil-compétence-localité n’est pas assez fiable pour valider automatiquement l’offre.
-2. Décider si Anvers, Gand, Bruges, Louvain et Malines doivent être indexées en français dans le premier lot ou attendre des pages néerlandaises et une stratégie `hreflang`.
-3. Valider les 23 métiers/services indexables, notamment les spécialités B susceptibles de faible volume ou de cannibalisation.
+1. Le stock des trois combinaisons est contrôlé et insuffisant ; les pages restent fermées.
+2. Le lot initial est francophone, y compris pour Anvers, Gand, Bruges, Louvain et Malines.
+3. Les 23 métiers/services sont validés ; les spécialités B restent en priorité 2.
 
 ## Technique et données
 

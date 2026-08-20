@@ -32,6 +32,9 @@ fs.writeFileSync(path.join(directory, 'URLS_GENEREES.csv'), `${urlCsv}\n`);
 
 const redirectRows = Object.entries(LEGACY_REDIRECTS).map(([source, destination]) => [source, destination, '301', 'implémentée', 'correspondance directe']);
 redirectRows.push(
+    ['/plombier-bruxelles.html', '', '', 'conservée après recette', '1 profil local plausible et 0 demande validée; redirection annulée'],
+    ['/electricien-bruxelles.html', '', '', 'conservée après recette', '2 profils locaux plausibles et 0 demande validée; redirection annulée'],
+    ['/chauffagiste-liege.html', '', '', 'conservée après recette', '0 profil local plausible et 0 demande validée; redirection annulée'],
     ['/isolation-maison-wallonie.html', '', '', 'conservée', 'pas de page régionale équivalente dans ce lot'],
     ['/renovation-salle-de-bain-bruxelles.html', '', '', 'conservée', 'intention multi-métiers; cible unique à valider'],
     ['/artisan-brabant-wallon.html', '', '', 'conservée', 'pas de page province dans ce lot']

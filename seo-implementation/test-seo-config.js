@@ -15,9 +15,17 @@ assert(indexableLocalities.every((locality) => locality.intro && /^\d{5}$/.test(
 const combinations = thresholds.combination.allowlist.filter((entry) => (
     isSeoCombinationIndexable(tradeBySlug.get(entry.trade), localityBySlug.get(entry.locality))
 ));
-assert.equal(combinations.length, 3, 'Seules les trois combinaisons contrôlées doivent être ouvertes');
+assert.equal(combinations.length, 0, 'Aucune combinaison ne doit être ouverte sans seuils de stock confirmés');
+thresholds.combination.allowlist.forEach((entry) => {
+    const decision = isSeoCombinationIndexable(
+        tradeBySlug.get(entry.trade),
+        localityBySlug.get(entry.locality),
+        { professionals: entry.evidence.professionals, validatedRequests: entry.evidence.validatedRequests }
+    );
+    assert.equal(decision, false, `${entry.trade} × ${entry.locality} doit rester fermée sous les seuils`);
+});
 assert(!constructionPaths().some((url) => url.includes('/autres/')), 'Autres ne doit jamais produire une URL SEO');
-assert.equal(constructionPaths().length, 37, 'Le premier lot doit contenir exactement 37 URL Construction');
+assert.equal(constructionPaths().length, 34, 'Le lot recetté doit contenir exactement 34 URL Construction');
 
 const titles = [
     buildMetadata({ kind: 'national' }).title,

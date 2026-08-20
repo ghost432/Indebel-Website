@@ -16,9 +16,9 @@
     "minimumValidatedRequests": 1,
     "minimumDistinctiveSignals": 3,
     "allowlist": [
-      {"trade":"plombier","locality":"bruxelles","validated":true,"signals":["legacy-landing","specific-editorial-content","validated-locality"],"note":"Cible historique /plombier-bruxelles.html; stock professionnel à reconfirmer avant production."},
-      {"trade":"electricien","locality":"bruxelles","validated":true,"signals":["legacy-landing","specific-editorial-content","validated-locality"],"note":"Cible historique /electricien-bruxelles.html; stock professionnel à reconfirmer avant production."},
-      {"trade":"chauffagiste","locality":"liege","validated":true,"signals":["legacy-landing","specific-editorial-content","validated-locality"],"note":"Cible historique /chauffagiste-liege.html; stock professionnel à reconfirmer avant production."}
+      {"trade":"plombier","locality":"bruxelles","validated":false,"signals":["legacy-landing","specific-editorial-content","validated-locality"],"evidence":{"professionals":1,"validatedRequests":0,"checkedAt":"2026-08-20"},"note":"Seuil non atteint : 1 profil local plausible et aucune demande validée avec correspondance exacte. Ancienne landing conservée."},
+      {"trade":"electricien","locality":"bruxelles","validated":false,"signals":["legacy-landing","specific-editorial-content","validated-locality"],"evidence":{"professionals":2,"validatedRequests":0,"checkedAt":"2026-08-20"},"note":"Seuil non atteint : 2 profils locaux plausibles et aucune demande validée avec correspondance exacte. Ancienne landing conservée."},
+      {"trade":"chauffagiste","locality":"liege","validated":false,"signals":["legacy-landing","specific-editorial-content","validated-locality"],"evidence":{"professionals":0,"validatedRequests":0,"checkedAt":"2026-08-20"},"note":"Seuil non atteint : aucun profil local plausible et aucune demande validée avec correspondance exacte. Ancienne landing conservée."}
     ]
   },
   "underThresholdBehavior": "not-generated",

@@ -6,6 +6,8 @@
     "start": "node server.js",
     "seo:build": "node scripts/generate-localites-seo.js && node scripts/generate-sitemaps.js && node scripts/generate-seo-deliverables.js",
     "seo:check": "node seo-implementation/check-seo.js",
+    "seo:similarity": "node seo-implementation/check-content-similarity.js",
+    "test:regression": "node seo-implementation/check-regression.js",
     "test": "node seo-implementation/test-seo-config.js"
   },
   "keywords": [],

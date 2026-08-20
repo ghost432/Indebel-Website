@@ -1,5 +1,6 @@
 const { buildMetadata, SITE_URL } = require('./metadata');
 const { indexableTrades, indexableLocalities, tradeBySlug, localityBySlug } = require('./catalog');
+const { isSeoCombinationIndexable } = require('./quality');
 
 function escapeHtml(value) {
     return String(value ?? '').replace(/[&<>"']/g, (character) => ({
@@ -102,7 +103,7 @@ function demandCards(demands) {
 function tradeCards(trades, locality) {
     return `<div class="seo-card-grid">${trades.map((trade) => {
         const href = locality ? `/construction/${trade.slug}/${locality.slug}/` : `/construction/${trade.slug}/`;
-        const comboAvailable = !locality || ['plombier:bruxelles', 'electricien:bruxelles', 'chauffagiste:liege'].includes(`${trade.slug}:${locality.slug}`);
+        const comboAvailable = !locality || isSeoCombinationIndexable(trade, locality);
         const target = comboAvailable ? href : `/construction/${trade.slug}/`;
         return `<article class="seo-link-card"><span>${escapeHtml(trade.category)}</span><h3><a href="${target}">${escapeHtml(trade.seoName)}</a></h3><p>${escapeHtml(trade.scope?.[0] || trade.notes)}</p><a class="seo-arrow-link" href="${target}">Voir la page <span aria-hidden="true">→</span></a></article>`;
     }).join('')}</div>`;
@@ -110,7 +111,7 @@ function tradeCards(trades, locality) {
 
 function localityLinks(localities, trade) {
     return `<div class="seo-location-list">${localities.map((locality) => {
-        const comboAvailable = trade && ['plombier:bruxelles', 'electricien:bruxelles', 'chauffagiste:liege'].includes(`${trade.slug}:${locality.slug}`);
+        const comboAvailable = trade && isSeoCombinationIndexable(trade, locality);
         const path = comboAvailable ? `/construction/${trade.slug}/${locality.slug}/` : `/construction/${locality.slug}/`;
         return `<a href="${path}"><strong>${escapeHtml(locality.name)}</strong><span>${escapeHtml(locality.province)}</span></a>`;
     }).join('')}</div>`;
@@ -126,6 +127,11 @@ function faqSchema(faqs) {
     return { '@type': 'FAQPage', mainEntity: faqs.map((faq) => ({
         '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer }
     })) };
+}
+
+function localityGuidance(locality) {
+    if (!locality.guidance?.length) return '';
+    return `<section class="seo-section seo-local-guidance"><div class="container"><div class="seo-section-heading"><span class="seo-kicker">Cadrage local</span><h2>Préparer un projet situé à ${escapeHtml(locality.name)}</h2></div><div class="seo-guidance-grid">${locality.guidance.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('')}</div></div></section>`;
 }
 
 function nationalPage({ demands = [], indexable = true }) {
@@ -189,7 +195,8 @@ function localityPage({ locality, demands = [], indexable = true }) {
         { question: 'Pourquoi certaines combinaisons métier et ville ne sont-elles pas indexées ?', answer: 'Une page combinée n’est ouverte que si elle possède des signaux réels et un contenu distinctif. Les autres recherches restent accessibles depuis les pages métier ou commune.' }
     ];
     const body = `<section class="seo-hero"><div class="container">${breadcrumbs(crumbs)}<div class="seo-hero-copy"><span class="seo-kicker">${escapeHtml(locality.province)}</span><h1>Artisans et professionnels de la construction à ${escapeHtml(locality.name)}</h1><p>${escapeHtml(locality.intro)}</p><div class="seo-actions"><a class="btn btn-primary" href="https://pro.indebel.be/demande-devis">Publier un projet à ${escapeHtml(locality.name)}</a><a class="btn seo-secondary-button" href="#metiers">Choisir un métier</a></div></div></div></section>
-    <section class="seo-section" id="metiers"><div class="container"><div class="seo-section-heading"><span class="seo-kicker">Compétences</span><h2>Métiers pertinents pour votre projet</h2><p>Les pages combinées ne sont proposées que pour les couples validés; les autres cartes renvoient vers la page métier nationale.</p></div>${tradeCards(featuredTrades, locality)}</div></section>
+    ${localityGuidance(locality)}
+    <section class="seo-section" id="metiers"><div class="container"><div class="seo-section-heading"><span class="seo-kicker">Compétences</span><h2>Métiers pertinents pour votre projet</h2><p>Une page combinée n’est ouverte que si les seuils de profils et de demandes sont confirmés. Sinon, la carte renvoie vers la page métier nationale.</p></div>${tradeCards(featuredTrades, locality)}</div></section>
     <section class="seo-section seo-band"><div class="container seo-two-column"><div><div class="seo-section-heading"><span class="seo-kicker">Contexte de demande</span><h2>Informations utiles à préciser à ${escapeHtml(locality.name)}</h2></div><ul class="seo-check-list">${locality.focus.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}<li>Code postal, accès et contraintes de stationnement</li><li>Photos et état actuel des supports</li></ul></div><aside class="seo-brief"><h2>Identification officielle</h2><dl><dt>Commune</dt><dd>${escapeHtml(locality.name)}</dd><dt>Code NIS</dt><dd>${escapeHtml(locality.nisCode)}</dd><dt>Région</dt><dd>${escapeHtml(locality.region)}</dd></dl></aside></div></section>
     <section class="seo-section"><div class="container"><div class="seo-section-heading"><span class="seo-kicker">Demandes locales</span><h2>Projets publics attribués à ${escapeHtml(locality.name)}</h2><p>Seules les demandes dont la commune correspond exactement sont affichées. Aucun email, téléphone, budget ou adresse n’est repris.</p></div>${demandCards(demands)}</div></section>
     ${faqSection(faqs)}<section class="seo-cta"><div class="container"><div><span class="seo-kicker">À ${escapeHtml(locality.name)}</span><h2>Décrivez votre projet avant de solliciter un professionnel</h2></div><a class="btn btn-primary" href="https://pro.indebel.be/demande-devis">Commencer ma demande</a></div></section>`;

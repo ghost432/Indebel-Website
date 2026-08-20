@@ -31,52 +31,92 @@ const PRIORITY_OVERRIDES = {
         priority: 1, indexable: true,
         intro: "À Bruxelles, les demandes de rénovation concernent aussi bien les appartements que les maisons des dix-neuf communes. Indebel aide à cadrer le besoin et à solliciter un professionnel selon le métier requis.",
         focus: ['rénovation d’appartement', 'mise en conformité', 'dépannage technique'],
+        guidance: [
+            "Pour une intervention dans un appartement, la demande doit distinguer la partie privative d’un éventuel équipement commun et préciser l’étage, l’accès au chantier et les plages d’intervention possibles.",
+            "Pour une maison ou un local, indiquez la commune bruxelloise exacte, le code postal, l’état de l’existant et les contraintes de livraison. Ces informations sont plus utiles qu’une simple mention « Bruxelles »."
+        ],
         nearby: ['anderlecht', 'ixelles', 'uccle']
     },
     Liège: {
         priority: 1, indexable: true,
         intro: "À Liège, Indebel met en relation les porteurs de projets avec des professionnels pour l’entretien, la réparation et la rénovation du bâti. La sélection part du travail à réaliser, pas d’une liste générique d’entreprises.",
-        focus: ['chauffage', 'peinture', 'rénovation intérieure'], nearby: ['seraing', 'herstal']
+        focus: ['chauffage', 'peinture', 'rénovation intérieure'],
+        guidance: [
+            "Pour le chauffage, précisez l’équipement en place, son énergie, le symptôme constaté et l’existence d’un entretien récent. Une demande d’entretien ne relève pas du même périmètre qu’un remplacement complet.",
+            "Pour les finitions intérieures, joignez des photos des supports et séparez les réparations, la préparation et la finition attendue. Le code postal et les conditions d’accès complètent utilement le brief liégeois."
+        ], nearby: ['seraing', 'herstal']
     },
     Charleroi: {
         priority: 1, indexable: true,
         intro: "À Charleroi, la plateforme couvre les besoins de rénovation intérieure, de gros travaux et d’amélioration énergétique. Une demande détaillée permet d’orienter le projet vers la compétence adaptée.",
-        focus: ['rénovation intérieure', 'isolation', 'maçonnerie'], nearby: ['châtelet', 'courcelles']
+        focus: ['rénovation intérieure', 'isolation', 'maçonnerie'],
+        guidance: [
+            "Un projet de maçonnerie doit préciser si l’intervention touche un mur porteur, une ouverture, une réparation ou un nouvel ouvrage. Les plans disponibles et des vues larges évitent de réduire le besoin à un intitulé vague.",
+            "Pour l’isolation ou la rénovation intérieure, décrivez les parois concernées, leur état et l’occupation des lieux pendant les travaux. Indiquez aussi la section de Charleroi et le code postal du chantier."
+        ], nearby: ['châtelet', 'courcelles']
     },
     Namur: {
         priority: 1, indexable: true,
         intro: "À Namur, les projets peuvent porter sur une rénovation complète comme sur une intervention ciblée. Indebel structure la demande par métier afin de faciliter des réponses réellement pertinentes.",
-        focus: ['toiture', 'menuiserie', 'électricité'], nearby: ['andenne', 'gembloux']
+        focus: ['toiture', 'menuiserie', 'électricité'],
+        guidance: [
+            "Pour une toiture, indiquez sa forme, le matériau visible, la zone du problème et les possibilités d’accès. Une infiltration, un entretien et une réfection complète appellent des diagnostics différents.",
+            "Pour la menuiserie ou l’électricité, ajoutez les dimensions, photos ou rapports disponibles. La commune exacte, le code postal et le calendrier souhaité permettent de cadrer le déplacement et l’organisation du chantier namurois."
+        ], nearby: ['andenne', 'gembloux']
     },
     Mons: {
         priority: 1, indexable: true,
         intro: "À Mons, Indebel permet de publier un projet de construction ou de rénovation avec son contexte, son calendrier et le métier recherché. Les demandes publiques disponibles alimentent la page sans exposer les coordonnées du demandeur.",
-        focus: ['peinture', 'façades', 'chauffage'], nearby: ['quaregnon', 'saint-ghislain']
+        focus: ['peinture', 'façades', 'chauffage'],
+        guidance: [
+            "Pour une façade, photographiez le support, les fissures et les traces d’humidité, puis précisez les possibilités d’accès. Le nettoyage, la réparation d’enduit et la finition doivent être séparés dans le descriptif.",
+            "Pour la peinture ou le chauffage, détaillez les surfaces ou équipements concernés et l’état actuel. La commune, le code postal et la période d’intervention donnent au professionnel un contexte exploitable autour de Mons."
+        ], nearby: ['quaregnon', 'saint-ghislain']
     },
     Anvers: {
         priority: 1, indexable: true,
         intro: "À Anvers, la page rassemble les accès vers les métiers de rénovation couverts par Indebel. Le contenu reste en français dans ce premier lot; une version néerlandaise devra être conçue avant une extension SEO en Flandre.",
-        focus: ['rénovation urbaine', 'électricité', 'menuiserie'], nearby: ['mortsel', 'schoten']
+        focus: ['rénovation urbaine', 'électricité', 'menuiserie'],
+        guidance: [
+            "Cette page répond aux recherches francophones visant Anvers. La demande doit conserver le nom officiel utilisé par Indebel, le code postal et une description factuelle du bâtiment, sans prétendre fournir une version néerlandaise.",
+            "Pour l’électricité ou la menuiserie, joignez les rapports, mesures et photos disponibles. Pour une rénovation plus large, séparez les lots afin que chaque compétence puisse être évaluée indépendamment."
+        ], nearby: ['mortsel', 'schoten']
     },
     Gand: {
         priority: 1, indexable: true,
         intro: "À Gand, Indebel organise la recherche d’un professionnel autour du besoin concret: type de travaux, délai et localisation. Cette première version francophone doit être complétée par une stratégie linguistique validée.",
-        focus: ['isolation', 'chauffage', 'rénovation intérieure'], nearby: ['destelbergen', 'merelbeke']
+        focus: ['isolation', 'chauffage', 'rénovation intérieure'],
+        guidance: [
+            "Le lot actuel traite Gand en français. Pour l’isolation, précisez la paroi, les matériaux connus et l’objectif recherché; pour le chauffage, indiquez l’installation existante et le type d’intervention.",
+            "Une rénovation intérieure gagne à être découpée par pièce et par métier. Le code postal, l’accès et la chronologie souhaitée rendent la demande plus précise sans fabriquer de disponibilité locale."
+        ], nearby: ['destelbergen', 'merelbeke']
     },
     Bruges: {
         priority: 2, indexable: true,
         intro: "À Bruges, la page donne accès aux métiers de rénovation configurés dans Indebel et aux demandes publiques attribuées de façon fiable à la commune. Aucun volume de professionnels n’est affiché sans agrégat vérifié.",
-        focus: ['toiture', 'peinture', 'menuiserie'], nearby: ['damme', 'zedelgem']
+        focus: ['toiture', 'peinture', 'menuiserie'],
+        guidance: [
+            "Pour une demande francophone à Bruges, indiquez le code postal et l’adresse du chantier uniquement dans le formulaire privé. Sur la page publique, seuls le métier et la commune servent au cadrage.",
+            "Toiture, peinture et menuiserie nécessitent des informations différentes : accès et infiltration pour la première, état des supports pour la deuxième, dimensions et matériaux pour la troisième."
+        ], nearby: ['damme', 'zedelgem']
     },
     Louvain: {
         priority: 2, indexable: true,
         intro: "À Louvain, les particuliers peuvent décrire leur projet puis choisir la compétence de construction correspondante. La page locale ne revendique aucune disponibilité qui ne soit pas confirmée par les données Indebel.",
-        focus: ['électricité', 'architecture', 'rénovation énergétique'], nearby: ['herent', 'kortenberg']
+        focus: ['électricité', 'architecture', 'rénovation énergétique'],
+        guidance: [
+            "Pour l’électricité, un rapport de contrôle ou une liste des circuits concernés clarifie le périmètre. Pour une mission d’architecture, précisez plutôt le programme, les plans existants et le stade du projet.",
+            "Une rénovation énergétique doit être découpée entre étude, enveloppe et équipements. Cette page francophone utilise Louvain comme localisation, sans créer d’alias néerlandais ni annoncer un stock non vérifié."
+        ], nearby: ['herent', 'kortenberg']
     },
     Malines: {
         priority: 2, indexable: true,
         intro: "À Malines, Indebel relie les demandes de travaux aux métiers configurés sur la plateforme. Les signaux locaux restent volontairement factuels et peuvent être enrichis à mesure que les agrégats deviennent fiables.",
-        focus: ['plomberie', 'chauffage', 'peinture'], nearby: ['bonheiden', 'sint-katelijne-waver']
+        focus: ['plomberie', 'chauffage', 'peinture'],
+        guidance: [
+            "Pour la plomberie, décrivez la fuite, l’équipement ou le réseau concerné et l’urgence réelle. Pour le chauffage, ajoutez la marque, l’énergie et l’historique d’entretien lorsque ces informations sont disponibles.",
+            "Un chantier de peinture doit distinguer la préparation des supports de la finition. Le formulaire peut ensuite recueillir le code postal, les photos et les contraintes d’accès propres au projet à Malines."
+        ], nearby: ['bonheiden', 'sint-katelijne-waver']
     }
 };
 
@@ -108,6 +148,7 @@ const localitiesWithBaseSlugs = Object.entries(regions).flatMap(([region, commun
         indexableByDefault: override.indexable || false,
         intro: override.intro || null,
         focus: override.focus || [],
+        ...(override.guidance ? { guidance: override.guidance } : {}),
         nearby: override.nearby || []
     };
 }));

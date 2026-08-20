@@ -17,6 +17,8 @@ npm run seo:build
 npm test
 npm start
 npm run seo:check
+npm run seo:similarity
+npm run test:regression
 ```
 
 `seo:build` régénère les 581 communes à partir de `../Indebel-App/frontend/src/data/belgianCommunes.js`, puis les sitemaps et les CSV d’inventaire. Le chemin source peut être remplacé avec `INDEBEL_COMMUNES_SOURCE`.
@@ -26,7 +28,7 @@ npm run seo:check
 - Les métiers viennent de `metiers-seo.json`; aucun slug n’est ajouté en base.
 - Une page métier exige un type A ou B, un identifiant source et trois blocs de travaux spécifiques.
 - Une page ville exige un code NIS, une priorité 1 ou 2 et une introduction locale spécifique.
-- Une page métier × ville exige des parents valides et une entrée validée dans l’allowlist de `seo-thresholds.json`.
+- Une page métier × ville exige des parents valides, une entrée validée, 3 professionnels locaux, 1 demande validée et 3 signaux distinctifs.
 - Une combinaison hors allowlist répond 404 et n’entre jamais dans le sitemap.
 - Une variante Construction avec paramètres de filtre reçoit `noindex,follow` et garde un canonical propre.
 - Les sitemaps ne contiennent que les pages canoniques et indexables du lot.
@@ -39,4 +41,4 @@ Le mapping entre profils, compétences et demandes n’étant pas suffisamment f
 
 ## Déploiement futur
 
-Le serveur Express doit rester l’origine qui traite ces routes et les redirections. Si l’hébergement final sert uniquement le dossier `public`, les sitemaps statiques resteront disponibles mais les pages rendues et les 301 nécessiteront une adaptation équivalente au niveau du serveur web.
+Le serveur Express doit rester l’origine qui traite ces routes et les redirections. La recette a confirmé Nginx/Plesk devant Express en production, mais pas la branche, le déclencheur ni le redémarrage du processus. Aucun déploiement ne doit être préparé avant validation des questions listées dans `RAPPORT_RECETTE_PREPROD.md`.

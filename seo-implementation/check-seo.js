@@ -32,6 +32,13 @@ async function run() {
         assert.equal(child.response.status, 200, `${sitemapPath} doit répondre 200`);
         pagePaths.push(...sitemapLocations(child.text).map((url) => new URL(url).pathname));
     }
+    assert.equal(pagePaths.length, 55, 'Le sitemap doit contenir exactement 55 URL recettées');
+    assert.equal(new Set(pagePaths).size, pagePaths.length, 'Le sitemap ne doit contenir aucun doublon');
+    pagePaths.forEach((pathname) => {
+        assert(!pathname.includes('?'), `${pathname}: paramètre interdit dans le sitemap`);
+        assert(!/(?:login|register|admin|account|recherche|search)/i.test(pathname), `${pathname}: route privée ou de recherche interdite`);
+        assert(!Object.prototype.hasOwnProperty.call(LEGACY_REDIRECTS, pathname), `${pathname}: une source redirigée ne doit pas figurer au sitemap`);
+    });
 
     const titles = new Map();
     const sitemapFailures = [];
@@ -63,6 +70,10 @@ async function run() {
         const response = await fetch(`${BASE_URL}${source}`, { redirect: 'manual' });
         assert.equal(response.status, 301, `${source}: redirection 301 attendue`);
         assert.equal(new URL(response.headers.get('location'), BASE_URL).pathname, destination, `${source}: mauvaise cible`);
+        const target = await fetchText(destination);
+        assert.equal(target.response.status, 200, `${destination}: la cible doit répondre directement 200`);
+        const targetCanonical = firstMatch(target.text, /<link\s+rel="canonical"\s+href="([^"]+)"/i);
+        assert.equal(new URL(targetCanonical).pathname, destination, `${destination}: canonical self attendu sur la cible`);
     }
 
     const parameterPage = await fetchText('/construction/plombier/?ville=bruxelles');

@@ -5,9 +5,6 @@ const { nationalPage, tradePage, localityPage, combinationPage, notFoundPage } =
 const { LEGACY_INDEXABLE_PATHS, constructionPaths, urlSet, sitemapIndex } = require('./sitemap');
 
 const LEGACY_REDIRECTS = {
-    '/plombier-bruxelles.html': '/construction/plombier/bruxelles/',
-    '/electricien-bruxelles.html': '/construction/electricien/bruxelles/',
-    '/chauffagiste-liege.html': '/construction/chauffagiste/liege/',
     '/artisan-bruxelles.html': '/construction/bruxelles/',
     '/artisan-liege.html': '/construction/liege/',
     '/artisan-charleroi.html': '/construction/charleroi/',

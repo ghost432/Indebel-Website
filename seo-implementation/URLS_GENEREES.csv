@@ -33,6 +33,3 @@
 "ville";"https://indebel.be/construction/bruges/";"oui";"oui";"localites-seo.json";"priorité 1/2 + contenu local + code NIS"
 "ville";"https://indebel.be/construction/louvain/";"oui";"oui";"localites-seo.json";"priorité 1/2 + contenu local + code NIS"
 "ville";"https://indebel.be/construction/malines/";"oui";"oui";"localites-seo.json";"priorité 1/2 + contenu local + code NIS"
-"métier × ville";"https://indebel.be/construction/plombier/bruxelles/";"oui";"oui";"seo-thresholds.json";"allowlist contrôlée"
-"métier × ville";"https://indebel.be/construction/electricien/bruxelles/";"oui";"oui";"seo-thresholds.json";"allowlist contrôlée"
-"métier × ville";"https://indebel.be/construction/chauffagiste/liege/";"oui";"oui";"seo-thresholds.json";"allowlist contrôlée"

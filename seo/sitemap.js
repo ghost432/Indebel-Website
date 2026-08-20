@@ -11,6 +11,7 @@ const LEGACY_INDEXABLE_PATHS = [
     '/comment-trouver-artisan-fiable-belgique.html',
     '/prix-renovation-salle-de-bain-belgique.html',
     '/renovation-salle-de-bain-bruxelles.html', '/isolation-maison-wallonie.html',
+    '/plombier-bruxelles.html', '/electricien-bruxelles.html', '/chauffagiste-liege.html',
     '/comment-nous-verifions-nos-artisans.html', '/avis-clients-et-projets-locaux.html',
     '/comment-comparer-un-devis-travaux.html'
 ];

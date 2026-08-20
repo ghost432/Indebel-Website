@@ -110,6 +110,10 @@
 .seo-demand-card time { color: #7d8994; font-size: 12px; margin-top: 5px; }
 .seo-empty-state { border: 1px dashed #aebdca; border-radius: 6px; padding: 22px; }
 
+.seo-local-guidance { background: #fff; }
+.seo-guidance-grid { display: grid; gap: 32px; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 980px; }
+.seo-guidance-grid p { border-left: 4px solid var(--seo-orange); line-height: 1.75; margin: 0; padding: 4px 0 4px 22px; }
+
 .seo-process { background: var(--seo-navy); color: #fff; }
 .seo-process .seo-section-heading h2 { color: #fff; }
 .seo-process ol { counter-reset: steps; display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); list-style: none; }
@@ -205,6 +209,7 @@
     .seo-card-grid,
     .seo-demand-list,
     .seo-location-list,
+    .seo-guidance-grid,
     .seo-process ol,
     .seo-two-column,
     .seo-parent-links,

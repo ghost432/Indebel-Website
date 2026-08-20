@@ -30,16 +30,24 @@ function getCombinationDecision(trade, locality, data = {}) {
     ));
     if (!entry?.validated) return { indexable: false, reason: 'not-on-controlled-allowlist' };
 
+    const evidence = {
+        professionals: Number(data.professionals ?? entry.evidence?.professionals ?? 0),
+        validatedRequests: Number(data.validatedRequests ?? entry.evidence?.validatedRequests ?? 0)
+    };
     const observedSignals = [
         ...(entry.signals || []),
-        ...(data.professionals >= thresholds.combination.minimumProfessionals ? ['professionals-threshold'] : []),
-        ...(data.validatedRequests >= thresholds.combination.minimumValidatedRequests ? ['requests-threshold'] : [])
+        ...(evidence.professionals >= thresholds.combination.minimumProfessionals ? ['professionals-threshold'] : []),
+        ...(evidence.validatedRequests >= thresholds.combination.minimumValidatedRequests ? ['requests-threshold'] : [])
     ];
     const uniqueSignals = [...new Set(observedSignals)];
+    const professionalsThresholdMet = evidence.professionals >= thresholds.combination.minimumProfessionals;
+    const requestsThresholdMet = evidence.validatedRequests >= thresholds.combination.minimumValidatedRequests;
+    const distinctiveSignalsThresholdMet = uniqueSignals.length >= thresholds.combination.minimumDistinctiveSignals;
     return {
-        indexable: uniqueSignals.length >= thresholds.combination.minimumDistinctiveSignals,
-        reason: 'controlled-allowlist',
+        indexable: professionalsThresholdMet && requestsThresholdMet && distinctiveSignalsThresholdMet,
+        reason: professionalsThresholdMet && requestsThresholdMet ? 'controlled-allowlist' : 'data-threshold-not-met',
         signals: uniqueSignals,
+        evidence,
         note: entry.note
     };
 }

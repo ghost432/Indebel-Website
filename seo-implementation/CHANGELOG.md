@@ -1,5 +1,15 @@
 # Changelog
 
+## Recette préproduction — 2026-08-20
+
+- Fermeture des trois combinaisons métier × ville sous les seuils réels.
+- Conservation des anciennes landing pages plombier, électricien et chauffagiste.
+- Passage du sitemap à 21 URL historiques et 34 URL Construction.
+- Enrichissement éditorial spécifique des 10 pages villes.
+- Suppression des formulations SEO artificielles des trois landing pages préservées.
+- Ajout des contrôles de similarité, régression, redirections et sitemap.
+- Ajout du rapport de recette, de la stratégie linguistique et de l’audit des 23 métiers.
+
 ## Phase 2 — Architecture Construction Belgique
 
 - Ajout du rendu HTML serveur pour quatre familles de routes Construction.
