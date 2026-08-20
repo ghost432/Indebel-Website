@@ -3,8 +3,9 @@ const path = require('path');
 const db = require('./db');
 const multer = require('multer');
 const { createProxyMiddleware } = require('http-proxy-middleware');
+const { registerSeoRoutes } = require('./seo/routes');
 const app = express();
-const port = 3000;
+const port = Number(process.env.PORT) || 3000;
 
 // Multer Storage Configuration
 const storage = multer.diskStorage({
@@ -20,6 +21,7 @@ const upload = multer({ storage: storage });
 
 // Middleware to parse JSON bodies
 app.use(express.json());
+registerSeoRoutes(app);
 app.use(express.static('public'));
 
 // Visitor Tracking Middleware
