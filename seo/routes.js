@@ -2,7 +2,6 @@ const { tradeBySlug, localityBySlug, trades } = require('./catalog');
 const { isTradeIndexable, isLocalityIndexable, getCombinationDecision } = require('./quality');
 const { getPublicDemands, isConstructionDemand, demandMatchesTrade, demandMatchesLocality } = require('./public-data');
 const { nationalPage, tradePage, localityPage, combinationPage, notFoundPage } = require('./render');
-const { LEGACY_INDEXABLE_PATHS, constructionPaths, urlSet, sitemapIndex } = require('./sitemap');
 
 const LEGACY_REDIRECTS = {
     '/artisan-bruxelles.html': '/construction/bruxelles/',
@@ -28,10 +27,6 @@ function registerSeoRoutes(app) {
         }
         next();
     });
-    app.get('/sitemap.xml', (req, res) => res.type('application/xml').send(sitemapIndex()));
-    app.get('/sitemap-pages.xml', (req, res) => res.type('application/xml').send(urlSet(LEGACY_INDEXABLE_PATHS)));
-    app.get('/sitemap-construction.xml', (req, res) => res.type('application/xml').send(urlSet(constructionPaths())));
-
     Object.entries(LEGACY_REDIRECTS).forEach(([source, destination]) => {
         app.get(source, (req, res) => res.redirect(301, destination));
     });
