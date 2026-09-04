@@ -1,6 +1,18 @@
 <!doctype html>
 <html lang="fr">
   <head>
+    <!-- OpenPanel Tracking -->
+    <script src="https://openpanel.dev/op1.js" defer async></script>
+    <script>
+      window.op = window.op || function (...args) { (window.op.q = window.op.q || []).push(args); };
+      op('init', {
+        clientId: '9963a519-b0b8-4523-aade-bb0d8d38fcf4',
+        trackScreenViews: true,
+        trackOutgoingLinks: true,
+        trackAttributes: true,
+        apiUrl: 'https://monitoring.indebel.be/api'
+      });
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
